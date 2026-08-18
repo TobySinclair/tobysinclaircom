@@ -1,0 +1,225 @@
+import type { Metadata } from "next";
+import type { LandingPage, Post } from "@/lib/content";
+import { isRtsPost, rtsCoverImagePath } from "@/lib/rts-cover";
+import { categoryLabel, site } from "@/lib/site";
+
+export const defaultOgImage = {
+  url: "/opengraph-image",
+  width: 1200,
+  height: 630,
+  alt: site.seo.homeTitle,
+};
+
+export const personId = `${site.url}/#person`;
+export const orgId = `${site.url}/#organization`;
+export const websiteId = `${site.url}/#website`;
+
+export function absoluteUrl(path = "/") {
+  if (path.startsWith("http")) return path;
+  const clean = path.startsWith("/") ? path : `/${path}`;
+  return `${site.url}${clean === "/" ? "/" : clean}`;
+}
+
+export function personJsonLd() {
+  return {
+    "@type": "Person",
+    "@id": personId,
+    name: site.author,
+    url: site.url,
+    image: absoluteUrl("/toby.png"),
+    jobTitle: "Founder",
+    description: site.seo.homeDescription,
+    worksFor: {
+      "@type": "Organization",
+      name: "Real Talk Studio",
+      url: site.realTalk,
+    },
+    sameAs: Object.values(site.social),
+  };
+}
+
+export function organizationJsonLd() {
+  return {
+    "@type": "Organization",
+    "@id": orgId,
+    name: site.name,
+    url: site.url,
+    logo: absoluteUrl("/icon-512.png"),
+    founder: { "@id": personId },
+    sameAs: Object.values(site.social),
+  };
+}
+
+export function websiteJsonLd() {
+  return {
+    "@type": "WebSite",
+    "@id": websiteId,
+    url: site.url,
+    name: site.name,
+    description: site.seo.homeDescription,
+    inLanguage: "en-GB",
+    publisher: { "@id": orgId },
+    author: { "@id": personId },
+  };
+}
+
+export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
+    })),
+  };
+}
+
+export function blogPostingJsonLd(post: Post) {
+  return {
+    "@type": "BlogPosting",
+    "@id": absoluteUrl(`/post/${post.slug}#article`),
+    headline: post.title,
+    description: post.description,
+    image: isRtsPost(post)
+      ? [absoluteUrl(rtsCoverImagePath(post.slug))]
+      : post.image
+        ? [post.image]
+        : [absoluteUrl(rtsCoverImagePath(post.slug))],
+    datePublished: post.published,
+    dateModified: post.modified || post.published,
+    author: { "@id": personId },
+    publisher: { "@id": orgId },
+    mainEntityOfPage: absoluteUrl(`/post/${post.slug}`),
+    url: absoluteUrl(`/post/${post.slug}`),
+    keywords: post.categories.map(categoryLabel).join(", "),
+    articleSection: post.categories[0] ? categoryLabel(post.categories[0]) : "Articles",
+    inLanguage: "en-GB",
+    isPartOf: { "@id": websiteId },
+  };
+}
+
+export function collectionJsonLd(input: {
+  name: string
+  description: string
+  path: string
+  posts: Post[]
+}) {
+  return {
+    "@type": "CollectionPage",
+    name: input.name,
+    description: input.description,
+    url: absoluteUrl(input.path),
+    isPartOf: { "@id": websiteId },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: input.posts.length,
+      itemListElement: input.posts.slice(0, 20).map((post, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: absoluteUrl(`/post/${post.slug}`),
+        name: post.title,
+      })),
+    },
+  };
+}
+
+export function webPageJsonLd(input: {
+  name: string
+  description: string
+  path: string
+  type?: string
+  image?: string | null
+}) {
+  return {
+    "@type": input.type || "WebPage",
+    name: input.name,
+    description: input.description,
+    url: absoluteUrl(input.path),
+    isPartOf: { "@id": websiteId },
+    about: { "@id": personId },
+    image: input.image || absoluteUrl("/opengraph-image"),
+  };
+}
+
+export function pageMetadata(input: {
+  title: string
+  description: string
+  path: string
+  image?: string | null
+  type?: "website" | "article"
+  published?: string | null
+  modified?: string | null
+  absoluteTitle?: boolean
+}): Metadata {
+  const url = input.path;
+  const image = input.image
+    ? [{ url: input.image, alt: input.title }]
+    : [defaultOgImage];
+
+  return {
+    title: input.absoluteTitle ? { absolute: input.title } : input.title,
+    description: input.description,
+    alternates: {
+      canonical: url,
+      types: {
+        "application/rss+xml": "/feed.xml",
+      },
+    },
+    openGraph: {
+      type: input.type || "website",
+      siteName: site.name,
+      locale: "en_GB",
+      title: input.title,
+      description: input.description,
+      url,
+      images: image,
+      ...(input.type === "article"
+        ? {
+            publishedTime: input.published ?? undefined,
+            modifiedTime: input.modified ?? input.published ?? undefined,
+            authors: [site.author],
+          }
+        : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: input.title,
+      description: input.description,
+      images: [input.image || defaultOgImage.url],
+      creator: "@TobySinclair_",
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
+  };
+}
+
+export function postMetadata(post: Post): Metadata {
+  return pageMetadata({
+    title: post.title,
+    description: post.description,
+    path: `/post/${post.slug}`,
+    image: isRtsPost(post) ? rtsCoverImagePath(post.slug) : post.image,
+    type: "article",
+    published: post.published,
+    modified: post.modified,
+  });
+}
+
+export function landingMetadata(page: LandingPage): Metadata {
+  return pageMetadata({
+    title: page.title,
+    description: page.description,
+    path: `/${page.slug}`,
+    image: page.image,
+  });
+}

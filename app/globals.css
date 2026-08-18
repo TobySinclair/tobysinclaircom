@@ -1,26 +1,170 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0f;
+  --foreground: #f4f4f5;
+  --surface: #1e1e2e;
+  --muted: #a1a1aa;
+  --border: rgba(255, 255, 255, 0.1);
+  --green: #00ff88;
+  --cyan: #00d4ff;
+  --ink: #f4f4f5;
+  --ink-muted: #a1a1aa;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-border: var(--border);
+  --color-accent: var(--green);
+  --color-accent-dark: var(--green);
+  --color-cyan: var(--cyan);
+  --color-green: var(--green);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.gradient-text {
+  background-image: linear-gradient(to right, #00d4ff, #00ff88);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #00ff88;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0a0a0f;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f4f4f5;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.btn-secondary:hover {
+  border-color: #00ff88;
+  background: rgba(0, 255, 136, 0.06);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #00ff88;
+}
+
+.glow-green {
+  background: radial-gradient(ellipse at center, rgba(0, 255, 136, 0.28), transparent 68%);
+}
+
+.glow-cyan {
+  background: radial-gradient(ellipse at center, rgba(0, 180, 255, 0.24), transparent 68%);
+}
+
+.hairline {
+  background: linear-gradient(90deg, rgba(0, 255, 136, 0.5), rgba(0, 212, 255, 0.2), transparent);
+}
+
+.prose {
+  max-width: 42rem;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: #d4d4d8;
+}
+
+.prose > * + * {
+  margin-top: 1.15em;
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  color: #fafafa;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.prose h1 {
+  font-size: 2rem;
+}
+
+.prose h2 {
+  margin-top: 2em;
+  font-size: 1.45rem;
+}
+
+.prose h3 {
+  margin-top: 1.6em;
+  font-size: 1.2rem;
+}
+
+.prose a {
+  color: #00ff88;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.25rem;
+}
+
+.prose li + li {
+  margin-top: 0.35em;
+}
+
+.prose blockquote {
+  border-left: 3px solid #00ff88;
+  padding-left: 1rem;
+  color: #a1a1aa;
+  font-style: italic;
+}
+
+.prose img {
+  border-radius: 1rem;
+}
+
+.prose hr {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.prose strong {
+  color: #fafafa;
 }
