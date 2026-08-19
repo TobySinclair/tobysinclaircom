@@ -22,6 +22,7 @@ export function CoverImage({
   height,
   className,
   priority = false,
+  sizes,
 }: {
   src: string
   alt?: string
@@ -29,10 +30,19 @@ export function CoverImage({
   height: number
   className?: string
   priority?: boolean
+  sizes?: string
 }) {
   if (src.startsWith("/") || allowed.has(hostname(src))) {
     return (
-      <Image src={src} alt={alt} width={width} height={height} className={className} priority={priority} />
+      <Image
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        className={className}
+        priority={priority}
+        sizes={sizes}
+      />
     );
   }
 

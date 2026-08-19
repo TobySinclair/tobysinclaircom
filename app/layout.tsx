@@ -36,8 +36,10 @@ export const metadata: Metadata = {
   publisher: site.name,
   keywords: [
     "Toby Sinclair",
+    "human side of AI",
+    "AI enablement",
+    "AI change management",
     "coaching",
-    "mentoring",
     "leadership",
     "hard conversations",
     "book summaries",

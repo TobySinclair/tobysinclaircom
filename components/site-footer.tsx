@@ -14,11 +14,15 @@ export function SiteFooter() {
             <a href={site.realTalk} className="text-green hover:underline">
               Real Talk Studio
             </a>
-            . Coach and advisor helping senior managers become more coach-like.
+            . Coach and trainer helping enterprises navigate the human side of AI — change,
+            capability, and the conversations that make transformation real.
           </p>
         </div>
         <div className="flex flex-col gap-2 text-sm text-ink-muted">
           <p className="font-semibold text-white">Site</p>
+          <Link href="/work-with-me" className="hover:text-white">
+            Work with me
+          </Link>
           <Link href="/blog" className="hover:text-white">
             Articles
           </Link>

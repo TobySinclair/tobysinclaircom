@@ -9,6 +9,7 @@ export function generateStaticParams() {
   return [
     { path: ["index"] },
     { path: ["about"] },
+    { path: ["work-with-me"] },
     { path: ["blog"] },
     { path: ["book-summaries"] },
     ...getAllPosts().map((post) => ({ path: ["post", post.slug] })),

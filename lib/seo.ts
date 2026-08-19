@@ -27,7 +27,7 @@ export function personJsonLd() {
     name: site.author,
     url: site.url,
     image: absoluteUrl("/toby.png"),
-    jobTitle: "Founder",
+    jobTitle: "Founder, Coach and Trainer",
     description: site.seo.homeDescription,
     worksFor: {
       "@type": "Organization",

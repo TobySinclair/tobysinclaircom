@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Toby Sinclair Personal Development Coach | Coaching and Mentoring";
+export const alt = "Toby Sinclair | The Human Side of AI";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -18,20 +18,22 @@ export default function Image() {
           padding: 72,
         }}
       >
-        <div style={{ display: "flex", fontSize: 28, fontWeight: 700, color: "#00ff88" }}>Toby Sinclair</div>
+        <div style={{ display: "flex", fontSize: 24, fontWeight: 700, color: "#00ff88" }}>
+          Toby Sinclair · Founder, Real Talk Studio
+        </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
           <div
             style={{
-              fontSize: 64,
+              fontSize: 52,
               fontWeight: 700,
               color: "white",
-              lineHeight: 1.1,
-              maxWidth: 960,
+              lineHeight: 1.12,
+              maxWidth: 1000,
             }}
           >
-            Helping leaders become more coach-like
+            AI is a technology problem for about six weeks. Then it's a people problem.
           </div>
-          <div style={{ fontSize: 28, color: "#a1a1aa" }}>Founder, Real Talk Studio</div>
+          <div style={{ fontSize: 24, color: "#a1a1aa" }}>The human side of AI</div>
         </div>
       </div>
     ),

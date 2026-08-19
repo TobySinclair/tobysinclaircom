@@ -24,6 +24,7 @@ export const config = {
     "/llms-full.txt",
     "/index.md",
     "/about.md",
+    "/work-with-me.md",
     "/blog.md",
     "/book-summaries.md",
     "/post/:slug.md",

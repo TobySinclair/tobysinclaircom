@@ -23,6 +23,7 @@ const nextConfig: NextConfig = {
     return [
       { source: "/index.md", destination: "/llm/index" },
       { source: "/about.md", destination: "/llm/about" },
+      { source: "/work-with-me.md", destination: "/llm/work-with-me" },
       { source: "/blog.md", destination: "/llm/blog" },
       { source: "/book-summaries.md", destination: "/llm/book-summaries" },
       { source: "/post/:slug.md", destination: "/llm/post/:slug" },

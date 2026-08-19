@@ -18,25 +18,72 @@ export const metadata: Metadata = pageMetadata({
   absoluteTitle: true,
 });
 
+const credibility = [
+  {
+    title: "Founder, Real Talk Studio",
+    body: "An AI simulation platform used by enterprises to build real conversational competence",
+  },
+  {
+    title: "ICF Professional Certified Coach",
+    body: "A decade helping senior managers lead change people actually follow",
+  },
+  {
+    title: "Ex-JP Morgan",
+    body: "Ten years in financial trading, so I know what regulated, high-stakes environments demand",
+  },
+];
+
+const offers = [
+  {
+    index: "01",
+    title: "AI Enablement Training",
+    body: "Hands-on workshops that take teams from “we should use AI” to actually using it well. Practical, tool-agnostic, and grounded in real workflows — identifying use cases, building judgement about what AI should and shouldn't do, and making adoption a habit rather than a mandate.",
+    audience: "For: leadership teams, functions rolling out AI, L&D leaders who need more than a webinar.",
+    cta: "Book a training conversation →",
+    href: "/work-with-me#training",
+  },
+  {
+    index: "02",
+    title: "Coaching Through AI Change",
+    body: "One-to-one and team coaching for leaders navigating AI transformation. The same coaching craft I've practised for a decade, pointed at the hardest change most leaders will face: role anxiety, resistance, restructuring conversations, and leading teams whose work is being redrawn.",
+    audience: "For: senior managers, exec teams, and the people carrying the change.",
+    cta: "Explore coaching →",
+    href: "/work-with-me#coaching",
+  },
+  {
+    index: "03",
+    title: "Real Talk Studio",
+    body: "My company. Teams rehearse feedback, conflict, and high-stakes conversations with AI — before they happen for real. It's also my daily proof: I don't advise on AI from the sidelines, I build with it, sell it, and live its limits.",
+    audience: "For: organisations that need verified conversational competence at scale.",
+    cta: "Visit Real Talk Studio →",
+    href: site.realTalk,
+  },
+];
+
 const pillars = [
   {
     index: "01",
-    href: "/blog/categories/coaching",
-    label: "Coaching",
-    body: "Listening, asking, and helping people find their own next move — rather than adding another layer of advice.",
+    href: "/post/best-artificial-intelligence-books-for-leadership-development",
+    label: "The Human Side of AI",
+    body: "Adoption, change, and what happens to people when the tools change faster than the culture.",
   },
   {
     index: "02",
     href: "/blog/categories/leadership",
     label: "Leadership",
-    body: "How senior managers build cultures people want to be part of, and the habits that make that possible.",
+    body: "How senior managers build cultures people want to be part of — especially under transformation.",
   },
   {
     index: "03",
     href: "/blog/categories/real-talk-studio",
-    label: "Hard conversations",
-    body: "Feedback, conflict, and the discussions teams postpone until they become expensive.",
+    label: "Hard Conversations",
+    body: "Feedback, conflict, and the discussions teams postpone until they become expensive. (AI has added a few new ones.)",
   },
+];
+
+const moreEngagements = [
+  "Trained recruitment teams to use Claude through a DEI lens ahead of a major hiring drive",
+  "Embedded AI practice into a live leadership programme so managers rehearse hard conversations, not just discuss them",
 ];
 
 export default function Home() {
@@ -64,38 +111,210 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute -right-24 top-0 h-[480px] w-[480px] glow-cyan opacity-80" />
         <div className="pointer-events-none absolute -left-16 bottom-0 h-[360px] w-[360px] glow-green opacity-60" />
-        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 px-5 py-16 md:grid-cols-2 md:gap-12 md:py-20 lg:min-h-[calc(100vh-4.25rem)] lg:gap-16">
-          <div className="relative order-2 mx-auto aspect-[4/5] w-full max-w-[280px] overflow-hidden rounded-[2rem] border border-white/10 bg-black shadow-[0_0_80px_rgba(0,255,136,0.08)] md:order-1 md:mx-0 md:max-w-none md:h-[560px] md:aspect-auto lg:h-[68vh]">
+        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-8 px-5 py-16 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] md:gap-14 md:py-24">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-[200px] overflow-hidden rounded-3xl border border-white/10 bg-black shadow-[0_0_80px_rgba(0,255,136,0.08)] md:mx-0 md:max-w-[280px]">
             <Image
               src="/toby.png"
               alt="Toby Sinclair, founder of Real Talk Studio"
               fill
               priority
-              sizes="(min-width: 768px) 40vw, 280px"
+              sizes="(min-width: 768px) 280px, 200px"
               className="object-cover object-left"
             />
           </div>
-          <div className="order-1 max-w-xl md:order-2 md:justify-self-end">
-            <p className="eyebrow">ICF Professional Certified Coach</p>
-            <h1 className="mt-5 text-4xl font-bold tracking-tight md:text-6xl md:leading-[1.05]">
-              Helping leaders become more <span className="gradient-text">coach-like</span>
+          <div>
+            <p className="eyebrow">
+              Toby Sinclair · ICF Professional Certified Coach · Founder, Real Talk Studio
+            </p>
+            <h1 className="mt-5 text-4xl font-bold tracking-tight md:text-5xl md:leading-[1.1] lg:text-6xl">
+              AI is a technology problem for about six weeks.{" "}
+              <span className="gradient-text">Then it&apos;s a people problem.</span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-white/70">
-              I work with senior managers on coaching, personal development, and the conversations that shape a team.
-              The essays are here. I founded{" "}
-              <a href={site.realTalk} className="text-green hover:underline">
-                Real Talk Studio
-              </a>{" "}
-              so those ideas can be practised, not only discussed.
+              I help enterprises with the human side of AI — the change management, the coaching, the
+              conversations nobody scheduled. I&apos;m not a consultant who read about AI. I build an AI
+              company every day, and I&apos;ve spent a decade coaching the leaders who have to make change
+              stick.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/blog" className="btn-primary">
-                Browse articles
+              <Link href="/work-with-me" className="btn-primary">
+                Work with me →
               </Link>
-              <Link href="/about" className="btn-secondary">
-                About Toby
-              </Link>
+              <a href={site.realTalk} className="btn-secondary">
+                See Real Talk Studio
+              </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/10">
+        <div className="mx-auto grid w-full max-w-6xl gap-0 px-5 py-12 md:grid-cols-3 md:py-14">
+          {credibility.map((item) => (
+            <div
+              key={item.title}
+              className="border-white/10 py-6 md:border-l md:px-8 md:py-0 first:md:border-l-0 first:md:pl-0"
+            >
+              <p className="font-semibold tracking-tight">{item.title}</p>
+              <p className="mt-2 text-sm leading-6 text-ink-muted">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-t border-white/10">
+        <div className="mx-auto w-full max-w-6xl px-5 py-24">
+          <div className="max-w-3xl">
+            <h2 className="text-3xl font-bold tracking-tight md:text-4xl md:leading-[1.15]">
+              Every company is “doing AI.” Few are ready for what it does to people.
+            </h2>
+            <div className="mt-8 space-y-5 text-lg leading-8 text-ink-muted">
+              <p>They bought the licences.</p>
+              <p>They ran the town hall.</p>
+              <p>They still have teams quietly not using it — or using it badly.</p>
+              <p>
+                The gap isn&apos;t technical. It&apos;s human: fear, identity, skill, trust, and managers
+                who&apos;ve never had to lead a change like this. That&apos;s the gap I work in.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how-i-help" className="border-t border-white/10 bg-[#0c0c14]">
+        <div className="mx-auto w-full max-w-6xl px-5 py-24">
+          <p className="eyebrow">How I help</p>
+          <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight md:text-4xl">
+            Training, coaching, and the product that proves I do the work
+          </h2>
+          <div className="mt-14 grid gap-0 border-t border-white/10 md:grid-cols-3">
+            {offers.map((offer) => (
+              <article
+                key={offer.title}
+                className="flex flex-col border-white/10 px-0 py-10 md:border-l md:px-8 first:md:border-l-0 first:md:pl-0"
+              >
+                <p className="font-mono text-xs text-cyan">{offer.index}</p>
+                <h3 className="mt-4 text-2xl font-bold tracking-tight">{offer.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-ink-muted">{offer.body}</p>
+                <p className="mt-5 text-sm italic leading-6 text-white/60">{offer.audience}</p>
+                <a
+                  href={offer.href}
+                  className="mt-6 inline-block text-sm font-semibold text-green hover:underline"
+                >
+                  {offer.cta}
+                </a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute -right-16 top-10 h-80 w-80 glow-cyan opacity-50" />
+        <div className="pointer-events-none absolute -left-20 bottom-0 h-72 w-72 glow-green opacity-40" />
+        <div className="relative mx-auto w-full max-w-6xl px-5 py-24">
+          <p className="eyebrow">Why me</p>
+          <h2 className="mt-4 max-w-3xl text-3xl font-bold tracking-tight md:text-4xl md:leading-[1.15]">
+            Most AI advisors have never built with it. Most builders have never coached people through
+            change.
+          </h2>
+          <div className="mt-10 max-w-3xl space-y-6 text-lg leading-8 text-ink-muted">
+            <p>I&apos;ve done both, at the same time, for years.</p>
+            <p>
+              Every day I run an AI company — designing with large language models, shipping product,
+              watching where AI genuinely helps and where it quietly fails. Every week I coach leaders
+              through the human consequences: the fear, the scepticism, the skills gap, the conversations
+              they&apos;re avoiding.
+            </p>
+            <p>
+              That combination is the point. When I train your team on AI, it&apos;s informed by building a
+              real product. When I coach your leaders through the change, it&apos;s informed by twenty years
+              inside demanding organisations — from JP Morgan trading floors to enterprise boardrooms.
+            </p>
+            <p className="text-white">
+              You don&apos;t need another AI keynote. You need someone who can sit with your people and make
+              it real.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/10 bg-[#0c0c14]">
+        <div className="mx-auto w-full max-w-6xl px-5 py-24">
+          <p className="eyebrow">What working with me looks like</p>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">Proof, not a keynote</h2>
+
+          <article
+            id="wpp"
+            className="mt-14 grid scroll-mt-28 gap-10 rounded-[2rem] border border-white/10 bg-black/40 p-8 md:p-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-start"
+          >
+            <div>
+              <div className="inline-flex items-center rounded-xl bg-white px-4 py-2.5">
+                <Image
+                  src="/wpp-logo.png"
+                  alt="WPP"
+                  width={262}
+                  height={148}
+                  className="h-9 w-auto"
+                />
+              </div>
+              <p className="eyebrow mt-6">Case study</p>
+              <h3 className="mt-4 text-2xl font-bold tracking-tight md:text-3xl md:leading-[1.15]">
+                Helping WPP&apos;s HR and talent leaders get in front of AI — not behind it.
+              </h3>
+              <p className="mt-5 text-base leading-8 text-ink-muted">
+                One of the world&apos;s largest advertising and communications companies. WPP&apos;s people
+                teams face the same question every HR function does right now: will AI happen{" "}
+                <em>to</em> us, or <em>through</em> us?
+              </p>
+              <p className="mt-5 text-base leading-8 text-ink-muted">
+                I ran a working session with their HR and talent leaders built around one shift: HR as
+                leaders of AI adoption, not passengers. Together we got hands-on with AI across the work
+                they actually do —
+              </p>
+              <ul className="mt-6 space-y-4 text-sm leading-7 text-ink-muted">
+                <li>
+                  <span className="font-semibold text-white">Recruitment</span> — where AI sharpens
+                  sourcing, screening and candidate experience (and where human judgement must stay in the
+                  loop)
+                </li>
+                <li>
+                  <span className="font-semibold text-white">Employee engagement</span> — using AI to listen
+                  at scale and act faster on what people are telling you
+                </li>
+                <li>
+                  <span className="font-semibold text-white">Data, analysis & reporting</span> — turning the
+                  people-data HR already owns into insight leaders act on
+                </li>
+              </ul>
+              <p className="mt-6 text-base leading-8 text-ink-muted">
+                The reframe that landed hardest: AI in HR isn&apos;t a cost-saving exercise. It&apos;s an
+                opportunity engine — for the function&apos;s credibility, for the employee experience, and
+                for HR&apos;s seat at the transformation table.
+              </p>
+              <a
+                href={site.calendly}
+                className="mt-8 inline-block text-sm font-semibold text-green hover:underline"
+              >
+                Book a session like this →
+              </a>
+            </div>
+            <blockquote className="border-l-2 border-green pl-6 lg:mt-2 lg:border-l-0 lg:pl-0">
+              <p className="text-3xl font-bold tracking-tight text-white md:text-4xl md:leading-[1.15]">
+                “Leaders of AI adoption — not falling behind it”
+              </p>
+            </blockquote>
+          </article>
+
+          <div className="mt-16">
+            <h3 className="text-xl font-bold tracking-tight">More engagements</h3>
+            <ul className="mt-6 divide-y divide-white/10 border-y border-white/10">
+              {moreEngagements.map((item) => (
+                <li key={item} className="py-5 text-base leading-7 text-ink-muted">
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -104,7 +323,7 @@ export default function Home() {
         <div className="pointer-events-none absolute left-0 top-24 h-72 w-72 glow-green opacity-40" />
         <div className="mx-auto w-full max-w-6xl px-5 py-24">
           <div className="max-w-2xl">
-            <p className="eyebrow">Focus</p>
+            <p className="eyebrow">Essays</p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">The work I publish about</h2>
           </div>
           <div className="mt-14 grid gap-0 border-t border-white/10 md:grid-cols-3">
@@ -115,7 +334,9 @@ export default function Home() {
                 className="group border-white/10 px-0 py-10 transition-colors md:border-l md:px-8 first:md:border-l-0 first:md:pl-0"
               >
                 <p className="font-mono text-xs text-cyan">{pillar.index}</p>
-                <h3 className="mt-4 text-2xl font-bold tracking-tight group-hover:text-green">{pillar.label}</h3>
+                <h3 className="mt-4 text-2xl font-bold tracking-tight group-hover:text-green">
+                  {pillar.label}
+                </h3>
                 <p className="mt-4 max-w-sm text-sm leading-7 text-ink-muted">{pillar.body}</p>
                 <p className="mt-6 text-sm font-semibold text-green opacity-0 transition-opacity group-hover:opacity-100">
                   View articles →
@@ -130,8 +351,8 @@ export default function Home() {
         <div className="mx-auto w-full max-w-6xl px-5 py-24">
           <div className="mb-12 flex items-end justify-between gap-4">
             <div>
-              <p className="eyebrow">Essays</p>
-              <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">Latest articles</h2>
+              <p className="eyebrow">Latest</p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">Recent articles</h2>
             </div>
             <Link href="/blog" className="text-sm font-semibold text-green hover:underline">
               All articles
@@ -219,26 +440,6 @@ export default function Home() {
                 </span>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute -left-20 bottom-0 h-80 w-80 glow-green" />
-        <div className="pointer-events-none absolute -right-10 top-0 h-80 w-80 glow-cyan" />
-        <div className="relative mx-auto w-full max-w-6xl px-5 py-24">
-          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-black/40 px-8 py-12 md:px-14 md:py-16">
-            <p className="eyebrow">Company</p>
-            <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight md:text-5xl md:leading-[1.1]">
-              Real Talk Studio
-            </h2>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-ink-muted">
-              The company I founded. Teams use it to rehearse feedback, conflict, and other conversations that matter —
-              before they happen for real.
-            </p>
-            <a href={site.realTalk} className="btn-primary mt-8">
-              Visit Real Talk Studio
-            </a>
           </div>
         </div>
       </section>

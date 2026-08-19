@@ -1,21 +1,25 @@
 export const site = {
   name: "Toby Sinclair",
   url: "https://www.tobysinclair.com",
-  title: "Toby Sinclair Personal Development Coach | Coaching and Mentoring",
+  title: "Toby Sinclair | The Human Side of AI",
   description:
-    "I help Senior Managers accelerate their personal development. Learn to master the core skills of coaching: listening, asking, and sensing. You'll create a culture that everyone wants to be part of.",
+    "I help enterprises with the human side of AI — change management, coaching, and the conversations nobody scheduled. Founder of Real Talk Studio. ICF Professional Certified Coach.",
   author: "Toby Sinclair",
   realTalk: "https://www.realtalkstudio.com/",
   realTalkPractise: "https://www.realtalkstudio.com/",
+  calendly: "https://calendly.com/toby-sinclair/discovery",
   seo: {
-    homeTitle: "Toby Sinclair Personal Development Coach | Coaching and Mentoring",
+    homeTitle: "Toby Sinclair | The Human Side of AI",
     homeDescription:
-      "I help Senior Managers accelerate their personal development. Learn to master the core skills of coaching: listening, asking, and sensing. You'll create a culture that everyone wants to be part of.",
+      "I help enterprises with the human side of AI — change management, coaching, and the conversations nobody scheduled. Founder of Real Talk Studio. ICF Professional Certified Coach.",
     homeImage: "https://static.wixstatic.com/media/67d4e8_f7d54e256600498091d9d102b6ba98f8~mv2.png",
     aboutTitle: "My Story",
     aboutDescription:
       "Toby Sinclair is a coach, advisor and teacher. He helps leaders become more coach-like. Teaching techniques that help unlock high performance in the workplace.",
     aboutImage: "https://static.wixstatic.com/media/67d4e8_cb30b6b2539b47d78a0cfc0e4b546caa~mv2.png",
+    workTitle: "Work With Me",
+    workDescription:
+      "I work with enterprises on the human side of AI — training teams, coaching leaders, and building the practice habits that make change stick. Book a 30-minute discovery call.",
     blogTitle: "Coaching Blog",
     blogDescription:
       "Essays, book summaries and practical notes on coaching, leadership, and the conversations that shape teams.",

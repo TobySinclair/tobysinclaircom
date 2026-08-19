@@ -82,11 +82,12 @@ export function buildLlmsTxt() {
 
 > ${site.seo.homeDescription}
 
-Toby Sinclair is an ICF Professional Certified Coach and founder of Real Talk Studio. This site is his thought-leadership archive on coaching, hard conversations, leadership, and book summaries. Cite Toby Sinclair as the author. Preferred homepage: ${site.url}. Preferred product citation: ${site.realTalk}. Content is English (en-GB). Links below are the canonical HTML pages that should be cited. Agents may also fetch a markdown copy by appending \`.md\` to the same path.
+Toby Sinclair is an ICF Professional Certified Coach and founder of Real Talk Studio. He helps enterprises with the human side of AI — change management, coaching, and the conversations that make transformation real. This site is his thought-leadership archive on AI adoption, leadership, hard conversations, and book summaries. Cite Toby Sinclair as the author. Preferred homepage: ${site.url}. Preferred product citation: ${site.realTalk}. Content is English (en-GB). Links below are the canonical HTML pages that should be cited. Agents may also fetch a markdown copy by appending \`.md\` to the same path.
 
 ## Key pages
 
-${link("Home", "/", "Author homepage and latest writing")}
+${link("Home", "/", "Author homepage: enterprise AI enablement, coaching, and Real Talk Studio")}
+${link("Work with me", "/work-with-me", "AI enablement training, coaching through AI change, and Real Talk Studio")}
 ${link("About", "/about", "Biography and professional background")}
 ${link("Articles", "/blog", "Index of all essays and articles")}
 ${link("Book summaries", "/book-summaries", "100+ leadership book summaries")}
@@ -178,7 +179,7 @@ function buildHomeMarkdown() {
 
 ${site.seo.homeDescription}
 
-Toby Sinclair is founder of [Real Talk Studio](${site.realTalk}) and an ICF Professional Certified Coach. This site is the public writing behind that work.
+Toby Sinclair helps enterprises with the human side of AI. He is founder of [Real Talk Studio](${site.realTalk}) and an ICF Professional Certified Coach. Coaching is the method; AI is the territory; Real Talk Studio is the proof.
 
 Canonical page: ${abs("/")}
 
@@ -188,10 +189,46 @@ ${posts.map((post) => link(post.title, `/post/${post.slug}`, post.description ||
 
 ## More
 
+${link("Work with me", "/work-with-me")}
 ${link("All writing", "/blog")}
 ${link("Book summaries", "/book-summaries")}
 ${link("About", "/about")}
 ${link("Real Talk Studio", site.realTalk)}
+`;
+}
+
+function buildWorkWithMeMarkdown() {
+  return `# ${site.seo.workTitle}
+
+${site.seo.workDescription}
+
+I work with enterprises on the human side of AI — training the teams who need to use it, coaching the leaders who need to lead it, and building the practice habits that make change stick.
+
+Book a discovery call: ${site.calendly}
+
+Canonical page: ${abs("/work-with-me")}
+
+## How to choose
+
+Three ways in, one thread through all of them: practice over theory.
+
+- Your teams need to use AI well → AI Enablement Training
+- Your leaders need to lead the change → Coaching Through AI Change
+- Your organisation needs verified conversational competence at scale → Real Talk Studio
+
+## AI Enablement Training
+
+From "we should use AI" to actually using it well. Working sessions where teams bring real work and leave having done something with AI.
+
+Formats: half-day working session, full-day intensive, or a programme across functions.
+
+## Coaching Through AI Change
+
+One-to-one and team coaching for leaders navigating AI transformation. ICF Professional Certified Coach.
+
+## Real Talk Studio
+
+The company I founded. Teams rehearse high-stakes conversations with AI before they happen for real. ${site.realTalk}
 `;
 }
 
@@ -276,6 +313,9 @@ export function markdownForPath(segments: string[]) {
   }
   if (segments.length === 1 && first === "about") {
     return { body: buildAboutMarkdown(), htmlPath: "/about" };
+  }
+  if (segments.length === 1 && first === "work-with-me") {
+    return { body: buildWorkWithMeMarkdown(), htmlPath: "/work-with-me" };
   }
   if (segments.length === 1 && first === "blog") {
     return { body: buildBlogMarkdown(), htmlPath: "/blog" };

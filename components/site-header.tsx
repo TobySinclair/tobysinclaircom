@@ -25,9 +25,12 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <a href={site.realTalk} className="btn-primary !px-4 !py-2 text-sm">
+          <a href={site.realTalk} className="text-ink-muted transition-colors hover:text-white">
             Real Talk Studio
           </a>
+          <Link href="/work-with-me" className="btn-primary !px-4 !py-2 text-sm">
+            Work with me
+          </Link>
         </nav>
         <button
           type="button"
@@ -48,9 +51,12 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <a href={site.realTalk} className="font-bold text-green" onClick={() => setOpen(false)}>
+            <a href={site.realTalk} onClick={() => setOpen(false)}>
               Real Talk Studio
             </a>
+            <Link href="/work-with-me" className="font-bold text-green" onClick={() => setOpen(false)}>
+              Work with me
+            </Link>
           </div>
         </div>
       ) : null}
