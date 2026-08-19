@@ -81,6 +81,12 @@ const pillars = [
   },
 ];
 
+const gapSignals = [
+  { status: "Done", label: "They bought the licences." },
+  { status: "Done", label: "They ran the town hall." },
+  { status: "Missing", label: "They still have teams quietly not using it — or using it badly." },
+];
+
 const moreEngagements = [
   "Trained recruitment teams to use Claude through a DEI lens ahead of a major hiring drive",
   "Embedded AI practice into a live leadership programme so managers rehearse hard conversations, not just discuss them",
@@ -148,13 +154,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-white/10">
-        <div className="mx-auto grid w-full max-w-6xl gap-0 px-5 py-12 md:grid-cols-3 md:py-14">
+      <section className="border-t border-white/10 bg-[#0c0c14]">
+        <div className="mx-auto grid w-full max-w-6xl gap-4 px-5 py-12 md:grid-cols-3 md:py-14">
           {credibility.map((item) => (
-            <div
-              key={item.title}
-              className="border-white/10 py-6 md:border-l md:px-8 md:py-0 first:md:border-l-0 first:md:pl-0"
-            >
+            <div key={item.title} className="rounded-2xl border border-white/10 bg-black/50 p-6">
               <p className="font-semibold tracking-tight">{item.title}</p>
               <p className="mt-2 text-sm leading-6 text-ink-muted">{item.body}</p>
             </div>
@@ -162,21 +165,51 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-white/10">
-        <div className="mx-auto w-full max-w-6xl px-5 py-24">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl font-bold tracking-tight md:text-4xl md:leading-[1.15]">
-              Every company is “doing AI.” Few are ready for what it does to people.
-            </h2>
-            <div className="mt-8 space-y-5 text-lg leading-8 text-ink-muted">
-              <p>They bought the licences.</p>
-              <p>They ran the town hall.</p>
-              <p>They still have teams quietly not using it — or using it badly.</p>
-              <p>
+      <section className="relative overflow-hidden border-t border-white/10">
+        <div className="pointer-events-none absolute -left-16 bottom-0 h-80 w-80 glow-green opacity-40" />
+        <div className="relative mx-auto w-full max-w-6xl px-5 py-24">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-[2rem] border border-white/10">
+              <Image
+                src="/ai-people-gap.png"
+                alt="An empty office after the AI town hall — the tools are there, the people aren't using them"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+            </div>
+            <div>
+              <p className="eyebrow">The gap</p>
+              <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl md:leading-[1.15]">
+                Every company is “doing AI.” Few are ready for what it does to people.
+              </h2>
+              <p className="mt-6 text-lg leading-8 text-ink-muted">
                 The gap isn&apos;t technical. It&apos;s human: fear, identity, skill, trust, and managers
                 who&apos;ve never had to lead a change like this. That&apos;s the gap I work in.
               </p>
             </div>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {gapSignals.map((item) => (
+              <div
+                key={item.label}
+                className={`rounded-2xl border p-6 ${
+                  item.status === "Missing"
+                    ? "border-green/30 bg-green/[0.06]"
+                    : "border-white/10 bg-[#0c0c14]"
+                }`}
+              >
+                <p
+                  className={`text-xs font-semibold uppercase tracking-[0.16em] ${
+                    item.status === "Missing" ? "text-green" : "text-ink-muted"
+                  }`}
+                >
+                  {item.status}
+                </p>
+                <p className="mt-3 text-lg font-semibold tracking-tight">{item.label}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -187,11 +220,11 @@ export default function Home() {
           <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight md:text-4xl">
             Training, coaching, and the product that proves I do the work
           </h2>
-          <div className="mt-14 grid gap-0 border-t border-white/10 md:grid-cols-3">
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
             {offers.map((offer) => (
               <article
                 key={offer.title}
-                className="flex flex-col border-white/10 px-0 py-10 md:border-l md:px-8 first:md:border-l-0 first:md:pl-0"
+                className="flex flex-col rounded-[1.5rem] border border-white/10 bg-black/50 p-6 md:p-8"
               >
                 <p className="font-mono text-xs text-cyan">{offer.index}</p>
                 <h3 className="mt-4 text-2xl font-bold tracking-tight">{offer.title}</h3>
@@ -214,27 +247,33 @@ export default function Home() {
         <div className="pointer-events-none absolute -left-20 bottom-0 h-72 w-72 glow-green opacity-40" />
         <div className="relative mx-auto w-full max-w-6xl px-5 py-24">
           <p className="eyebrow">Why me</p>
-          <h2 className="mt-4 max-w-3xl text-3xl font-bold tracking-tight md:text-4xl md:leading-[1.15]">
-            Most AI advisors have never built with it. Most builders have never coached people through
-            change.
-          </h2>
-          <div className="mt-10 max-w-3xl space-y-6 text-lg leading-8 text-ink-muted">
-            <p>I&apos;ve done both, at the same time, for years.</p>
-            <p>
-              Every day I run an AI company — designing with large language models, shipping product,
-              watching where AI genuinely helps and where it quietly fails. Every week I coach leaders
-              through the human consequences: the fear, the scepticism, the skills gap, the conversations
-              they&apos;re avoiding.
-            </p>
-            <p>
-              That combination is the point. When I train your team on AI, it&apos;s informed by building a
-              real product. When I coach your leaders through the change, it&apos;s informed by twenty years
-              inside demanding organisations — from JP Morgan trading floors to enterprise boardrooms.
-            </p>
-            <p className="text-white">
-              You don&apos;t need another AI keynote. You need someone who can sit with your people and make
-              it real.
-            </p>
+          <div className="mt-6 grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+            <div>
+              <h2 className="max-w-3xl text-3xl font-bold tracking-tight md:text-4xl md:leading-[1.15]">
+                Most AI advisors have never built with it. Most builders have never coached people through
+                change.
+              </h2>
+              <div className="mt-8 space-y-6 text-lg leading-8 text-ink-muted">
+                <p>I&apos;ve done both, at the same time, for years.</p>
+                <p>
+                  Every day I run an AI company — designing with large language models, shipping product,
+                  watching where AI genuinely helps and where it quietly fails. Every week I coach leaders
+                  through the human consequences: the fear, the scepticism, the skills gap, the conversations
+                  they&apos;re avoiding.
+                </p>
+                <p>
+                  That combination is the point. When I train your team on AI, it&apos;s informed by building a
+                  real product. When I coach your leaders through the change, it&apos;s informed by twenty years
+                  inside demanding organisations — from JP Morgan trading floors to enterprise boardrooms.
+                </p>
+              </div>
+            </div>
+            <blockquote className="rounded-[2rem] border border-white/10 bg-black/50 p-8 md:p-10">
+              <p className="text-2xl font-bold tracking-tight text-white md:text-3xl md:leading-[1.2]">
+                You don&apos;t need another AI keynote. You need someone who can sit with your people and make
+                it real.
+              </p>
+            </blockquote>
           </div>
         </div>
       </section>
@@ -299,22 +338,19 @@ export default function Home() {
                 Book a session like this →
               </a>
             </div>
-            <blockquote className="border-l-2 border-green pl-6 lg:mt-2 lg:border-l-0 lg:pl-0">
+            <blockquote className="rounded-[1.5rem] border border-green/25 bg-green/[0.06] p-8">
               <p className="text-3xl font-bold tracking-tight text-white md:text-4xl md:leading-[1.15]">
                 “Leaders of AI adoption — not falling behind it”
               </p>
             </blockquote>
           </article>
 
-          <div className="mt-16">
-            <h3 className="text-xl font-bold tracking-tight">More engagements</h3>
-            <ul className="mt-6 divide-y divide-white/10 border-y border-white/10">
-              {moreEngagements.map((item) => (
-                <li key={item} className="py-5 text-base leading-7 text-ink-muted">
-                  {item}
-                </li>
-              ))}
-            </ul>
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {moreEngagements.map((item) => (
+              <div key={item} className="rounded-2xl border border-white/10 bg-black/40 p-6">
+                <p className="text-base leading-7 text-ink-muted">{item}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -326,21 +362,19 @@ export default function Home() {
             <p className="eyebrow">Essays</p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight md:text-4xl">The work I publish about</h2>
           </div>
-          <div className="mt-14 grid gap-0 border-t border-white/10 md:grid-cols-3">
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
             {pillars.map((pillar) => (
               <Link
                 key={pillar.href}
                 href={pillar.href}
-                className="group border-white/10 px-0 py-10 transition-colors md:border-l md:px-8 first:md:border-l-0 first:md:pl-0"
+                className="group rounded-[1.5rem] border border-white/10 bg-[#0c0c14] p-6 transition-colors hover:border-green/40 md:p-8"
               >
                 <p className="font-mono text-xs text-cyan">{pillar.index}</p>
                 <h3 className="mt-4 text-2xl font-bold tracking-tight group-hover:text-green">
                   {pillar.label}
                 </h3>
                 <p className="mt-4 max-w-sm text-sm leading-7 text-ink-muted">{pillar.body}</p>
-                <p className="mt-6 text-sm font-semibold text-green opacity-0 transition-opacity group-hover:opacity-100">
-                  View articles →
-                </p>
+                <p className="mt-6 text-sm font-semibold text-green">View articles →</p>
               </Link>
             ))}
           </div>
@@ -428,15 +462,25 @@ export default function Home() {
               Browse the library →
             </Link>
           </div>
-          <div className="divide-y divide-white/10 border-y border-white/10">
-            {featuredSummaries.map((post, index) => (
-              <Link key={post.slug} href={`/post/${post.slug}`} className="group flex gap-6 py-6 hover:bg-white/[0.03]">
-                <span className="w-8 shrink-0 font-mono text-sm text-cyan/80">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <span>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {featuredSummaries.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/post/${post.slug}`}
+                className="group overflow-hidden rounded-2xl border border-white/10 bg-black/40"
+              >
+                {post.image ? (
+                  <CoverImage
+                    src={post.image}
+                    alt={post.title}
+                    width={640}
+                    height={360}
+                    sizes="(min-width: 1024px) 28vw, 50vw"
+                    className="aspect-[16/9] w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                  />
+                ) : null}
+                <span className="block p-4">
                   <span className="block font-semibold tracking-tight group-hover:text-green">{post.title}</span>
-                  <span className="mt-2 block text-sm leading-6 text-ink-muted line-clamp-2">{post.description}</span>
                 </span>
               </Link>
             ))}
