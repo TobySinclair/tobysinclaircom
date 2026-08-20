@@ -1,6 +1,6 @@
 ---
 title: "Summary: The Friction Project by Robert Sutton, Huggy Rao"
-description: "💡Big Ideas 💬 Best Quotes ✅ Toby's Takeaway 🛒 Buy on Amazon📚 Should You Read This?Toby's Rating: 7/10The Friction Project tackles a really important challenge we all face at work. This book helps leaders identify and address friction—those hidden forces that slow down productivity and burn out teams. It’s a practical guide for creating an environment where the right things flow smoothly while intentionally adding friction to prevent undesirable behaviours. Leaders seeking to streamline operat"
+description: "The Friction Project helps leaders find the hidden forces that slow work and burn out teams — and when to add friction on purpose. A practical guide to making the right work flow."
 slug: "summary-the-friction-project-by-robert-sutton-huggy-rao"
 url: "https://www.tobysinclair.com/post/summary-the-friction-project-by-robert-sutton-huggy-rao"
 type: post

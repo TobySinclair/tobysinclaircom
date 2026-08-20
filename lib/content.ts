@@ -5,6 +5,7 @@ import { cache } from "react";
 import { hubsForPost } from "./book-hubs";
 import {
   cleanBookSummaryBody,
+  cleanLeadText,
   isBookSummaryPost,
   parseBookSummary,
   type BookSummary,
@@ -71,7 +72,7 @@ export const getAllPosts = cache((): Post[] => {
       const draft = {
         slug: String(data.slug || file.replace(/\.md$/, "")),
         title: cleanTitle(String(data.title || "Untitled")),
-        description: String(data.description || ""),
+        description: cleanLeadText(String(data.description || "")),
         url: String(data.url || `${site.url}/post/${data.slug || file.replace(/\.md$/, "")}`),
         published: data.published ? String(data.published) : null,
         modified: data.modified ? String(data.modified) : null,

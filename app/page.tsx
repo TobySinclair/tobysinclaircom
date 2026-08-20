@@ -63,19 +63,19 @@ const offers = [
 const pillars = [
   {
     index: "01",
-    href: "/post/best-artificial-intelligence-books-for-leadership-development",
+    href: "/book-summaries/ai",
     label: "The Human Side of AI",
     body: "Adoption, change, and what happens to people when the tools change faster than the culture.",
   },
   {
     index: "02",
-    href: "/blog/categories/leadership",
+    href: "/book-summaries/leadership",
     label: "Leadership",
     body: "How senior managers build cultures people want to be part of — especially under transformation.",
   },
   {
     index: "03",
-    href: "/blog/categories/real-talk-studio",
+    href: "/book-summaries/hard-conversations",
     label: "Hard Conversations",
     body: "Feedback, conflict, and the discussions teams postpone until they become expensive. (AI has added a few new ones.)",
   },

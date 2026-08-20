@@ -13,9 +13,9 @@ export const site = {
     homeDescription:
       "I help enterprises with the human side of AI — change management, coaching, and the conversations nobody scheduled. Founder of Real Talk Studio. ICF Professional Certified Coach.",
     homeImage: "https://static.wixstatic.com/media/67d4e8_f7d54e256600498091d9d102b6ba98f8~mv2.png",
-    aboutTitle: "My Story",
+    aboutTitle: "About Toby Sinclair",
     aboutDescription:
-      "Toby Sinclair is a coach, advisor and teacher. He helps leaders become more coach-like. Teaching techniques that help unlock high performance in the workplace.",
+      "Toby Sinclair is the person enterprises call when AI meets people. ICF Professional Certified Coach and founder of Real Talk Studio. Coaching is the method; AI is the territory.",
     aboutImage: "https://static.wixstatic.com/media/67d4e8_cb30b6b2539b47d78a0cfc0e4b546caa~mv2.png",
     workTitle: "Work With Me",
     workDescription:

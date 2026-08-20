@@ -445,6 +445,47 @@ export default function WorkWithMePage() {
         </div>
       </section>
 
+      <section className="border-t border-white/10">
+        <div className="mx-auto w-full max-w-6xl px-5 py-24">
+          <p className="eyebrow">Reading</p>
+          <h2 className="mt-4 max-w-2xl text-3xl font-bold tracking-tight md:text-4xl">
+            The books behind this work
+          </h2>
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
+            <Link
+              href="/book-summaries/ai"
+              className="rounded-[1.5rem] border border-white/10 bg-[#0c0c14] p-6 transition-colors hover:border-green md:p-8"
+            >
+              <p className="text-sm font-semibold tracking-tight">AI book summaries</p>
+              <p className="mt-3 text-sm leading-7 text-ink-muted">
+                What AI is doing to organisations — and what it is not doing for the people inside them.
+              </p>
+              <p className="mt-5 text-sm font-semibold text-green">Read the notes →</p>
+            </Link>
+            <Link
+              href="/coaching-books"
+              className="rounded-[1.5rem] border border-white/10 bg-[#0c0c14] p-6 transition-colors hover:border-green md:p-8"
+            >
+              <p className="text-sm font-semibold tracking-tight">Coaching books</p>
+              <p className="mt-3 text-sm leading-7 text-ink-muted">
+                The master list for managers learning to coach, and coaches tightening their craft.
+              </p>
+              <p className="mt-5 text-sm font-semibold text-green">Start the path →</p>
+            </Link>
+            <Link
+              href="/book-summaries/hard-conversations"
+              className="rounded-[1.5rem] border border-white/10 bg-[#0c0c14] p-6 transition-colors hover:border-green md:p-8"
+            >
+              <p className="text-sm font-semibold tracking-tight">Hard conversation books</p>
+              <p className="mt-3 text-sm leading-7 text-ink-muted">
+                The notes behind Real Talk Studio: candour, listening, and staying in the room.
+              </p>
+              <p className="mt-5 text-sm font-semibold text-green">Read the notes →</p>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="border-t border-white/10 bg-[#0c0c14]">
         <div className="mx-auto w-full max-w-3xl px-5 py-24">
           <p className="eyebrow">FAQ</p>

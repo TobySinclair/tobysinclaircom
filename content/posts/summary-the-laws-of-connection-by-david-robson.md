@@ -1,6 +1,6 @@
 ---
 title: "Summary: The Laws of Connection by David Robson"
-description: "✅ Toby's Takeaway 🤖 Exercises 📹 Video 💡Big Ideas 💬 Best Quotes  🛒 Buy on Amazon📚 Should You Read This?Toby's Rating: 9/10The Laws of Connection by David Robson is an essential read for leaders seeking to understand and improve their ability to build meaningful connections in the workplace. With increasing social isolation, this book provides practical, science-backed strategies to foster stronger relationships, which are crucial for both personal well-being and team success. Whether you'r"
+description: "The Laws of Connection by David Robson is for leaders who need to build real workplace relationships. Science-backed strategies for connection when isolation is the default."
 slug: "summary-the-laws-of-connection-by-david-robson"
 url: "https://www.tobysinclair.com/post/summary-the-laws-of-connection-by-david-robson"
 type: post

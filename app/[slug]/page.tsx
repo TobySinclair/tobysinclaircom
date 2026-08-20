@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
 import { MarkdownBody } from "@/components/markdown-body";
+import { masterPageSlugs } from "@/lib/book-masters";
 import { getLandingPage, getLandingPages } from "@/lib/content";
 import { breadcrumbJsonLd, landingMetadata, webPageJsonLd } from "@/lib/seo";
 
@@ -11,7 +12,9 @@ type Props = { params: Promise<{ slug: string }> };
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return getLandingPages().map((page) => ({ slug: page.slug }));
+  return getLandingPages()
+    .filter((page) => !masterPageSlugs.includes(page.slug))
+    .map((page) => ({ slug: page.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

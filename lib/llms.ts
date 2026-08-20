@@ -36,7 +36,7 @@ export const aiCrawlers = [
 const aboutChapters = [
   {
     title: "My Guiding Principle",
-    body: "If you can get 1 percent better each day for one year, you'll end up thirty-seven times better by the time you're done. I first read Atomic Habits in 2018. It articulated many of my personal values: growth, learning, experimentation. In helping people change I've found that small shifts in behaviour often lead to remarkable results.",
+    body: "If you can get 1 percent better each day for one year, you'll end up thirty-seven times better by the time you're done. I first read Atomic Habits in 2018. It articulated many of my personal values: growth, learning, experimentation. In helping people change I've found that small shifts in behaviour often lead to remarkable results — including how organisations actually adopt AI.",
   },
   {
     title: "In The Beginning",
@@ -44,7 +44,7 @@ const aboutChapters = [
   },
   {
     title: "The First 7 Years",
-    body: "I started my career as a software tester. I was an outsider doing a job people felt could be automated away. I had to learn how to clearly articulate the value of testing. Agile Testing helped me do that. The most helpful skill I still use today: how to be curious.",
+    body: "I started my career as a software tester. I was an outsider doing a job people felt could be automated away. I had to learn how to clearly articulate the value of testing. Agile Testing helped me do that. The most helpful skill I still use today: how to be curious — especially when a new tool is about to redraw someone's job.",
   },
   {
     title: "Dreams of a Rock Star",
@@ -56,11 +56,11 @@ const aboutChapters = [
   },
   {
     title: "Going Professional",
-    body: "In 2016 I started working as an Agile Coach. I came to a big realisation: what I thought was coaching was really mentoring. Training with Barefoot Coaching opened my eyes to unlocking high performance. I'm now an ICF Professional Certified Coach.",
+    body: "In 2016 I started working as an Agile Coach. I came to a big realisation: what I thought was coaching was really mentoring. Training with Barefoot Coaching opened my eyes to unlocking high performance. I'm now an ICF Professional Certified Coach. That craft is still the method. The territory is now AI change.",
   },
   {
     title: "Real Talk Studio",
-    body: "That work became a company. Real Talk Studio is where teams rehearse the conversations that carry legal, commercial, and human weight — before they happen for real. This site is where I publish the thinking behind it.",
+    body: "That work became a company. Real Talk Studio is where teams rehearse the conversations that carry legal, commercial, and human weight — including the new ones AI forces — before they happen for real. This site is where I publish the thinking behind it.",
   },
 ];
 
@@ -255,6 +255,12 @@ One-to-one and team coaching for leaders navigating AI transformation. ICF Profe
 ## Real Talk Studio
 
 The company I founded. Teams rehearse high-stakes conversations with AI before they happen for real. ${site.realTalk}
+
+## The books behind this work
+
+${link("AI book summaries", "/book-summaries/ai")}
+${link("Coaching books", "/coaching-books")}
+${link("Hard conversation book summaries", "/book-summaries/hard-conversations")}
 `;
 }
 
@@ -263,7 +269,7 @@ function buildAboutMarkdown() {
 
 ${site.seo.aboutDescription}
 
-I help leaders get ready for conversations that matter — then I build the room where they can practise. Canonical page: ${abs("/about")}
+Coaching is the method. AI is the territory. Real Talk Studio is the proof. Canonical page: ${abs("/about")}
 
 ${aboutChapters.map((chapter) => `## ${chapter.title}\n\n${chapter.body}`).join("\n\n")}
 `;

@@ -153,6 +153,8 @@ That’s precisely what [Real Talk Studio](https://www.realtalkstudio.com/) offe
 - Real feedback from real practitioners
 - A psychologically safe environment to learn through experience
 
+The books behind this work — candour, listening, conflict — are collected on [hard conversation book summaries](/book-summaries/hard-conversations).
+
 ## **Final Word: Practice Before Performance**
 
 You don’t build a culture of psychological safety through slogans.

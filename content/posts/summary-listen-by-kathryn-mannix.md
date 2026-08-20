@@ -1,6 +1,6 @@
 ---
 title: "Summary: Listen by Kathryn Mannix"
-description: "✅ Toby's Takeaway 🤖 Exercises 📹 Video 💡Big Ideas 💬 Best Quotes  🛒 Buy on Amazon📚 Should You Read This?Toby's Rating: 10/10If you’ve ever avoided a challenging conversation—be it delivering difficult news, consoling someone in distress, or navigating conflict—then Listen by Kathryn Mannix is a must-read. This book offers practical guidance for approaching emotionally charged discussions with empathy, clarity, and courage. It’s especially valuable for leaders seeking to improve communicatio"
+description: "If you’ve ever avoided a challenging conversation — delivering difficult news, consoling someone in distress, or navigating conflict — Listen by Kathryn Mannix is a must-read. Practical guidance for emotionally charged discussions, especially for leaders."
 slug: "summary-listen-by-kathryn-mannix"
 url: "https://www.tobysinclair.com/post/summary-listen-by-kathryn-mannix"
 type: post

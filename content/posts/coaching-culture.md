@@ -496,7 +496,9 @@ Your senior leaders are the chief storytellers.
 
 ## **Part 3 - Resources**
 
-The 13 best books to help you change culture:
+The 13 best books to help you change culture are now on the master list: [culture books for leaders](/culture-books). For the coaching craft behind a coaching culture, start with [coaching books from beginner to expert](/coaching-books).
+
+The original shortlist:
 
 ![](https://static.wixstatic.com/media/67d4e8_6e6277691c6f446faab727c2152125c2~mv2.png)
 

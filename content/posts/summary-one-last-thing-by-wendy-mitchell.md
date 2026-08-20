@@ -1,6 +1,6 @@
 ---
 title: "Summary: One Last Thing by Wendy Mitchell"
-description: "💡Big Ideas 💬 Best Quotes ✅ Toby's Takeaway 🛒 Buy on Amazon📚 Should You Read This?Toby's Rating: 8/10One Last Thing by Wendy Mitchell is an insightful and deeply personal exploration of life, resilience, and leadership through the lens of someone living with dementia. Leaders will find this book profoundly moving and thought-provoking as it offers a unique perspective on overcoming challenges, adapting to change, and maintaining a positive outlook. Wendy Mitchell's story is inspirational and"
+description: "One Last Thing by Wendy Mitchell is a personal account of life, resilience, and leadership through dementia. A moving perspective on adapting to change and staying useful."
 slug: "summary-one-last-thing-by-wendy-mitchell"
 url: "https://www.tobysinclair.com/post/summary-one-last-thing-by-wendy-mitchell"
 type: post

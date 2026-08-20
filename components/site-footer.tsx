@@ -32,6 +32,9 @@ export function SiteFooter() {
           <Link href="/about" className="hover:text-white">
             About
           </Link>
+          <Link href="/llms.txt" className="hover:text-white">
+            For AI agents
+          </Link>
         </div>
         <div className="flex flex-col gap-2 text-sm text-ink-muted">
           <p className="font-semibold text-white">Elsewhere</p>

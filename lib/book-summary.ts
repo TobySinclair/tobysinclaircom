@@ -128,7 +128,7 @@ function compactIsbn(value?: string) {
 export function cleanLeadText(text: string) {
   let next = text.replace(/\s+/g, " ").trim();
   const junk =
-    /^(?:[✅🤖📹💡💬🛒📚⭐✏️*]+|Toby'?s Takeaway|Exercises|Video|Big Ideas|Best Quotes|Buy on Amazon|Should You Read This\??|Toby'?s Rating[:\s]*[0-9.]+\/10)\s*/i;
+    /^(?:[✅🤖📹💡💬🛒📚⭐✏️*🤔]+|Toby'?s Takeaway|Exercises|Video|Big Ideas|Best Quotes|Buy on Amazon|Should You Read This(?: Book)?\??|Toby'?s Rating[:\s]*[0-9.]+\/10|Rating[:\s]*[0-9.]+\/10(?:\s*[-–—][^.]+)?|Recommended For:[^.]*|Buy\b.{0,90}(?:on Amazon)?|Read on Blinkist.{0,40})\s*/i;
   while (junk.test(next)) {
     next = next.replace(junk, "").trim();
   }
