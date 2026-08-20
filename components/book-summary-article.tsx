@@ -1,7 +1,14 @@
 import Link from "next/link";
 import { CoverImage } from "@/components/cover-image";
 import { MarkdownBody } from "@/components/markdown-body";
-import { bookSummaryHeadings } from "@/lib/book-summary";
+import { hubsForPost } from "@/lib/book-hubs";
+import {
+  bookCitation,
+  bookSummaryFaqs,
+  bookSummaryHeadline,
+  bookSummaryHeadings,
+  bookSummaryVerdict,
+} from "@/lib/book-summary";
 import type { Post } from "@/lib/content";
 import { formatDate } from "@/lib/site";
 
@@ -28,17 +35,34 @@ export function BookSummaryArticle({
   const book = post.book;
   if (!book) return null;
   const headings = bookSummaryHeadings(post.body);
+  const verdict = bookSummaryVerdict(book, post.description);
+  const faqs = bookSummaryFaqs(book, post.description);
+  const hubs = hubsForPost(post);
 
   return (
     <>
       <p className="eyebrow mt-6">Book summary</p>
-      <h1 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">{book.bookTitle}</h1>
+      <h1 className="mt-3 text-4xl font-bold tracking-tight md:text-5xl">{bookSummaryHeadline(book)}</h1>
       {book.author ? <p className="mt-3 text-lg text-white/70">by {book.author}</p> : null}
+      <p className="mt-4 text-lg leading-8 text-white/80">{verdict}</p>
       <p className="mt-4 text-sm text-ink-muted">
         Notes by Toby Sinclair
         {post.published ? ` · ${formatDate(post.published)}` : ""}
         {post.readingTime ? ` · ${post.readingTime}` : ""}
       </p>
+      {hubs.length ? (
+        <p className="mt-4 flex flex-wrap gap-2">
+          {hubs.map((hub) => (
+            <Link
+              key={hub.slug}
+              href={`/book-summaries/${hub.slug}`}
+              className="rounded-full border border-white/10 bg-surface px-3 py-1 text-xs text-ink-muted hover:border-green hover:text-white"
+            >
+              {hub.title.replace(/ book summaries.*/i, "")}
+            </Link>
+          ))}
+        </p>
+      ) : null}
 
       <section className="mt-8 rounded-[1.5rem] border border-white/10 bg-[#0c0c14] p-6 md:p-8">
         <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
@@ -97,11 +121,24 @@ export function BookSummaryArticle({
 
       <p className="mt-8 text-sm leading-7 text-ink-muted">
         Written from the seat of a practising organisational leader — not an AI recap of the book.
+        Cite as {bookCitation(book)}.
       </p>
 
       <div className="mt-8">
         <MarkdownBody content={post.body} />
       </div>
+
+      <section id="faq" className="mt-12 rounded-[1.5rem] border border-white/10 bg-[#0c0c14] p-6 md:p-8">
+        <h2 className="text-xl font-bold tracking-tight">Questions</h2>
+        <dl className="mt-6 space-y-6">
+          {faqs.map((item) => (
+            <div key={item.question}>
+              <dt className="font-semibold tracking-tight">{item.question}</dt>
+              <dd className="mt-2 text-sm leading-7 text-ink-muted">{item.answer}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
 
       {book.amazon ? (
         <div className="mt-12 overflow-hidden rounded-[1.5rem] border border-green/25 bg-green/[0.06] px-6 py-8 md:flex md:items-center md:justify-between md:px-8">
@@ -142,6 +179,21 @@ export function BookSummaryArticle({
           </div>
         </aside>
       ) : null}
+
+      <p className="mt-12 text-sm text-ink-muted">
+        <Link href="/book-summaries" className="text-green hover:underline">
+          All book summaries
+        </Link>
+        {hubs.length ? " · " : null}
+        {hubs.map((hub, index) => (
+          <span key={hub.slug}>
+            <Link href={`/book-summaries/${hub.slug}`} className="text-green hover:underline">
+              {hub.title}
+            </Link>
+            {index < hubs.length - 1 ? " · " : null}
+          </span>
+        ))}
+      </p>
     </>
   );
 }

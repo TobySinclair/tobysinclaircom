@@ -4,6 +4,8 @@ export type BookSummary = {
   rating: number | null
   audience: string | null
   amazon: string | null
+  isbn: string | null
+  sameAs: string[]
 };
 
 export function isBookSummaryPost(input: { title: string; categories: string[] }) {
@@ -26,6 +28,7 @@ const PIPE_NOISE = /big ideas|best quotes|quotes|takeaway|insights|organizing|ha
 export function parseBookIdentity(title: string) {
   let work = title
     .replace(/^book summary:\s*/i, "")
+    .replace(/^book summary\s*[-–—]\s*/i, "")
     .replace(/^summary:\s*/i, "")
     .trim();
 
@@ -50,10 +53,10 @@ export function parseBookIdentity(title: string) {
   const byline = work.match(/^(.+?)\s+by\s+(.+)$/i);
   if (byline) {
     work = byline[1].trim();
-    author = byline[2].trim();
+    author = byline[2].replace(/\s+[-–—].+$/, "").trim();
   }
 
-  work = work.replace(/\s+summary$/i, "").trim();
+  work = work.replace(/\s+book summary$/i, "").replace(/\s+summary$/i, "").trim();
   author = author?.replace(/\s+/g, " ").trim() || null;
 
   return {
@@ -85,12 +88,20 @@ export function parseBookSummary(input: {
     input.body.match(/Recommended For:\s*([^\n*|]+)/i) ||
     input.body.match(/Recommended for:\s*([^\n*|]+)/i);
   const amazonMatch = input.body.match(/https?:\/\/(?:www\.)?(?:amzn\.to|amazon\.[a-z.]+)[^\s)"']*/i);
+  const isbnMatch = input.body.match(/ISBN(?:-1[03])?[:\s]*([0-9X-]{10,17})/i);
+  const sameAs = [
+    input.body.match(/https?:\/\/(?:www\.)?goodreads\.com\/book\/show\/[^\s)"']+/i)?.[0],
+    input.body.match(/https?:\/\/(?:en\.)?wikipedia\.org\/wiki\/[^\s)"']+/i)?.[0],
+    input.body.match(/https?:\/\/books\.google\.[^\s)"']+/i)?.[0],
+  ].filter((value): value is string => Boolean(value));
 
   const ratingFromData = input.rating != null ? Number(input.rating) : null;
+  const author =
+    (typeof input.author === "string" && input.author.trim()) || identity.author;
 
   return {
     bookTitle: identity.bookTitle,
-    author: typeof input.author === "string" && input.author.trim() ? input.author.trim() : identity.author,
+    author: author || null,
     rating:
       ratingFromData != null && Number.isFinite(ratingFromData)
         ? ratingFromData
@@ -103,7 +114,51 @@ export function parseBookSummary(input: {
       typeof input.amazon === "string" && input.amazon.trim()
         ? input.amazon.trim()
         : amazonMatch?.[0] || null,
+    isbn: compactIsbn(isbnMatch?.[1]),
+    sameAs,
   };
+}
+
+function compactIsbn(value?: string) {
+  if (!value) return null;
+  const compact = value.replace(/-/g, "");
+  return /^(?:[0-9]{9}[0-9X]|[0-9]{13})$/i.test(compact) ? compact.toUpperCase() : null;
+}
+
+export function cleanLeadText(text: string) {
+  let next = text.replace(/\s+/g, " ").trim();
+  const junk =
+    /^(?:[✅🤖📹💡💬🛒📚⭐✏️*]+|Toby'?s Takeaway|Exercises|Video|Big Ideas|Best Quotes|Buy on Amazon|Should You Read This\??|Toby'?s Rating[:\s]*[0-9.]+\/10)\s*/i;
+  while (junk.test(next)) {
+    next = next.replace(junk, "").trim();
+  }
+  return next;
+}
+
+export function firstSentence(text: string) {
+  const clean = cleanLeadText(text);
+  const match = clean.match(/^(.+?[.!?])(?:\s|$)/);
+  return match?.[1] || clean;
+}
+
+export function bookSummaryVerdict(book: BookSummary, description: string) {
+  const what = firstSentence(description) || `${book.bookTitle} is a book worth a working leader's time.`;
+  const who = book.audience
+    ? ` Best for ${book.audience.replace(/\.$/, "")}.`
+    : " Written for practising leaders, not students of theory.";
+  const rating =
+    book.rating == null
+      ? ""
+      : book.rating >= 8
+        ? ` Toby's rating: ${book.rating}/10 — read it.`
+        : book.rating >= 6
+          ? ` Toby's rating: ${book.rating}/10 — useful if this problem is on your desk.`
+          : ` Toby's rating: ${book.rating}/10 — skim unless this is your exact problem.`;
+  return `${what}${who}${rating}`;
+}
+
+export function bookSummaryHeadline(book: BookSummary) {
+  return `${book.bookTitle}: book summary`;
 }
 
 function normalizeHeading(line: string) {
@@ -160,11 +215,37 @@ export function bookSummaryPageTitle(book: BookSummary) {
   return `${book.bookTitle} Summary${author}${rating}`;
 }
 
+export function bookCitation(book: BookSummary) {
+  return `Toby Sinclair, book summary of ${book.bookTitle}${book.author ? ` by ${book.author}` : ""}`;
+}
+
+export function bookSummaryFaqs(book: BookSummary, description: string) {
+  const faqs = [
+    {
+      question: `Should I read ${book.bookTitle}?`,
+      answer: bookSummaryVerdict(book, description),
+    },
+    {
+      question: `Who is ${book.bookTitle} for?`,
+      answer: book.audience
+        ? `Recommended for ${book.audience.replace(/\.$/, "")}.`
+        : "Practising leaders, coaches, and anyone doing the work — not students of theory.",
+    },
+  ];
+  if (book.rating != null) {
+    faqs.push({
+      question: `What is Toby Sinclair's rating of ${book.bookTitle}?`,
+      answer: `${book.rating} out of 10.`,
+    });
+  }
+  return faqs;
+}
+
 export function bookSummaryDescription(description: string, book: BookSummary) {
   const bits = [
     book.rating != null ? `Toby's rating: ${book.rating}/10.` : null,
     book.audience ? `Recommended for ${book.audience}.` : null,
-    description,
+    cleanLeadText(description),
   ].filter(Boolean);
   return bits.join(" ");
 }

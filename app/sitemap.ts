@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { bookHubs } from "@/lib/book-hubs";
 import { getAllPosts, getCategories, getLandingPages, paginate } from "@/lib/content";
 import { isRtsPost, rtsCoverImagePath } from "@/lib/rts-cover";
 import { site } from "@/lib/site";
@@ -11,6 +12,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.url}/work-with-me`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${site.url}/blog`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${site.url}/book-summaries`, changeFrequency: "weekly", priority: 0.8 },
+    ...bookHubs.map((hub) => ({
+      url: `${site.url}/book-summaries/${hub.slug}`,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    })),
   ];
 
   const blogPages = paginate(posts, 1).totalPages;

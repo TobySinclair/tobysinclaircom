@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { bookHubs } from "@/lib/book-hubs";
 import { getAllPosts, getLandingPages } from "@/lib/content";
 import { markdownForPath, markdownHeaders } from "@/lib/llms";
 
@@ -12,6 +13,7 @@ export function generateStaticParams() {
     { path: ["work-with-me"] },
     { path: ["blog"] },
     { path: ["book-summaries"] },
+    ...bookHubs.map((hub) => ({ path: ["book-summaries", hub.slug] })),
     ...getAllPosts().map((post) => ({ path: ["post", post.slug] })),
     ...getLandingPages().map((page) => ({ path: ["page", page.slug] })),
   ];

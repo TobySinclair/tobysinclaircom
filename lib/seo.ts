@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { bookSummaryDescription, bookSummaryPageTitle } from "@/lib/book-summary";
+import { bookSummaryDescription, bookSummaryFaqs, bookSummaryPageTitle } from "@/lib/book-summary";
 import type { LandingPage, Post } from "@/lib/content";
 import { isRtsPost, rtsCoverImagePath } from "@/lib/rts-cover";
 import { categoryLabel, site } from "@/lib/site";
@@ -112,6 +112,8 @@ export function bookReviewJsonLd(post: Post) {
       "@id": bookId,
       name: book.bookTitle,
       ...(book.author ? { author: { "@type": "Person", name: book.author } } : {}),
+      ...(book.isbn ? { isbn: book.isbn } : {}),
+      ...(book.sameAs.length ? { sameAs: book.sameAs } : {}),
       ...(post.image ? { image: post.image } : {}),
     },
   ];
@@ -135,6 +137,23 @@ export function bookReviewJsonLd(post: Post) {
   return nodes;
 }
 
+export function bookFaqJsonLd(post: Post) {
+  const book = post.book;
+  if (!book) return null;
+  return {
+    "@type": "FAQPage",
+    "@id": absoluteUrl(`/post/${post.slug}#faq`),
+    mainEntity: bookSummaryFaqs(book, post.description).map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+}
+
 export function collectionJsonLd(input: {
   name: string
   description: string
@@ -154,7 +173,7 @@ export function collectionJsonLd(input: {
         "@type": "ListItem",
         position: index + 1,
         url: absoluteUrl(`/post/${post.slug}`),
-        name: post.title,
+        name: post.book?.bookTitle || post.title,
       })),
     },
   };

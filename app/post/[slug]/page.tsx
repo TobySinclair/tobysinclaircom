@@ -10,7 +10,7 @@ import { RtsCover } from "@/components/rts-cover";
 import { RtsCta } from "@/components/rts-cta";
 import { getAllPosts, getPost, relatedBookSummaries, relatedPosts } from "@/lib/content";
 import { isRtsPost } from "@/lib/rts-cover";
-import { blogPostingJsonLd, bookReviewJsonLd, breadcrumbJsonLd, postMetadata } from "@/lib/seo";
+import { blogPostingJsonLd, bookFaqJsonLd, bookReviewJsonLd, breadcrumbJsonLd, postMetadata } from "@/lib/seo";
 import { categoryLabel, formatDate } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -36,6 +36,7 @@ export default async function PostPage({ params }: Props) {
   const related = isSummary ? relatedBookSummaries(post) : relatedPosts(post);
   const primaryCategory = post.categories[0];
   const crumbTitle = post.book?.bookTitle || post.title;
+  const faq = bookFaqJsonLd(post);
 
   return (
     <article className="mx-auto w-full max-w-3xl px-5 py-16">
@@ -43,6 +44,7 @@ export default async function PostPage({ params }: Props) {
         data={[
           blogPostingJsonLd(post),
           ...bookReviewJsonLd(post),
+          ...(faq ? [faq] : []),
           breadcrumbJsonLd([
             { name: "Home", path: "/" },
             ...(isSummary

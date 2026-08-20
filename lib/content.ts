@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { cache } from "react";
+import { hubsForPost } from "./book-hubs";
 import {
   cleanBookSummaryBody,
   isBookSummaryPost,
@@ -118,17 +119,22 @@ export function getPostsByCategory(slug: string) {
 }
 
 export function getBookSummaries() {
-  return getAllPosts().filter((post) => isBookSummaryPost(post));
+  return getAllPosts().filter((post) => post.book);
 }
 
 export function relatedBookSummaries(post: Post, limit = 3) {
   const others = getBookSummaries().filter((item) => item.slug !== post.slug);
   const extra = post.categories.filter((category) => category !== "book-summaries");
+  const hubs = hubsForPost(post).map((hub) => hub.slug);
   const scored = others
-    .map((item) => ({
-      item,
-      score: extra.filter((category) => item.categories.includes(category)).length,
-    }))
+    .map((item) => {
+      const sharedCategories = extra.filter((category) => item.categories.includes(category)).length;
+      const sharedHubs = hubsForPost(item).filter((hub) => hubs.includes(hub.slug)).length;
+      return {
+        item,
+        score: sharedCategories + sharedHubs,
+      };
+    })
     .sort(
       (a, b) =>
         b.score - a.score || Date.parse(b.item.published || "0") - Date.parse(a.item.published || "0"),

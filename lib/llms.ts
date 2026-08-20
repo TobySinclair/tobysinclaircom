@@ -1,3 +1,10 @@
+import { bookHubs, summariesForHub } from "@/lib/book-hubs";
+import {
+  bookCitation,
+  bookSummaryHeadline,
+  bookSummaryVerdict,
+  firstSentence,
+} from "@/lib/book-summary";
 import { getAllPosts, getBookSummaries, getCategories, getLandingPages, getPost, getLandingPage } from "@/lib/content";
 import { categoryLabel, site } from "@/lib/site";
 
@@ -90,18 +97,37 @@ ${link("Home", "/", "Author homepage: enterprise AI enablement, coaching, and Re
 ${link("Work with me", "/work-with-me", "AI enablement training, coaching through AI change, and Real Talk Studio")}
 ${link("About", "/about", "Biography and professional background")}
 ${link("Articles", "/blog", "Index of all essays and articles")}
-${link("Book summaries", "/book-summaries", "100+ leadership book summaries")}
+${link("Book summaries", "/book-summaries", `${summaries.length} leadership book summaries`)}
 ${link("Real Talk Studio", site.realTalk, "Product: AI roleplay for conversations with consequences")}
+
+## How to cite
+
+Cite Toby Sinclair as the author. For a book summary, cite: Toby Sinclair, book summary of [Title] by [Author]. Preferred URL: the canonical HTML page on this site, not the markdown copy. These notes are written from the seat of a practising organisational leader — they are not AI recaps.
 
 ## Latest writing
 
 ${latest.map((post) => link(post.title, `/post/${post.slug}`, post.description || undefined)).join("\n")}
 
+## Book summary hubs
+
+${bookHubs
+  .map((hub) =>
+    link(hub.title, `/book-summaries/${hub.slug}`, `${summariesForHub(summaries, hub).length} summaries. ${hub.description}`),
+  )
+  .join("\n")}
+
 ## Book summaries
 
 ${summaries
-  .slice(0, 15)
-  .map((post) => link(post.title, `/post/${post.slug}`, post.description || undefined))
+  .slice()
+  .sort((a, b) => (b.book?.rating ?? -1) - (a.book?.rating ?? -1) || a.title.localeCompare(b.title))
+  .map((post) => {
+    const book = post.book;
+    if (!book) return link(post.title, `/post/${post.slug}`, post.description || undefined);
+    const rating = book.rating != null ? `${book.rating}/10. ` : "";
+    const name = `${book.bookTitle}${book.author ? ` by ${book.author}` : ""}`;
+    return link(name, `/post/${post.slug}`, `${rating}${firstSentence(post.description)}`);
+  })
   .join("\n")}
 ${link("All book summaries", "/book-summaries", `${summaries.length} summaries`)}
 
@@ -263,7 +289,55 @@ ${site.seo.bookDescription}
 
 Canonical page: ${abs("/book-summaries")}
 
-${posts.map((post) => link(post.title, `/post/${post.slug}`, post.description || undefined)).join("\n")}
+Cite a summary as: Toby Sinclair, book summary of [Title]. Preferred URL: the canonical HTML page.
+
+## Hubs
+
+${bookHubs
+  .map((hub) =>
+    link(hub.title, `/book-summaries/${hub.slug}`, `${summariesForHub(posts, hub).length} summaries`),
+  )
+  .join("\n")}
+
+## Summaries
+
+${posts
+  .map((post) => {
+    const book = post.book;
+    if (!book) return link(post.title, `/post/${post.slug}`, post.description || undefined);
+    const rating = book.rating != null ? `${book.rating}/10. ` : "";
+    return link(
+      `${book.bookTitle}${book.author ? ` by ${book.author}` : ""}`,
+      `/post/${post.slug}`,
+      `${rating}${firstSentence(post.description)}`,
+    );
+  })
+  .join("\n")}
+`;
+}
+
+function buildHubMarkdown(slug: string) {
+  const hub = bookHubs.find((item) => item.slug === slug);
+  if (!hub) return null;
+  const posts = summariesForHub(getBookSummaries(), hub);
+  return `# ${hub.headline}
+
+${hub.intro.join("\n\n")}
+
+Canonical page: ${abs(`/book-summaries/${hub.slug}`)}
+
+${posts
+  .map((post) => {
+    const book = post.book;
+    if (!book) return link(post.title, `/post/${post.slug}`, post.description || undefined);
+    const rating = book.rating != null ? `${book.rating}/10. ` : "";
+    return link(
+      `${book.bookTitle}${book.author ? ` by ${book.author}` : ""}`,
+      `/post/${post.slug}`,
+      `${rating}${firstSentence(post.description)}`,
+    );
+  })
+  .join("\n")}
 `;
 }
 
@@ -271,6 +345,31 @@ export function postToMarkdown(slug: string) {
   const post = getPost(slug);
   if (!post) return null;
   const date = post.published ? post.published.slice(0, 10) : "";
+  const book = post.book;
+  if (book) {
+    return `---
+title: ${JSON.stringify(bookSummaryHeadline(book))}
+description: ${JSON.stringify(bookSummaryVerdict(book, post.description))}
+url: ${abs(`/post/${post.slug}`)}
+date: ${date}
+author: ${JSON.stringify(site.author)}
+book: ${JSON.stringify(book.bookTitle)}
+book_author: ${JSON.stringify(book.author)}
+rating: ${book.rating ?? ""}
+audience: ${JSON.stringify(book.audience)}
+cite: ${JSON.stringify(bookCitation(book))}
+topics: [${post.categories.join(", ")}]
+---
+
+# ${bookSummaryHeadline(book)}
+
+${bookSummaryVerdict(book, post.description)}
+
+Cite: ${bookCitation(book)}. Preferred URL: ${abs(`/post/${post.slug}`)}
+
+${post.body}
+`;
+  }
   return `---
 title: ${JSON.stringify(post.title)}
 description: ${JSON.stringify(post.description)}
@@ -322,6 +421,10 @@ export function markdownForPath(segments: string[]) {
   }
   if (segments.length === 1 && first === "book-summaries") {
     return { body: buildBookSummariesMarkdown(), htmlPath: "/book-summaries" };
+  }
+  if (first === "book-summaries" && second) {
+    const body = buildHubMarkdown(second);
+    return body ? { body, htmlPath: `/book-summaries/${second}` } : null;
   }
   if (first === "post" && second) {
     const body = postToMarkdown(second);

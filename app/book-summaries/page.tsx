@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { toBookSummaryCard } from "@/components/book-cover-grid";
 import { BookSummaryGallery } from "@/components/book-summary-gallery";
+import { BookSummaryHubNav } from "@/components/book-summary-hubs";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
 import { getBookSummaries } from "@/lib/content";
@@ -38,18 +40,9 @@ export default function BookSummariesPage() {
         {posts.length}+ summaries written from the experience of a practising organisational leader. The big ideas
         and key takeaways in five minutes or less — with notes on how they show up at work.
       </p>
-      <BookSummaryGallery
-        posts={posts.map((post) => ({
-          slug: post.slug,
-          title: post.title,
-          description: post.description,
-          image: post.image,
-          published: post.published,
-          categories: post.categories,
-          rating: post.book?.rating ?? null,
-          bookTitle: post.book?.bookTitle || post.title,
-        }))}
-      />
+      <h2 className="mt-12 text-xl font-bold tracking-tight">Browse by topic</h2>
+      <BookSummaryHubNav posts={posts} />
+      <BookSummaryGallery posts={posts.map(toBookSummaryCard)} />
     </div>
   );
 }

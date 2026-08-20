@@ -27,6 +27,7 @@ export const config = {
     "/work-with-me.md",
     "/blog.md",
     "/book-summaries.md",
+    "/book-summaries/:hub.md",
     "/post/:slug.md",
     "/:slug.md",
   ],
