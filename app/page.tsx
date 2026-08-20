@@ -133,8 +133,8 @@ export default function Home() {
               Toby Sinclair · ICF Professional Certified Coach · Founder, Real Talk Studio
             </p>
             <h1 className="mt-5 text-4xl font-bold tracking-tight md:text-5xl md:leading-[1.1] lg:text-6xl">
-              AI is a technology problem for about six weeks.{" "}
-              <span className="gradient-text">Then it&apos;s a people problem.</span>
+              Solving ancient problems{" "}
+              <span className="gradient-text">with modern technology.</span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-white/70">
               I help enterprises with the human side of AI — the change management, the coaching, the
