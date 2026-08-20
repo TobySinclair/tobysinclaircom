@@ -1,6 +1,18 @@
+import type { ReactNode } from "react";
 import type { Components } from "react-markdown";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { headingId } from "@/lib/book-summary";
+
+function nodeText(node: ReactNode): string {
+  if (node == null || typeof node === "boolean") return "";
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(nodeText).join("");
+  if (typeof node === "object" && "props" in node) {
+    return nodeText((node as { props?: { children?: ReactNode } }).props?.children);
+  }
+  return "";
+}
 
 const components: Components = {
   a: ({ href, children }) => {
@@ -17,6 +29,14 @@ const components: Components = {
       // eslint-disable-next-line @next/next/no-img-element
       <img src={src} alt={alt || ""} className="my-6 w-full rounded-xl" />
     );
+  },
+  h2: ({ children }) => {
+    const label = nodeText(children);
+    return <h2 id={headingId(label)}>{children}</h2>;
+  },
+  h3: ({ children }) => {
+    const label = nodeText(children);
+    return <h3 id={headingId(label)}>{children}</h3>;
   },
 };
 

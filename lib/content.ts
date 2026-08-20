@@ -2,6 +2,12 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { cache } from "react";
+import {
+  cleanBookSummaryBody,
+  isBookSummaryPost,
+  parseBookSummary,
+  type BookSummary,
+} from "./book-summary";
 import { POSTS_PER_PAGE, site } from "./site";
 
 export type Post = {
@@ -15,6 +21,7 @@ export type Post = {
   readingTime: string | null
   categories: string[]
   body: string
+  book: BookSummary | null
 };
 
 export type LandingPage = {
@@ -60,7 +67,7 @@ export const getAllPosts = cache((): Post[] => {
     .filter((file) => file.endsWith(".md"))
     .map((file) => {
       const { data, content } = readMarkdown(path.join(postsDir, file));
-      return {
+      const draft = {
         slug: String(data.slug || file.replace(/\.md$/, "")),
         title: cleanTitle(String(data.title || "Untitled")),
         description: String(data.description || ""),
@@ -71,6 +78,28 @@ export const getAllPosts = cache((): Post[] => {
         readingTime: data.readingTime ? String(data.readingTime) : null,
         categories: Array.isArray(data.categories) ? data.categories.map(String) : [],
         body: content,
+        book: null,
+      } satisfies Post;
+
+      if (!isBookSummaryPost(draft)) return draft;
+
+      const book = parseBookSummary({
+        title: draft.title,
+        body: content,
+        rating: data.rating,
+        author: data.author,
+        amazon: data.amazon,
+        audience: data.audience,
+      });
+      const singleBook =
+        /book summary|^summary:|\bsummary\b/i.test(draft.title) || book.rating != null;
+
+      if (!singleBook) return draft;
+
+      return {
+        ...draft,
+        book,
+        body: cleanBookSummaryBody(content, book),
       } satisfies Post;
     })
     .sort((a, b) => {
@@ -89,11 +118,22 @@ export function getPostsByCategory(slug: string) {
 }
 
 export function getBookSummaries() {
-  return getAllPosts().filter(
-    (post) =>
-      post.categories.includes("book-summaries") ||
-      /book summary|summary:/i.test(post.title),
-  );
+  return getAllPosts().filter((post) => isBookSummaryPost(post));
+}
+
+export function relatedBookSummaries(post: Post, limit = 3) {
+  const others = getBookSummaries().filter((item) => item.slug !== post.slug);
+  const extra = post.categories.filter((category) => category !== "book-summaries");
+  const scored = others
+    .map((item) => ({
+      item,
+      score: extra.filter((category) => item.categories.includes(category)).length,
+    }))
+    .sort(
+      (a, b) =>
+        b.score - a.score || Date.parse(b.item.published || "0") - Date.parse(a.item.published || "0"),
+    );
+  return scored.map((entry) => entry.item).slice(0, limit);
 }
 
 export function getCategories() {

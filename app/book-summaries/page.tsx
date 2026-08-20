@@ -46,6 +46,8 @@ export default function BookSummariesPage() {
           image: post.image,
           published: post.published,
           categories: post.categories,
+          rating: post.book?.rating ?? null,
+          bookTitle: post.book?.bookTitle || post.title,
         }))}
       />
     </div>

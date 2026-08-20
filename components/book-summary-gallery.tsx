@@ -12,6 +12,8 @@ export type BookSummaryCard = {
   image: string | null
   published: string | null
   categories: string[]
+  rating: number | null
+  bookTitle: string
 };
 
 const TOPIC_SKIP = new Set(["book-summaries", "book-collections"]);
@@ -65,10 +67,18 @@ function Chip({
   );
 }
 
+const ratingFilters = [
+  { id: null, label: "All ratings" },
+  { id: 9, label: "9+" },
+  { id: 8, label: "8+" },
+  { id: 7, label: "7+" },
+] as const;
+
 export function BookSummaryGallery({ posts }: { posts: BookSummaryCard[] }) {
   const [query, setQuery] = useState("");
   const [topic, setTopic] = useState<string | null>(null);
   const [year, setYear] = useState<string | null>(null);
+  const [minRating, setMinRating] = useState<number | null>(null);
 
   const topics = useMemo(() => topicCounts(posts), [posts]);
   const years = useMemo(() => yearCounts(posts), [posts]);
@@ -78,13 +88,15 @@ export function BookSummaryGallery({ posts }: { posts: BookSummaryCard[] }) {
     return posts.filter((post) => {
       if (topic && !post.categories.includes(topic)) return false;
       if (year && post.published?.slice(0, 4) !== year) return false;
+      if (minRating != null && (post.rating == null || post.rating < minRating)) return false;
       if (!needle) return true;
       return (
         post.title.toLowerCase().includes(needle) ||
+        post.bookTitle.toLowerCase().includes(needle) ||
         post.description.toLowerCase().includes(needle)
       );
     });
-  }, [posts, query, topic, year]);
+  }, [posts, query, topic, year, minRating]);
 
   return (
     <div className="mt-10">
@@ -113,6 +125,24 @@ export function BookSummaryGallery({ posts }: { posts: BookSummaryCard[] }) {
               onClick={() => setTopic(topic === item.slug ? null : item.slug)}
             >
               {categoryLabel(item.slug)} {item.count}
+            </Chip>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-6">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-ink-muted">Rating</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {ratingFilters.map((item) => (
+            <Chip
+              key={item.label}
+              active={minRating === item.id}
+              onClick={() => setMinRating(item.id)}
+            >
+              {item.label}
+              {item.id != null
+                ? ` ${posts.filter((post) => post.rating != null && post.rating >= item.id).length}`
+                : ""}
             </Chip>
           ))}
         </div>
@@ -169,11 +199,13 @@ export function BookSummaryGallery({ posts }: { posts: BookSummaryCard[] }) {
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90" />
                 <div className="absolute inset-x-0 bottom-0 p-3 md:p-4">
                   <h2 className="text-sm font-semibold leading-5 tracking-tight text-white line-clamp-2 group-hover:text-green md:text-[15px] md:leading-6">
-                    {post.title}
+                    {post.bookTitle}
                   </h2>
-                  {post.published ? (
-                    <p className="mt-1 text-xs text-white/55">{formatDate(post.published)}</p>
-                  ) : null}
+                  <p className="mt-1 text-xs text-white/55">
+                    {post.rating != null ? `${post.rating}/10` : null}
+                    {post.rating != null && post.published ? " · " : null}
+                    {post.published ? formatDate(post.published) : null}
+                  </p>
                 </div>
               </div>
             </Link>

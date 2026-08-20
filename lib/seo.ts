@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { bookSummaryDescription, bookSummaryPageTitle } from "@/lib/book-summary";
 import type { LandingPage, Post } from "@/lib/content";
 import { isRtsPost, rtsCoverImagePath } from "@/lib/rts-cover";
 import { categoryLabel, site } from "@/lib/site";
@@ -76,11 +77,12 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
 }
 
 export function blogPostingJsonLd(post: Post) {
+  const book = post.book;
   return {
     "@type": "BlogPosting",
     "@id": absoluteUrl(`/post/${post.slug}#article`),
-    headline: post.title,
-    description: post.description,
+    headline: book ? bookSummaryPageTitle(book) : post.title,
+    description: book ? bookSummaryDescription(post.description, book) : post.description,
     image: isRtsPost(post)
       ? [absoluteUrl(rtsCoverImagePath(post.slug))]
       : post.image
@@ -96,7 +98,41 @@ export function blogPostingJsonLd(post: Post) {
     articleSection: post.categories[0] ? categoryLabel(post.categories[0]) : "Articles",
     inLanguage: "en-GB",
     isPartOf: { "@id": websiteId },
+    ...(book ? { about: { "@id": absoluteUrl(`/post/${post.slug}#book`) } } : {}),
   };
+}
+
+export function bookReviewJsonLd(post: Post) {
+  const book = post.book;
+  if (!book) return [];
+  const bookId = absoluteUrl(`/post/${post.slug}#book`);
+  const nodes: Record<string, unknown>[] = [
+    {
+      "@type": "Book",
+      "@id": bookId,
+      name: book.bookTitle,
+      ...(book.author ? { author: { "@type": "Person", name: book.author } } : {}),
+      ...(post.image ? { image: post.image } : {}),
+    },
+  ];
+  if (book.rating != null) {
+    nodes.push({
+      "@type": "Review",
+      "@id": absoluteUrl(`/post/${post.slug}#review`),
+      itemReviewed: { "@id": bookId },
+      author: { "@id": personId },
+      publisher: { "@id": orgId },
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: book.rating,
+        bestRating: 10,
+        worstRating: 1,
+      },
+      reviewBody: post.description,
+      url: absoluteUrl(`/post/${post.slug}`),
+    });
+  }
+  return nodes;
 }
 
 export function collectionJsonLd(input: {
@@ -204,9 +240,10 @@ export function pageMetadata(input: {
 }
 
 export function postMetadata(post: Post): Metadata {
+  const book = post.book;
   return pageMetadata({
-    title: post.title,
-    description: post.description,
+    title: book ? bookSummaryPageTitle(book) : post.title,
+    description: book ? bookSummaryDescription(post.description, book) : post.description,
     path: `/post/${post.slug}`,
     image: isRtsPost(post) ? rtsCoverImagePath(post.slug) : post.image,
     type: "article",
