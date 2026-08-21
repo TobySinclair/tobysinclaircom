@@ -3,9 +3,9 @@
 import { cookies } from "next/headers";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-export const CHEAT_SHEET_COOKIE = "nsttd_sheet";
+const CHEAT_SHEET_COOKIE = "nsttd_sheet";
 
-export type LeadResult = { ok: true } | { ok: false; error: string };
+type LeadResult = { ok: true } | { ok: false; error: string };
 
 export async function captureCheatSheetLead(formData: FormData): Promise<LeadResult> {
   const honeypot = String(formData.get("company") || "").trim();

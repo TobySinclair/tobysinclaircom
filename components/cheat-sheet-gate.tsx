@@ -1,21 +1,32 @@
 "use client";
 
-import { useActionState, useEffect, useState, type ReactNode } from "react";
-import { captureCheatSheetLead, type LeadResult } from "@/app/actions/capture-lead";
+import { useActionState, useEffect, useSyncExternalStore, type ReactNode } from "react";
+import { captureCheatSheetLead } from "@/app/actions/capture-lead";
+
+type LeadResult = { ok: true } | { ok: false; error: string };
 
 const STORAGE_KEY = "nsttd_sheet";
 const initial: LeadResult | null = null;
 
+function subscribe(onStoreChange: () => void) {
+  window.addEventListener("storage", onStoreChange);
+  return () => window.removeEventListener("storage", onStoreChange);
+}
+
+function getSnapshot() {
+  return window.localStorage.getItem(STORAGE_KEY) === "1";
+}
+
+function getServerSnapshot() {
+  return false;
+}
+
 export function CheatSheetGate({ children }: { children: ReactNode }) {
-  const [stored, setStored] = useState(false);
+  const stored = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const [state, action, pending] = useActionState(
     async (_prev: LeadResult | null, formData: FormData) => captureCheatSheetLead(formData),
     initial,
   );
-
-  useEffect(() => {
-    setStored(window.localStorage.getItem(STORAGE_KEY) === "1");
-  }, []);
 
   useEffect(() => {
     if (state?.ok) window.localStorage.setItem(STORAGE_KEY, "1");
