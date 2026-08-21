@@ -1,6 +1,6 @@
 ---
 title: "Summary: What Got You Here Won't Get You There by Marshall Goldsmith"
-description: "What Got You Here Won't Get You There by Marshall Goldsmith is a catalogue of the twenty communication habits that stall leaders — winning too much, adding too much value, and failing to listen. I do several of them before lunch."
+description: "What Got You Here Won't Get You There by Marshall Goldsmith is a catalogue of the twenty communication tics that stall leaders — winning too much, adding too much value, and failing to listen. I do several of them before lunch."
 slug: "summary-what-got-you-here-wont-get-you-there-by-marshall-goldsmith"
 url: "https://www.tobysinclair.com/post/summary-what-got-you-here-wont-get-you-there-by-marshall-goldsmith"
 type: post

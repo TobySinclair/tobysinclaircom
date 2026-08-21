@@ -1,6 +1,6 @@
 ---
 title: "Summary: Nonviolent Communication by Marshall Rosenberg"
-description: "Nonviolent Communication by Marshall Rosenberg is the book Satya Nadella asked Microsoft's leadership team to read — a four-step language for saying the hard thing without attack. Observation, feeling, need, request. Simple. Rarely done."
+description: "Nonviolent Communication by Marshall Rosenberg is the book Satya Nadella asked Microsoft's senior team to read — a four-step language for saying the hard thing without attack. Observation, feeling, need, request. Simple. Rarely done."
 slug: "summary-nonviolent-communication-by-marshall-rosenberg"
 url: "https://www.tobysinclair.com/post/summary-nonviolent-communication-by-marshall-rosenberg"
 type: post
