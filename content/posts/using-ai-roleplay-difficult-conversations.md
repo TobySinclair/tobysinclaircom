@@ -5,7 +5,7 @@ slug: "using-ai-roleplay-difficult-conversations"
 url: "https://www.tobysinclair.com/post/using-ai-roleplay-difficult-conversations"
 type: post
 published: "2025-08-17T18:29:36.331Z"
-modified: "2025-08-18T14:43:21.257Z"
+modified: "2026-08-21T20:00:00.000Z"
 image: "https://i.ytimg.com/vi/7c6frulS7aA/maxresdefault.jpg"
 readingTime: "5 min read"
 categories:
@@ -153,7 +153,7 @@ That’s precisely what [Real Talk Studio](https://www.realtalkstudio.com/) offe
 - Real feedback from real practitioners
 - A psychologically safe environment to learn through experience
 
-The books behind this work — candour, listening, conflict — are collected on [hard conversation book summaries](/book-summaries/hard-conversations).
+The books behind this work — candour, listening, conflict — are collected on [hard conversation book summaries](/book-summaries/hard-conversations). For a longer catalogue of setups, see [10 difficult conversation scenarios for managers](/post/difficult-conversation-scenarios-managers). For the category itself: [AI roleplay training](/post/ai-roleplay-training).
 
 ## **Final Word: Practice Before Performance**
 

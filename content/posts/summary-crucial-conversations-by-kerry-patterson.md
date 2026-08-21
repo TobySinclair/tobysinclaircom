@@ -5,7 +5,7 @@ slug: "summary-crucial-conversations-by-kerry-patterson"
 url: "https://www.tobysinclair.com/post/summary-crucial-conversations-by-kerry-patterson"
 type: post
 published: "2024-05-02T14:31:36.720Z"
-modified: "2026-08-21T19:00:00.000Z"
+modified: "2026-08-21T20:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_fdf83893b6184cf18cff3d91fe9b2105~mv2.jpg"
 readingTime: "4 min read"
 categories:
@@ -92,5 +92,7 @@ Emotions can escalate quickly during [crucial conversations](https://amzn.to/44r
 > “The mistake most of us make in our crucial conversations is we believe that we have to choose between telling the truth and keeping a friend.”
 
 > “There are four common ways of making decisions: command, consult, vote, and consensus. These four options represent increasing degrees of involvement.”
+
+Reading the playbook is step one. If you want the honest comparison of how to actually practise — official course, workshops, peer role play, and AI simulation — see [Crucial Conversations training](/post/crucial-conversations-training). The ten conversations I watch people avoid most are in [difficult conversation scenarios for managers](/post/difficult-conversation-scenarios-managers).
 
 ## **📹 Prefer Video?**

@@ -5,7 +5,7 @@ slug: "45-roleplay-ideas-for-training-sales-support-leadership"
 url: "https://www.tobysinclair.com/post/45-roleplay-ideas-for-training-sales-support-leadership"
 type: post
 published: "2025-12-01T12:24:13.939Z"
-modified: "2025-12-01T12:24:13.939Z"
+modified: "2026-08-21T20:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_0d256dcbb8c24409a192c41fb3ac33f9~mv2.png"
 readingTime: "13 min read"
 categories:
@@ -384,6 +384,8 @@ The AI will instantly generate a unique persona, context, and grading criteria f
 ## The Bottom Line
 
 When you are willing to use your imagination, there is an infinite number of roleplay ideas for training you can explore for organizational development. However, ideas are only as good as their execution.
+
+For sales specifically, I also wrote [sales role play scenarios that actually prepare reps](/post/sales-role-play-scenarios). For managers: [10 difficult conversation scenarios](/post/difficult-conversation-scenarios-managers).
 
 Whatever your specific training needs—be it sales, support, or leadership—**R**[**eal Talk Studio**](https://www.realtalkstudio.com/) has you covered. By combining creative scenarios with our state-of-the-art AI Roleplay Builder, you can bridge the gap between theory and practice faster than ever before.
 

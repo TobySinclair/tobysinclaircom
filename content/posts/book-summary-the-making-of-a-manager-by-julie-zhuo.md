@@ -5,7 +5,7 @@ slug: "book-summary-the-making-of-a-manager-by-julie-zhuo"
 url: "https://www.tobysinclair.com/post/book-summary-the-making-of-a-manager-by-julie-zhuo"
 type: post
 published: "2021-04-01T09:30:40.226Z"
-modified: "2024-07-17T07:44:30.754Z"
+modified: "2026-08-21T20:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_9d5b9c165a77480da190734b7af9338e~mv2.jpg"
 readingTime: "7 min read"
 categories:
@@ -209,5 +209,7 @@ When I started to see 1:1s with my manager as an opportunity for focused learnin
 **Make a Mentor Out of Everyone**
 
 Sheryl Sandberg, in her book Lean In, cautions against treating the notion of a mentor as something too precious. Nobody wants to be asked, “Will you be my mentor?” because it sounds needy and time-consuming. But ask for specific advice instead, and you’ll find tons of people willing to help.
+
+Zhuo is excellent on the job. The part most programmes still skip is the conversations. I wrote [the conversations nobody prepares new managers for](/post/new-manager-training-conversations).
 
 ### **What other people are saying:**

@@ -5,7 +5,7 @@ slug: "summary-radical-candor-by-kim-scott"
 url: "https://www.tobysinclair.com/post/summary-radical-candor-by-kim-scott"
 type: post
 published: "2024-05-02T15:02:56.756Z"
-modified: "2024-07-16T08:53:26.221Z"
+modified: "2026-08-21T20:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_27f685fe9ade492fa134c9a21f17b184~mv2.jpg"
 readingTime: "4 min read"
 categories:
@@ -83,5 +83,7 @@ Effective leadership according to [Radical Candor](https://amzn.to/4blksne) invo
 > “It’s brutally hard to tell people when they are screwing up. You don’t want to hurt anyone’s feelings; that’s because you’re not a sadist. You don’t want that person or the rest of the team to think you’re a jerk. Plus, you’ve been told since you learned to talk, “If you don’t have anything nice to say, don’t say anything at all.” Now all of a sudden it’s your job to say it. You’ve got to undo a lifetime of training. Management is hard.”
 
 > “The way you ask for criticism and react when you get it goes a long way toward building trust—or destroying it.”
+
+Candour is a conversation, not a slide. The conversations new managers actually freeze on are in [new manager training](/post/new-manager-training-conversations). For the redundancy conversation specifically, I wrote [a practical, humane guide](/post/redundancy-conversation-guide). Ten worked scenarios: [difficult conversation scenarios for managers](/post/difficult-conversation-scenarios-managers).
 
 ## **📹 Prefer Video?**

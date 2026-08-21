@@ -45,6 +45,36 @@ const covers: Record<string, Pick<RtsCoverCopy, "line1" | "line2" | "highlight">
     line2: "They had never practised.",
     highlight: "practised.",
   },
+  "new-manager-training-conversations": {
+    line1: "They knew the models.",
+    line2: "They had never practised.",
+    highlight: "practised.",
+  },
+  "difficult-conversation-scenarios-managers": {
+    line1: "They circled the sentence.",
+    line2: "They never said it.",
+    highlight: "said it.",
+  },
+  "sales-role-play-scenarios": {
+    line1: "The room clapped.",
+    line2: "Nobody learned.",
+    highlight: "learned.",
+  },
+  "crucial-conversations-training": {
+    line1: "They finished the book.",
+    line2: "Nothing changed.",
+    highlight: "changed.",
+  },
+  "ai-roleplay-training": {
+    line1: "The demo was polite.",
+    line2: "Real buyers aren't.",
+    highlight: "aren't.",
+  },
+  "redundancy-conversation-guide": {
+    line1: "They still couldn't say it.",
+    line2: "The word was redundant.",
+    highlight: "redundant.",
+  },
 };
 
 export function isRtsPost(post: Pick<Post, "categories">) {

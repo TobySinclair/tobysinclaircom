@@ -5,7 +5,7 @@ slug: "summary-pitch-anything-by-oren-klaff"
 url: "https://www.tobysinclair.com/post/summary-pitch-anything-by-oren-klaff"
 type: post
 published: "2024-06-20T13:05:52.292Z"
-modified: "2024-07-16T08:52:58.490Z"
+modified: "2026-08-21T20:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_8c5f5acf84c6475692038ba75cb34445~mv2.jpg"
 readingTime: "6 min read"
 categories:
@@ -108,5 +108,7 @@ It doesn’t matter how well you argue, the way your points are crafted, or how 
 - **Offering the Prize**: Position your pitch as a valuable opportunity.
 - **Nailing the Hookpoint**: Drive the audience towards a decision.
 - **Getting a Decision**: Push for a clear outcome, be it a yes, no, or follow-up meeting
+
+Reading the method is not the same as holding a frame when a buyer is trying to knock it down. Practise it with [sales role play scenarios that actually prepare reps](/post/sales-role-play-scenarios).
 
 ## **📹 Prefer Video?**

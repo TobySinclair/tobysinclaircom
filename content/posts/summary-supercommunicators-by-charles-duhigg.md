@@ -5,7 +5,7 @@ slug: "summary-supercommunicators-by-charles-duhigg"
 url: "https://www.tobysinclair.com/post/summary-supercommunicators-by-charles-duhigg"
 type: post
 published: "2024-03-13T16:05:22.896Z"
-modified: "2024-07-16T08:54:08.482Z"
+modified: "2026-08-21T20:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_82c1ccb2b3fd4e41806c6aaee3ba10e0~mv2.jpg"
 readingTime: "5 min read"
 categories:
@@ -99,5 +99,7 @@ Provide: Invite the other person to speak.
 “To make a decision, what do you need?” In summary: - Frame - Summarise - Ask
 
 **📚** [**Buy Supercommunicators on Amazon**](https://amzn.to/4au3DWP)
+
+Duhigg is strong on why conversations go wrong. For the actual scenarios managers face, see [10 difficult conversation scenarios](/post/difficult-conversation-scenarios-managers).
 
 ## **📹 Prefer Video?**
