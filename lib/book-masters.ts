@@ -59,6 +59,8 @@ export const bookMasters: BookMaster[] = [
           "a-more-beautiful-question-summary",
           "book-summary-rapport-by-emily-alison-and-laurence-alison",
           "20-magic-words-for-coaching-conversations",
+          "summary-humble-inquiry-by-edgar-schein",
+          "summary-ask-by-jeff-wetzler",
         ],
       },
       {
@@ -85,7 +87,7 @@ export const bookMasters: BookMaster[] = [
     also: [
       { title: "Coaching for Performance", author: "John Whitmore" },
       { title: "The Coaches Casebook", author: "Kim Morgan and Geoff Watts" },
-      { title: "Humble Inquiry", author: "Edgar Schein" },
+      { title: "Nonviolent Communication", author: "Marshall Rosenberg" },
     ],
   },
   {
@@ -136,6 +138,9 @@ export const bookMasters: BookMaster[] = [
           "summary-radical-candor-by-kim-scott",
           "book-summary-you-re-not-listening-by-kate-murphy-big-ideas-and-best-quotes",
           "high-conflict-summary-by-amanda-ripley",
+          "summary-the-next-conversation-by-jefferson-fisher",
+          "summary-the-culture-map-by-erin-meyer",
+          "summary-dare-to-lead-by-brene-brown",
         ],
       },
       {
