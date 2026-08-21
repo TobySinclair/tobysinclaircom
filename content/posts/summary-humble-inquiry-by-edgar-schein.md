@@ -5,7 +5,8 @@ slug: "summary-humble-inquiry-by-edgar-schein"
 url: "https://www.tobysinclair.com/post/summary-humble-inquiry-by-edgar-schein"
 type: post
 published: "2026-08-16T09:00:00.000Z"
-modified: "2026-08-21T18:40:00.000Z"
+modified: "2026-08-21T20:20:00.000Z"
+image: "/book-covers/humble-inquiry.jpg"
 readingTime: "6 min read"
 categories:
   - book-summaries

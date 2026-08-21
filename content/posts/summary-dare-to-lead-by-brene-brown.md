@@ -5,7 +5,8 @@ slug: "summary-dare-to-lead-by-brene-brown"
 url: "https://www.tobysinclair.com/post/summary-dare-to-lead-by-brene-brown"
 type: post
 published: "2026-08-12T09:00:00.000Z"
-modified: "2026-08-21T18:40:00.000Z"
+modified: "2026-08-21T20:20:00.000Z"
+image: "/book-covers/dare-to-lead.jpg"
 readingTime: "6 min read"
 categories:
   - book-summaries

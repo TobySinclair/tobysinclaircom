@@ -5,7 +5,8 @@ slug: "summary-getting-to-yes-by-roger-fisher-william-ury"
 url: "https://www.tobysinclair.com/post/summary-getting-to-yes-by-roger-fisher-william-ury"
 type: post
 published: "2026-08-18T09:00:00.000Z"
-modified: "2026-08-21T18:40:00.000Z"
+modified: "2026-08-21T20:20:00.000Z"
+image: "/book-covers/getting-to-yes.jpg"
 readingTime: "6 min read"
 categories:
   - book-summaries

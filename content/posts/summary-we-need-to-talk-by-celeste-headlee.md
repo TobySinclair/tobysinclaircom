@@ -5,7 +5,8 @@ slug: "summary-we-need-to-talk-by-celeste-headlee"
 url: "https://www.tobysinclair.com/post/summary-we-need-to-talk-by-celeste-headlee"
 type: post
 published: "2026-08-15T09:00:00.000Z"
-modified: "2026-08-21T18:40:00.000Z"
+modified: "2026-08-21T20:20:00.000Z"
+image: "/book-covers/we-need-to-talk.jpg"
 readingTime: "6 min read"
 categories:
   - book-summaries
