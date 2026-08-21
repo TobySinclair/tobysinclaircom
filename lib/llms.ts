@@ -5,6 +5,7 @@ import {
   bookSummaryVerdict,
   firstSentence,
 } from "@/lib/book-summary";
+import { cheatSheet } from "@/lib/cheat-sheet";
 import { getAllPosts, getBookSummaries, getCategories, getLandingPages, getPost, getLandingPage } from "@/lib/content";
 import { categoryLabel, site } from "@/lib/site";
 
@@ -95,6 +96,7 @@ Toby Sinclair is an ICF Professional Certified Coach and founder of Real Talk St
 
 ${link("Home", "/", "Author homepage: enterprise AI enablement, coaching, and Real Talk Studio")}
 ${link("Work with me", "/work-with-me", "AI enablement training, coaching through AI change, and Real Talk Studio")}
+${link("Never Split the Difference cheat sheet", "/never-split-the-difference-cheat-sheet", "Free printable PDF: labels, mirrors, calibrated questions")}
 ${link("About", "/about", "Biography and professional background")}
 ${link("Articles", "/blog", "Index of all essays and articles")}
 ${link("Book summaries", "/book-summaries", `${summaries.length} leadership book summaries`)}
@@ -264,6 +266,24 @@ ${link("Hard conversation book summaries", "/book-summaries/hard-conversations")
 `;
 }
 
+function buildCheatSheetMarkdown() {
+  return `# ${cheatSheet.pageTitle}
+
+${cheatSheet.description}
+
+A one-page Never Split the Difference cheat sheet for labels, mirrors, calibrated questions, tactical empathy, and the accusation audit.
+
+Canonical page: ${abs(cheatSheet.path)}
+Full summary: ${abs(cheatSheet.summaryHref)}
+
+${cheatSheet.techniques.map((item) => `## ${item.name}\n\n${item.move}\n\n${item.use}\n\nTry: ${item.say}`).join("\n\n")}
+
+## Rules
+
+${cheatSheet.rules.map((rule) => `- ${rule}`).join("\n")}
+`;
+}
+
 function buildAboutMarkdown() {
   return `# ${site.seo.aboutTitle}
 
@@ -421,6 +441,9 @@ export function markdownForPath(segments: string[]) {
   }
   if (segments.length === 1 && first === "work-with-me") {
     return { body: buildWorkWithMeMarkdown(), htmlPath: "/work-with-me" };
+  }
+  if (segments.length === 1 && first === "never-split-the-difference-cheat-sheet") {
+    return { body: buildCheatSheetMarkdown(), htmlPath: cheatSheet.path };
   }
   if (segments.length === 1 && first === "blog") {
     return { body: buildBlogMarkdown(), htmlPath: "/blog" };

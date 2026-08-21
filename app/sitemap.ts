@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.url}/work-with-me`, changeFrequency: "monthly", priority: 0.9 },
     { url: `${site.url}/blog`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${site.url}/book-summaries`, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${site.url}/never-split-the-difference-cheat-sheet`, changeFrequency: "monthly", priority: 0.7 },
     ...bookHubs.map((hub) => ({
       url: `${site.url}/book-summaries/${hub.slug}`,
       changeFrequency: "weekly" as const,

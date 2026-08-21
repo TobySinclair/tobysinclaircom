@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ConversionCta } from "@/components/conversion-cta";
 import { CoverImage } from "@/components/cover-image";
 import { MarkdownBody } from "@/components/markdown-body";
 import { hubsForPost } from "@/lib/book-hubs";
@@ -10,6 +11,7 @@ import {
   bookSummaryVerdict,
 } from "@/lib/book-summary";
 import type { Post } from "@/lib/content";
+import { cheatSheetOffer, conversionIntentForPost, conversionOfferFor } from "@/lib/conversion";
 import { formatDate } from "@/lib/site";
 
 function RatingMarks({ value }: { value: number }) {
@@ -38,6 +40,9 @@ export function BookSummaryArticle({
   const verdict = bookSummaryVerdict(book, post.description);
   const faqs = bookSummaryFaqs(book, post.description);
   const hubs = hubsForPost(post);
+  const intent = conversionIntentForPost(post);
+  const offer = intent ? conversionOfferFor(intent, book.bookTitle) : null;
+  const extra = post.slug === "never-split-the-difference-summary" ? cheatSheetOffer() : null;
 
   return (
     <>
@@ -127,6 +132,17 @@ export function BookSummaryArticle({
       <div className="mt-8">
         <MarkdownBody content={post.body} />
       </div>
+
+      {offer ? (
+        <div className="mt-12">
+          <ConversionCta offer={offer} />
+        </div>
+      ) : null}
+      {extra ? (
+        <div className="mt-6">
+          <ConversionCta offer={extra} />
+        </div>
+      ) : null}
 
       <section id="faq" className="mt-12 rounded-[1.5rem] border border-white/10 bg-[#0c0c14] p-6 md:p-8">
         <h2 className="text-xl font-bold tracking-tight">Questions</h2>

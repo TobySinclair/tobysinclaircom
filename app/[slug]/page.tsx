@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { ConversionCta } from "@/components/conversion-cta";
 import { JsonLd } from "@/components/json-ld";
 import { MarkdownBody } from "@/components/markdown-body";
 import { masterPageSlugs } from "@/lib/book-masters";
 import { getLandingPage, getLandingPages } from "@/lib/content";
+import { conversionIntentFor, conversionOfferFor } from "@/lib/conversion";
 import { breadcrumbJsonLd, landingMetadata, webPageJsonLd } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -28,6 +30,8 @@ export default async function LandingPage({ params }: Props) {
   const { slug } = await params;
   const page = getLandingPage(slug);
   if (!page) notFound();
+  const intent = conversionIntentFor({ slug: page.slug, title: page.title });
+  const offer = intent ? conversionOfferFor(intent) : null;
 
   return (
     <article className="mx-auto w-full max-w-3xl px-5 py-16">
@@ -51,6 +55,11 @@ export default async function LandingPage({ params }: Props) {
       <div className="mt-10">
         <MarkdownBody content={page.body} />
       </div>
+      {offer ? (
+        <div className="mt-16">
+          <ConversionCta offer={offer} />
+        </div>
+      ) : null}
     </article>
   );
 }

@@ -170,3 +170,23 @@ a {
 .prose strong {
   color: #fafafa;
 }
+
+@media print {
+  header,
+  footer {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #111;
+  }
+
+  .cheat-sheet-print,
+  .cheat-sheet-print section {
+    border-color: #ddd;
+    background: #fff;
+    color: #111;
+    break-inside: avoid;
+  }
+}

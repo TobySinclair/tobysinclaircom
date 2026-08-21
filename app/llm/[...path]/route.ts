@@ -11,6 +11,7 @@ export function generateStaticParams() {
     { path: ["index"] },
     { path: ["about"] },
     { path: ["work-with-me"] },
+    { path: ["never-split-the-difference-cheat-sheet"] },
     { path: ["blog"] },
     { path: ["book-summaries"] },
     ...bookHubs.map((hub) => ({ path: ["book-summaries", hub.slug] })),
