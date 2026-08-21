@@ -5,7 +5,7 @@ slug: "never-split-the-difference-summary"
 url: "https://www.tobysinclair.com/post/never-split-the-difference-summary"
 type: post
 published: "2022-07-10T15:29:11.660Z"
-modified: "2026-08-21T19:00:00.000Z"
+modified: "2026-08-21T20:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_3e7f2362fb504113bee1f949d04bd4aa~mv2.jpg"
 readingTime: "5 min read"
 categories:
@@ -155,6 +155,8 @@ It seems like you’re reluctant to \_\_\_\_\_\_\_\_\_.
 Effective negotiators look past their counterparts’ stated positions (what the party demands) and delve into their underlying motivations (what is making them want what they want).
 
 Never forget that a loss stings at least twice as much as an equivalent gain.
+
+The techniques work when you've said them out loud, against someone who doesn't want to give you the deal. I wrote [sales role play scenarios that actually prepare reps](/post/sales-role-play-scenarios).
 
 ### **📹 Prefer Video?**
 

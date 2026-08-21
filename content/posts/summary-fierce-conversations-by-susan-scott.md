@@ -5,7 +5,7 @@ slug: "summary-fierce-conversations-by-susan-scott"
 url: "https://www.tobysinclair.com/post/summary-fierce-conversations-by-susan-scott"
 type: post
 published: "2024-04-23T19:43:17.115Z"
-modified: "2024-07-16T08:53:51.087Z"
+modified: "2026-08-21T20:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_e628a114b9ba4bc3925432ceefb366f2~mv2.jpg"
 readingTime: "16 min read"
 categories:
@@ -306,5 +306,7 @@ Silence has become my favourite sound, because that is when the work is being do
 4. “Nothing I say will make any difference. Why bother?”
 5. “She’s just going through a hard time, just needs to talk.”
 6. “I’m bored, fatigued, impatient with this person [and/ or this topic]. I’ll adopt an attitude of polite indifference and hope it’s over soon.”
+
+A fierce conversation is still a conversation you have to have, not a concept you have to finish. For the training options after the book — including what actually produces reps — see [Crucial Conversations training](/post/crucial-conversations-training). For the meetings themselves: [ten difficult conversation scenarios for managers](/post/difficult-conversation-scenarios-managers).
 
 ## **📹 Prefer Video?**

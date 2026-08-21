@@ -22,6 +22,15 @@ const SALES_SLUGS = new Set([
   "the-ultimate-guide-to-ai-sales-roleplay-mastering-the-art-of-the-deal-in-the-digital-age",
   "influence-is-your-superpower-zoe-chance",
   "whats-in-it-for-them-by-joe-polish",
+  "sales-role-play-scenarios",
+]);
+
+const CONVERSATION_SLUGS = new Set([
+  "ai-roleplay-training",
+  "new-manager-training-conversations",
+  "difficult-conversation-scenarios-managers",
+  "crucial-conversations-training",
+  "redundancy-conversation-guide",
 ]);
 
 const WORKSHOP_SLUGS = new Set(["workshop-planning-template"]);
@@ -53,6 +62,7 @@ export function conversionIntentFor(
 ): ConversionIntent | null {
   if (NONE_SLUGS.has(input.slug)) return null;
   if (SALES_SLUGS.has(input.slug)) return "sales";
+  if (CONVERSATION_SLUGS.has(input.slug)) return "conversation";
   if (WORKSHOP_SLUGS.has(input.slug)) return "workshop";
   if (AI_SLUGS.has(input.slug)) return "ai";
 
@@ -115,10 +125,16 @@ export function conversionOfferFor(
     return {
       intent,
       eyebrow: "Practice, not theory",
-      title: `You've just read how to have the conversation. Reading isn't practising.`,
-      body: `${book} is a playbook. Real Talk Studio is the driving test — try the same conversation against an AI counterpart before it happens for real.`,
+      title: bookTitle
+        ? `You've just read how to have the conversation. Reading isn't practising.`
+        : "Reading about the conversation isn't practising it.",
+      body: bookTitle
+        ? `${book} is a playbook. Real Talk Studio is the driving test — try the same conversation against an AI counterpart before it happens for real.`
+        : "Real Talk Studio is the driving test — try the same conversation against an AI counterpart before it happens for real.",
       cta: "Try a free scenario →",
       href: site.realTalkPractise,
+      secondaryCta: "Work with me",
+      secondaryHref: "/work-with-me",
     };
   }
 
@@ -126,8 +142,12 @@ export function conversionOfferFor(
     return {
       intent,
       eyebrow: "Sales practice",
-      title: "You've just read how to negotiate. Reading isn't practising.",
-      body: `${book} is useful until your heart rate goes up. Rehearse a cold call, a negotiation, or a close against an AI counterpart — then use it when the deal is live.`,
+      title: bookTitle
+        ? "You've just read how to negotiate. Reading isn't practising."
+        : "You've just read how to handle the call. Reading isn't practising.",
+      body: bookTitle
+        ? `${book} is useful until your heart rate goes up. Rehearse a cold call, a negotiation, or a close against an AI counterpart — then use it when the deal is live.`
+        : "Rehearse a cold call, a negotiation, or a close against an AI counterpart — then use it when the deal is live.",
       cta: "Try a sales scenario →",
       href: site.realTalkPractise,
     };

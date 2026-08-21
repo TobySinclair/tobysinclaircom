@@ -5,7 +5,7 @@ slug: "book-summary-coaching-habit-by-michael-bungay-stanier"
 url: "https://www.tobysinclair.com/post/book-summary-coaching-habit-by-michael-bungay-stanier"
 type: post
 published: "2021-01-31T15:12:06.125Z"
-modified: "2025-08-04T16:50:25.274Z"
+modified: "2026-08-21T20:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_9540a6fc1a6b4500bfb032c65f41958f~mv2.jpg"
 readingTime: "9 min read"
 categories:
@@ -55,6 +55,8 @@ Given the simplicity, this book narrowly focuses on coaching skills [rather than
 As such the Coaching Habit book doesn't dig into the personal attributes required to be a great coach. For example [active listening](https://youtu.be/5m3rlahGxW0) or developing empathy.
 
 For managers looking for a simple, practical way to start coaching the [coaching habit book](https://amzn.to/2TNcrF2) is a perfect choice.
+
+The questions are the easy part. The conversations they sit inside are not. I wrote [the conversations nobody prepares new managers for](/post/new-manager-training-conversations).
 
 ## 💡 **Big Ideas Expanded**
 

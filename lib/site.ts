@@ -49,6 +49,7 @@ const CATEGORY_LABELS: Record<string, string> = {
   "personal-productivity": "Personal Productivity",
   "product-management": "Product Management",
   "real-talk-studio": "Real Talk Studio",
+  roleplay: "Roleplay",
   "self-care": "Self-Care",
 };
 

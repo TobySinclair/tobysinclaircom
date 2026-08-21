@@ -5,7 +5,7 @@ slug: "multipliers-book-summary"
 url: "https://www.tobysinclair.com/post/multipliers-book-summary"
 type: post
 published: "2022-05-16T08:55:13.841Z"
-modified: "2024-07-16T14:40:27.469Z"
+modified: "2026-08-21T20:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_3b53639e1c134486934f5798efbcf887~mv2.jpg"
 readingTime: "5 min read"
 categories:
@@ -59,6 +59,8 @@ Here are a couple of insights that are leading me to become more of a Multiplier
 This is a hugely credible and well-researched book, jam-packed with rich case examples of Multiplier and Diminisher Leaders and their impact on individuals and organisations. Each chapter is clearly summarised and the tools and experiments draw you towards application – this is a fantastically motivating, practical and action-orientated book that I will refer back to time and again. As Stephen Covey says in his preface “Don’t just read this book; pay the price to really become a Multiplier”.
 
 [**Buy Multipliers on Amazon**](https://amzn.to/3wnpOv2)
+
+The book is about drawing intelligence out of people. New managers still have to have the conversations that make that possible. I wrote [the conversations nobody prepares first-time managers for](/post/new-manager-training-conversations).
 
 ## **📹 Prefer Video?**
 

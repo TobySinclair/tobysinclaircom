@@ -5,7 +5,7 @@ slug: "the-ultimate-guide-to-ai-sales-roleplay-mastering-the-art-of-the-deal-in-
 url: "https://www.tobysinclair.com/post/the-ultimate-guide-to-ai-sales-roleplay-mastering-the-art-of-the-deal-in-the-digital-age"
 type: post
 published: "2025-12-02T13:45:52.726Z"
-modified: "2025-12-02T13:45:52.726Z"
+modified: "2026-08-21T20:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_5dbff8fa9999491e9902484e8d104b8e~mv2.jpeg"
 readingTime: "11 min read"
 categories:
@@ -258,6 +258,8 @@ AI sales roleplay democratizes mastery. It gives every rep, from the intern to t
 Whether you are looking to fix a specific funnel leak or overhaul your entire onboarding process, the technology is ready. Platforms like [Real Talk Studio](https://www.realtalkstudio.com/) offer the fidelity required to make this training stick. In a market where buyers are smarter and budgets are tighter, the best-prepared team wins.
 
 Stop practicing on your customers. Start practicing with AI.
+
+Worked drills you can run this week: [sales role play scenarios that actually prepare reps](/post/sales-role-play-scenarios). Honest category guide: [AI roleplay training](/post/ai-roleplay-training).
 
 ## **Key Takeaways Checklist**
 
