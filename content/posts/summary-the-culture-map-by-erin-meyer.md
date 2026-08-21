@@ -5,7 +5,8 @@ slug: "summary-the-culture-map-by-erin-meyer"
 url: "https://www.tobysinclair.com/post/summary-the-culture-map-by-erin-meyer"
 type: post
 published: "2026-08-17T09:00:00.000Z"
-modified: "2026-08-21T18:40:00.000Z"
+modified: "2026-08-21T20:20:00.000Z"
+image: "/book-covers/the-culture-map.jpg"
 readingTime: "6 min read"
 categories:
   - book-summaries

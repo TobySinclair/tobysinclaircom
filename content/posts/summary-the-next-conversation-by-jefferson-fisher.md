@@ -5,7 +5,8 @@ slug: "summary-the-next-conversation-by-jefferson-fisher"
 url: "https://www.tobysinclair.com/post/summary-the-next-conversation-by-jefferson-fisher"
 type: post
 published: "2026-08-21T09:00:00.000Z"
-modified: "2026-08-21T18:40:00.000Z"
+modified: "2026-08-21T20:20:00.000Z"
+image: "/book-covers/the-next-conversation.jpg"
 readingTime: "7 min read"
 categories:
   - book-summaries

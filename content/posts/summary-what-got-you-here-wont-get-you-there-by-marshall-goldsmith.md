@@ -5,7 +5,8 @@ slug: "summary-what-got-you-here-wont-get-you-there-by-marshall-goldsmith"
 url: "https://www.tobysinclair.com/post/summary-what-got-you-here-wont-get-you-there-by-marshall-goldsmith"
 type: post
 published: "2026-08-13T09:00:00.000Z"
-modified: "2026-08-21T18:40:00.000Z"
+modified: "2026-08-21T20:20:00.000Z"
+image: "/book-covers/what-got-you-here.jpg"
 readingTime: "7 min read"
 categories:
   - book-summaries

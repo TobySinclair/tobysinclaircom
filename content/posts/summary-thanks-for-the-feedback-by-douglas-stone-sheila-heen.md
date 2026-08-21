@@ -5,7 +5,8 @@ slug: "summary-thanks-for-the-feedback-by-douglas-stone-sheila-heen"
 url: "https://www.tobysinclair.com/post/summary-thanks-for-the-feedback-by-douglas-stone-sheila-heen"
 type: post
 published: "2026-08-19T09:00:00.000Z"
-modified: "2026-08-21T18:40:00.000Z"
+modified: "2026-08-21T20:20:00.000Z"
+image: "/book-covers/thanks-for-the-feedback.jpg"
 readingTime: "6 min read"
 categories:
   - book-summaries

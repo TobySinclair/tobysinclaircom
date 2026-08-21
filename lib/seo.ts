@@ -86,7 +86,7 @@ export function blogPostingJsonLd(post: Post) {
     image: isRtsPost(post)
       ? [absoluteUrl(rtsCoverImagePath(post.slug))]
       : post.image
-        ? [post.image]
+        ? [absoluteUrl(post.image)]
         : [absoluteUrl(rtsCoverImagePath(post.slug))],
     datePublished: post.published,
     dateModified: post.modified || post.published,
@@ -114,7 +114,7 @@ export function bookReviewJsonLd(post: Post) {
       ...(book.author ? { author: { "@type": "Person", name: book.author } } : {}),
       ...(book.isbn ? { isbn: book.isbn } : {}),
       ...(book.sameAs.length ? { sameAs: book.sameAs } : {}),
-      ...(post.image ? { image: post.image } : {}),
+      ...(post.image ? { image: absoluteUrl(post.image) } : {}),
     },
   ];
   if (book.rating != null) {

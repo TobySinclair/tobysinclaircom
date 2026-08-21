@@ -5,7 +5,8 @@ slug: "summary-nonviolent-communication-by-marshall-rosenberg"
 url: "https://www.tobysinclair.com/post/summary-nonviolent-communication-by-marshall-rosenberg"
 type: post
 published: "2026-08-20T09:00:00.000Z"
-modified: "2026-08-21T18:40:00.000Z"
+modified: "2026-08-21T20:20:00.000Z"
+image: "/book-covers/nonviolent-communication.jpg"
 readingTime: "6 min read"
 categories:
   - book-summaries
