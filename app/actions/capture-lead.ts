@@ -16,7 +16,7 @@ export async function captureCheatSheetLead(formData: FormData): Promise<LeadRes
     return { ok: false, error: "Enter a valid work email." };
   }
 
-  const webhook = process.env.LEAD_WEBHOOK_URL;
+  const webhook = process.env.LEAD_WEBHOOK_URL; // ConvertKit / Beehiiv / Zapier / Make
   if (webhook) {
     const response = await fetch(webhook, {
       method: "POST",
