@@ -118,7 +118,7 @@ export default function Home() {
       <section className="relative overflow-hidden">
         <div className="pointer-events-none absolute -right-24 top-0 h-[480px] w-[480px] glow-cyan opacity-80" />
         <div className="pointer-events-none absolute -left-16 bottom-0 h-[360px] w-[360px] glow-green opacity-60" />
-        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-8 px-5 py-16 md:grid-cols-2 md:gap-12 md:py-24">
+        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-8 px-5 py-16 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] md:gap-14 md:py-24">
           <HeroVideo />
           <div>
             <p className="eyebrow">

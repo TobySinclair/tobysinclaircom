@@ -8,7 +8,7 @@ export const site = {
   realTalk: "https://www.realtalkstudio.com/",
   realTalkPractise: "https://www.realtalkstudio.com/",
   talkWithTobyEmbed:
-    "https://www.realtalkstudio.com/coach/toby-sinclair?studioId=1ec01f58-b431-44b7-bf39-4c2e279a41c4&autostart=1",
+    "https://www.realtalkstudio.com/coach/toby-sinclair?studioId=1ec01f58-b431-44b7-bf39-4c2e279a41c4&autostart=1&branding=false",
   calendly: "https://calendly.com/toby-sinclair/discovery",
   seo: {
     homeTitle: "Toby Sinclair | The Human Side of AI",

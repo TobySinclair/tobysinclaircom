@@ -3,13 +3,13 @@ import Link from "next/link";
 
 export function HeroVideo() {
   return (
-    <div className="relative mx-auto aspect-[608/336] w-full overflow-hidden rounded-3xl border border-white/10 bg-black shadow-[0_0_80px_rgba(0,255,136,0.08)]">
+    <div className="relative mx-auto aspect-[4/5] w-full max-w-[200px] overflow-hidden rounded-3xl border border-white/10 bg-black shadow-[0_0_80px_rgba(0,255,136,0.08)] md:mx-0 md:max-w-[280px]">
       <Image
         src="/speak-to-toby.jpg"
         alt="Toby Sinclair in a live conversation"
         fill
         priority
-        sizes="(min-width: 768px) 50vw, 100vw"
+        sizes="(min-width: 768px) 280px, 200px"
         className="object-cover object-center"
       />
       <video
@@ -25,8 +25,8 @@ export function HeroVideo() {
         <source src="/speak-to-toby.mp4" type="video/mp4" />
       </video>
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 flex justify-center p-4 md:p-5">
-        <Link href="/talk-with-toby" className="btn-primary shadow-[0_8px_32px_rgba(0,255,136,0.28)]">
+      <div className="absolute inset-x-0 bottom-0 flex justify-center p-3 md:p-4">
+        <Link href="/talk-with-toby" className="btn-primary !px-4 !py-2.5 text-sm shadow-[0_8px_32px_rgba(0,255,136,0.28)]">
           Speak to Toby
         </Link>
       </div>
