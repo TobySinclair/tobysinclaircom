@@ -23,6 +23,9 @@ export function SiteFooter() {
           <Link href="/work-with-me" className="hover:text-white">
             Work with me
           </Link>
+          <Link href="/talk-with-toby" className="hover:text-white">
+            Talk with Toby
+          </Link>
           <Link href="/blog" className="hover:text-white">
             Articles
           </Link>

@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: site.url, changeFrequency: "weekly", priority: 1 },
     { url: `${site.url}/about`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${site.url}/work-with-me`, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${site.url}/talk-with-toby`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${site.url}/blog`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${site.url}/book-summaries`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${site.url}/never-split-the-difference-cheat-sheet`, changeFrequency: "monthly", priority: 0.7 },

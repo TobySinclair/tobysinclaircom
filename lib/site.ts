@@ -7,6 +7,8 @@ export const site = {
   author: "Toby Sinclair",
   realTalk: "https://www.realtalkstudio.com/",
   realTalkPractise: "https://www.realtalkstudio.com/",
+  talkWithTobyEmbed:
+    "https://www.realtalkstudio.com/coach/toby-sinclair?studioId=1ec01f58-b431-44b7-bf39-4c2e279a41c4&autostart=1",
   calendly: "https://calendly.com/toby-sinclair/discovery",
   seo: {
     homeTitle: "Toby Sinclair | The Human Side of AI",
@@ -20,6 +22,9 @@ export const site = {
     workTitle: "Work With Me",
     workDescription:
       "I work with enterprises on the human side of AI — training teams, coaching leaders, and building the practice habits that make change stick. Book a 30-minute discovery call.",
+    talkTitle: "Talk with Toby",
+    talkDescription:
+      "Have a live conversation with an AI simulation of Toby Sinclair. Practise a hard conversation before you have it for real.",
     blogTitle: "Coaching Blog",
     blogDescription:
       "Essays, book summaries and practical notes on coaching, leadership, and the conversations that shape teams.",

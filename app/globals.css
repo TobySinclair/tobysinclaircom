@@ -33,6 +33,10 @@ body {
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
+body:has([data-page="talk-with-toby"]) footer {
+  display: none;
+}
+
 a {
   color: inherit;
 }

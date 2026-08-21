@@ -96,6 +96,7 @@ Toby Sinclair is an ICF Professional Certified Coach and founder of Real Talk St
 
 ${link("Home", "/", "Author homepage: enterprise AI enablement, coaching, and Real Talk Studio")}
 ${link("Work with me", "/work-with-me", "AI enablement training, coaching through AI change, and Real Talk Studio")}
+${link("Talk with Toby", "/talk-with-toby", "Live AI conversation with Toby Sinclair on Real Talk Studio")}
 ${link("Never Split the Difference cheat sheet", "/never-split-the-difference-cheat-sheet", "Free printable PDF: labels, mirrors, calibrated questions")}
 ${link("About", "/about", "Biography and professional background")}
 ${link("Articles", "/blog", "Index of all essays and articles")}
