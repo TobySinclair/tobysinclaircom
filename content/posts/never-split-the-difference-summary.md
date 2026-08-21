@@ -1,11 +1,11 @@
 ---
 title: "Never Split the Difference Summary By Chris Voss"
-description: "Don't compromise. It is a bad outcome of a negotiation. Compromise generally leads to a win-lose. You should aim for a win-win."
+description: "Never Split the Difference summary: Chris Voss's negotiation techniques — mirrors, labels, calibrated questions — plus a free cheat sheet PDF. Don't compromise. Aim for a win-win. Toby's rating: 10/10."
 slug: "never-split-the-difference-summary"
 url: "https://www.tobysinclair.com/post/never-split-the-difference-summary"
 type: post
 published: "2022-07-10T15:29:11.660Z"
-modified: "2025-09-01T20:08:31.846Z"
+modified: "2026-08-21T19:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_3e7f2362fb504113bee1f949d04bd4aa~mv2.jpg"
 readingTime: "5 min read"
 categories:
@@ -80,11 +80,9 @@ Active Listening, Asking Open Questions, Showing Empathy, Summarising.
 
 The good news is that implementing the ideas from Never Split The Difference got a little easier.
 
-This [Never Split The Difference cheat sheet pdf](https://www.slideshare.net/YanDavidErlich/never-split-the-difference-cheatsheet) has all of the techniques.
+I wrote a [Never Split the Difference cheat sheet PDF](/never-split-the-difference-cheat-sheet) with the techniques I actually use: labels, mirrors, calibrated questions, and the accusation audit.
 
-It will help you stop comprising and start influencing today.
-
-![never split the difference pdf cheat sheet](https://static.wixstatic.com/media/67d4e8_18a4ae63c2a24c34831a807bec45878f~mv2.jpeg)
+It will help you stop compromising and start influencing today.
 
 [**📚 Buy Never Split the Difference on Amazon**](https://amzn.to/3asXK2A)
 

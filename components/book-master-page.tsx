@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { BookCoverGrid, toBookSummaryCard } from "@/components/book-cover-grid";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { ConversionCta } from "@/components/conversion-cta";
 import { JsonLd } from "@/components/json-ld";
 import type { BookMaster } from "@/lib/book-masters";
+import { conversionIntentFor, conversionOfferFor } from "@/lib/conversion";
 import { getAllPosts, type Post } from "@/lib/content";
 import { breadcrumbJsonLd, collectionJsonLd } from "@/lib/seo";
 
@@ -17,6 +19,8 @@ export function BookMasterPage({ master }: { master: BookMaster }) {
     [...new Set([...master.startHere, ...master.sections.flatMap((section) => section.slugs)])],
     all,
   );
+  const intent = conversionIntentFor({ slug: master.slug, title: master.title });
+  const offer = intent ? conversionOfferFor(intent) : null;
 
   return (
     <div className="mx-auto w-full max-w-6xl px-5 py-16">
@@ -84,6 +88,12 @@ export function BookMasterPage({ master }: { master: BookMaster }) {
             ))}
           </ul>
         </section>
+      ) : null}
+
+      {offer ? (
+        <div className="mt-16">
+          <ConversionCta offer={offer} />
+        </div>
       ) : null}
 
       <p className="mt-16 text-sm text-ink-muted">

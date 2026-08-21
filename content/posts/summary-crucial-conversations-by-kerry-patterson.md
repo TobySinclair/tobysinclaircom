@@ -1,11 +1,11 @@
 ---
 title: "Summary: Crucial Conversations by Kerry Patterson"
-description: "This is the only conversation book you need to read. It's a bestselling classic. I'm fascinated and fear these high stake conversations. Kerry Patterson et al. provide a playbook to help you stop avoiding the conversations you fear the most. I use the techniques from this book almost daily. Becoming better at conversations has a direct impact on how fast you'll advance your career."
+description: "Crucial Conversations summary: Kerry Patterson's playbook for high-stakes talks — how to stop avoiding the conversation, make it safe, and say the thing that actually changes the outcome. Toby's rating: 9/10."
 slug: "summary-crucial-conversations-by-kerry-patterson"
 url: "https://www.tobysinclair.com/post/summary-crucial-conversations-by-kerry-patterson"
 type: post
 published: "2024-05-02T14:31:36.720Z"
-modified: "2024-07-16T08:53:33.776Z"
+modified: "2026-08-21T19:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_fdf83893b6184cf18cff3d91fe9b2105~mv2.jpg"
 readingTime: "4 min read"
 categories:

@@ -1,11 +1,11 @@
 ---
-title: "How To Use Johari Window To Build Self-Awareness"
-description: "The Johari Window improves self-awareness and mutual understanding between individuals within a group. It is particularly helpful for leaders who want to understand how people perceive them."
+title: "Johari Window: How to Use the Model to Build Self-Awareness"
+description: "Johari Window explained for leaders: the four quadrants, a worked example, an adjectives list, and an email template so you can run the exercise with your team this week."
 slug: "how-to-use-johari-window-to-build-self-awareness"
 url: "https://www.tobysinclair.com/post/how-to-use-johari-window-to-build-self-awareness"
 type: post
 published: "2021-07-03T11:29:18.527Z"
-modified: "2025-08-04T16:33:29.619Z"
+modified: "2026-08-21T19:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_0d27660a39244898858c56299b69d57b~mv2.png"
 readingTime: "7 min read"
 categories:
@@ -18,22 +18,16 @@ categories:
 
 Benjamin Franklin, 1750
 
-Johari Window is one of my favourite models to help leaders build self-awareness.
+The Johari Window is still the cleanest way I know to show a leader the gap between how they see themselves and how the room sees them. I use it in coaching and leadership programmes when a manager is stuck — usually because the feedback they need is sitting in a blind spot.
 
-This guide explores:
+This guide covers:
 
-- [What is the Johari Window Model?](#viewer-26k1p)
-- [Why use the Johari Window Model?](#viewer-drpoe)
-- [How does the Johari Window work?](#viewer-9mf74)
-- [What are the four quadrants of the Johari Window?](#viewer-8ur88)
-- [Johari Window Examples](#viewer-rgre)
-- [Johari Window Email Template](#viewer-diff9)
-
-Practice Johari Window with AI Avatars
-
-In this conversation, I practice giving feedback to a team member who is unaware of their tendency to dominate team meetings.
-
-Practice this exact scenario for free: <https://www.realtalkstudio.com/>
+- [What is the Johari Window Model?](#what-is-the-johari-window-model)
+- [Why use the Johari Window Model?](#why-use-the-johari-window-model)
+- [How does the Johari Window work?](#how-does-the-johari-window-model-work)
+- [What are the four quadrants of the Johari Window?](#what-are-the-four-quadrants-of-the-johari-window)
+- [Johari Window examples](#johari-window-examples)
+- [Johari Window email template](#johari-window-template)
 
 ### **What is the Johari Window Model?**
 

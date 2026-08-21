@@ -1,11 +1,11 @@
 ---
-title: "50+ Coaching Tools For Leaders"
-description: "Helping leaders confidently navigate people development, with coaching tools, that transform dull conversations into engaging journeys of discovery."
+title: "Coaching Tools for Managers and Leaders"
+description: "50+ coaching tools for managers, leadership coaching, and executive coaching — practical exercises for 1:1s, conflict, goal setting, and change. Used with real teams, not classroom theory."
 slug: "coaching-tools"
 url: "https://www.tobysinclair.com/post/coaching-tools"
 type: post
 published: "2021-07-06T15:21:13.148Z"
-modified: "2022-02-28T11:27:07.075Z"
+modified: "2026-08-21T19:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_a598b8eaf7f64ae69962ad20e33d95b9~mv2.png"
 readingTime: "12 min read"
 categories:
@@ -14,7 +14,7 @@ categories:
   - team-coaching
 ---
 
-**Helping leaders confidently develop people, with coaching tools, that enable incredible results.**
+**Coaching tools for managers and leaders — including executive coaching tools I actually use in 1:1s.**
 
 ![Coaching tools for leaders](https://static.wixstatic.com/media/67d4e8_a598b8eaf7f64ae69962ad20e33d95b9~mv2.png)
 

@@ -3,11 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BookSummaryArticle } from "@/components/book-summary-article";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { ConversionCta } from "@/components/conversion-cta";
 import { CoverImage } from "@/components/cover-image";
 import { JsonLd } from "@/components/json-ld";
 import { MarkdownBody } from "@/components/markdown-body";
 import { RtsCover } from "@/components/rts-cover";
-import { RtsCta } from "@/components/rts-cta";
+import { conversionIntentForPost, conversionOfferFor } from "@/lib/conversion";
 import { getAllPosts, getPost, relatedBookSummaries, relatedPosts } from "@/lib/content";
 import { isRtsPost } from "@/lib/rts-cover";
 import { blogPostingJsonLd, bookFaqJsonLd, bookReviewJsonLd, breadcrumbJsonLd, postMetadata } from "@/lib/seo";
@@ -37,6 +38,8 @@ export default async function PostPage({ params }: Props) {
   const primaryCategory = post.categories[0];
   const crumbTitle = post.book?.bookTitle || post.title;
   const faq = bookFaqJsonLd(post);
+  const intent = conversionIntentForPost(post);
+  const offer = intent ? conversionOfferFor(intent, post.book?.bookTitle) : null;
 
   return (
     <article className="mx-auto w-full max-w-3xl px-5 py-16">
@@ -122,9 +125,11 @@ export default async function PostPage({ params }: Props) {
           ) : null}
         </>
       )}
-      <div className="mt-16">
-        <RtsCta />
-      </div>
+      {!isSummary && offer ? (
+        <div className="mt-16">
+          <ConversionCta offer={offer} />
+        </div>
+      ) : null}
     </article>
   );
 }
