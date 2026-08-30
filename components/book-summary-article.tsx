@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BigIdeas } from "@/components/big-ideas";
 import { ConversionCta } from "@/components/conversion-cta";
 import { CoverImage } from "@/components/cover-image";
 import { MarkdownBody } from "@/components/markdown-body";
@@ -9,6 +10,8 @@ import {
   bookSummaryHeadline,
   bookSummaryHeadings,
   bookSummaryVerdict,
+  headingId,
+  layoutBookSummary,
 } from "@/lib/book-summary";
 import type { Post } from "@/lib/content";
 import { cheatSheetOffer, conversionIntentForPost, conversionOfferFor } from "@/lib/conversion";
@@ -36,7 +39,11 @@ export function BookSummaryArticle({
 }) {
   const book = post.book;
   if (!book) return null;
-  const headings = bookSummaryHeadings(post.body);
+  const { ideas, ideasIntro, commentary } = layoutBookSummary(post.body);
+  const headings = [
+    ...(ideas?.length ? [{ id: headingId("3 big ideas"), label: "3 big ideas" }] : []),
+    ...bookSummaryHeadings(commentary),
+  ];
   const verdict = bookSummaryVerdict(book, post.description);
   const faqs = bookSummaryFaqs(book, post.description);
   const hubs = hubsForPost(post);
@@ -99,6 +106,20 @@ export function BookSummaryArticle({
         </div>
       </section>
 
+      {ideas?.length ? (
+        <section id={headingId("3 big ideas")} className="mt-8" aria-labelledby="book-summary-ideas-heading">
+          <h2 id="book-summary-ideas-heading" className="text-xl font-bold tracking-tight">
+            3 big ideas
+          </h2>
+          {ideasIntro ? (
+            <div className="mt-3">
+              <MarkdownBody content={ideasIntro} skipIdeas />
+            </div>
+          ) : null}
+          <BigIdeas ideas={ideas} />
+        </section>
+      ) : null}
+
       {post.image ? (
         <CoverImage
           src={post.image}
@@ -130,7 +151,7 @@ export function BookSummaryArticle({
       </p>
 
       <div className="mt-8">
-        <MarkdownBody content={post.body} />
+        <MarkdownBody content={commentary} skipIdeas />
       </div>
 
       {offer ? (

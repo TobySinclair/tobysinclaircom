@@ -56,9 +56,165 @@ function unwrapViewerLinks(text: string) {
 }
 
 function splitTitleBody(text: string): BigIdea {
-  const match = text.match(/^\*\*(.+?)\*\*\s*[:–—-]\s+([\s\S]+)$/)
+  let match = text.match(/^\*\*(.+?)\*\*\s*[:–—-]\s+([\s\S]+)$/)
+  if (match) return { title: match[1].trim(), body: match[2].trim() }
+  match = text.match(/^\*\*(.+?)\s*[:–—-]\*\*\s+([\s\S]+)$/)
   if (match) return { title: match[1].trim(), body: match[2].trim() }
   return { title: null, body: text.trim() }
+}
+
+function stripMarkdown(text: string) {
+  return text
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+    .replace(/[*_~`]/g, "")
+    .replace(/[\u200B-\u200D\uFEFF]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+}
+
+function splitSentences(text: string) {
+  const clean = stripMarkdown(text)
+  const parts = clean.match(/[^.!?]+[.!?]+(?:["”'])?|[^.!?]+$/g) || []
+  return parts.map((part) => part.trim()).filter((part) => part.length > 12)
+}
+
+function looksLikeClaim(title: string) {
+  const text = title.trim()
+  if (!text) return false
+  if (/[.!?]$/.test(text)) return true
+  if (/^to\s+[a-z]/i.test(text) && text.split(/\s+/).length >= 4) return true
+  if (
+    /\b(is|are|isn't|aren't|was|were|means|beats|trumps|need|needs|must|can't|won't|don't|doesn't|should|or you)\b/i.test(
+      text,
+    )
+  ) {
+    return true
+  }
+  if (/^(don't|never|always|stop)\b/i.test(text) && text.split(/\s+/).length >= 6) return true
+  if (/\b(until|unless|without|instead of|rather than|not just|before you|or it will)\b/i.test(text)) return true
+  return false
+}
+
+function isThemeTitle(title: string) {
+  const text = title.trim()
+  if (!text) return true
+  if (looksLikeClaim(text)) return false
+  if (
+    /^(the power of|the role of|the importance of|understanding |practical |overview of|five (?:levels|ideals|laws|ps)|the art of|the dangers of)\b/i.test(
+      text,
+    )
+  ) {
+    return true
+  }
+  if (/^[A-Z][a-zA-Z'’]+(?:\s+[A-Z][a-zA-Z'’]+)?\s+and\s+[A-Z][a-zA-Z'’]+(?:\s+[A-Z][a-zA-Z'’]+)?$/.test(text)) {
+    return true
+  }
+  const words = text.split(/\s+/)
+  return (
+    words.length >= 2 &&
+    words.length <= 6 &&
+    words.every((word) => /^[A-Z]/.test(word) || /^(and|of|the|a|an|for|in|to|your)$/i.test(word))
+  )
+}
+
+function isWeakClaim(claim: string) {
+  return /^(instead|however|alongside this|importantly|this layered|this dual|this means identifying|this framework|this mindset|this teaches|this act of|this serves|this is critical|this is |the importance of|it ranges|it demonstrates|his journey|her story|the person across|they have a face|coach pop|rather than leaving)\b/i.test(
+    claim,
+  )
+}
+
+function isGoodClaim(claim: string) {
+  const text = claim.trim()
+  if (text.length < 28 || text.length > 180) return false
+  if (isWeakClaim(text)) return false
+  if (/^[A-Z][\w'’.-]+(?:\s+[A-Z][\w'’.-]+){0,3}\s+(?:emphasises|emphasizes|explains|highlights|stresses|argues|shows|cautions|advises|introduces|suggests|encourages|advocates)\b/i.test(text)) {
+    return false
+  }
+  if (/emphasiz(?:es|es the importance)|emphasises the importance/i.test(text)) return false
+  return /\b(should|means|don't|isn't|aren't|not just|until|unless|build|pursue|listen|need|must|can't|won't|leaders?|instead of|rather than)\b/i.test(
+    text,
+  )
+}
+
+function dehodge(sentence: string) {
+  let next = sentence.trim()
+  next = next.replace(/^this is a reminder for (?:business )?leaders to\s+/i, "")
+  next = next.replace(/^this (?:is a reminder to|illustrates|highlights|underscores|shows|demonstrates)\s+(?:the importance of\s+)?/i, "")
+  next = next.replace(
+    /^(?:the book|this book) (?:highlights|underscores|emphasises|emphasizes|offers|explains|advocates|stresses|argues|shows)\s+(?:that\s+)?/i,
+    "",
+  )
+  next = next.replace(/^(?:one of )?(?:the book's|its) key insights is(?: that)?\s+/i, "")
+  next = next.replace(/^[A-Z][\w'’.-]+(?:\s+[A-Z][\w'’.-]+){0,4}\s+(?:emphasises|emphasizes|explains|highlights|stresses|argues|shows|cautions|advises) that\s+/i, "")
+  if (next) next = next.charAt(0).toUpperCase() + next.slice(1)
+  return next.replace(/\s+/g, " ").trim()
+}
+
+function pickClaimSentence(body: string) {
+  const sentences = splitSentences(body)
+  if (!sentences.length) return null
+
+  const ranked = sentences.map((sentence, index) => {
+    let score = 0
+    if (/\b(should|means|don't|isn't|aren't|instead|rather than|not just|until|unless)\b/i.test(sentence)) {
+      score += 3
+    }
+    if (/\b(leaders?|managers?|you|your team)\b/i.test(sentence)) score += 2
+    if (/^(this is a reminder|the book |this book |one of )/i.test(sentence)) score += 1
+    if (index === sentences.length - 1) score += 1
+    if (sentence.length > 240) score -= 1
+    if (/^(instead|however|alongside|importantly|jonathan|the main character|in this book|when i |i was |his journey|her story)/i.test(sentence)) {
+      score -= 3
+    }
+    return { sentence, score, index }
+  })
+
+  ranked.sort((a, b) => b.score - a.score || a.index - b.index)
+  const best = ranked.find((item) => !isWeakClaim(dehodge(item.sentence))) ?? ranked[0]
+  if (!best) return null
+  const claim = dehodge(best.sentence)
+  if (isWeakClaim(claim)) return null
+  if (best.score >= 2 || sentences.length === 1) return claim
+  const last = dehodge(sentences[sentences.length - 1])
+  return isWeakClaim(last) ? claim : last
+}
+
+function stripFirstSentence(text: string) {
+  const match = text.match(/^(.+?[.!?])(?:\s+|$)([\s\S]*)$/)
+  if (!match) return ""
+  return match[2].trim()
+}
+
+export function ideaAsClaim(idea: BigIdea): BigIdea {
+  const title = idea.title ? stripMarkdown(idea.title).replace(/^[-*]\s+/, "") : ""
+
+  if (!title) {
+    const first = splitSentences(idea.body)[0]
+    if (!first) return idea
+    return {
+      title: dehodge(first).replace(/^[-*]\s+/, ""),
+      body: stripFirstSentence(idea.body),
+    }
+  }
+
+  if (!isThemeTitle(title)) {
+    return { title, body: idea.body }
+  }
+
+  const claim = pickClaimSentence(idea.body)
+  if (
+    claim &&
+    isGoodClaim(claim) &&
+    claim.toLowerCase() !== title.toLowerCase()
+  ) {
+    return { title: claim.replace(/^[-*]\s+/, ""), body: idea.body }
+  }
+
+  return { title, body: idea.body }
+}
+
+export function ideasAsClaims(ideas: BigIdea[]) {
+  return ideas.map(ideaAsClaim)
 }
 
 export function parseIdeaItem(raw: string): BigIdea {

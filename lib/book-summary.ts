@@ -1,3 +1,5 @@
+import { ideasAsClaims, splitBigIdeas, type BigIdea } from "./big-ideas";
+
 export type BookSummary = {
   bookTitle: string
   author: string | null
@@ -204,9 +206,135 @@ export function bookSummaryHeadings(body: string) {
   for (const match of body.matchAll(/^##\s+(.+)$/gm)) {
     const label = match[1].replace(/\*\*/g, "").trim();
     if (/prefer video/i.test(label)) continue;
+    if (/\bbig ideas\b/i.test(label) && !/expanded/i.test(label)) continue;
     headings.push({ id: headingId(label), label });
   }
   return headings;
+}
+
+type MarkdownSection = {
+  heading: string | null
+  content: string
+  from: "before" | "after" | "body"
+};
+
+function splitMarkdownSections(markdown: string, from: MarkdownSection["from"]): MarkdownSection[] {
+  const text = markdown.trim();
+  if (!text) return [];
+
+  const matches = [...text.matchAll(/^##[ \t]+.+$/gm)];
+  if (!matches.length) return [{ heading: null, content: text, from }];
+
+  const sections: MarkdownSection[] = [];
+  const firstIndex = matches[0].index ?? 0;
+  if (firstIndex > 0) {
+    const preamble = text.slice(0, firstIndex).trim();
+    if (preamble) sections.push({ heading: null, content: preamble, from });
+  }
+
+  for (let index = 0; index < matches.length; index += 1) {
+    const headingLine = matches[index][0];
+    const start = (matches[index].index ?? 0) + headingLine.length;
+    const end = index + 1 < matches.length ? (matches[index + 1].index ?? text.length) : text.length;
+    sections.push({
+      heading: headingLine.replace(/^##\s*/, "").trim(),
+      content: text.slice(start, end).trim(),
+      from,
+    });
+  }
+
+  return sections;
+}
+
+function serializeSections(sections: MarkdownSection[]) {
+  return sections
+    .map((section) => {
+      if (section.heading) {
+        const body = section.content ? `\n\n${section.content}` : "";
+        return `## ${section.heading}${body}`;
+      }
+      return section.content;
+    })
+    .filter(Boolean)
+    .join("\n\n")
+    .trim();
+}
+
+function isTakeawayHeading(heading: string | null) {
+  return Boolean(heading && /takeaway/i.test(heading));
+}
+
+function isShouldReadHeading(heading: string | null) {
+  return Boolean(heading && /should you read/i.test(heading));
+}
+
+function isQuotesHeading(heading: string | null) {
+  return Boolean(heading && /quotes|tweetable/i.test(heading));
+}
+
+function isCompactIdeasHeading(heading: string | null) {
+  return Boolean(heading && /\bbig ideas\b/i.test(heading) && !/expanded/i.test(heading));
+}
+
+function stripCompactIdeasHeading(before: string) {
+  const match = before.match(/^(##[^\n]*\bbig ideas\b[^\n]*)\n*/im);
+  if (!match || match.index == null) return { rest: before.trim(), intro: "" };
+  return {
+    rest: before.slice(0, match.index).trim(),
+    intro: before.slice(match.index + match[0].length).trim(),
+  };
+}
+
+function orderCommentary(sections: MarkdownSection[]) {
+  const takeaway: MarkdownSection[] = [];
+  const shouldRead: MarkdownSection[] = [];
+  const quotes: MarkdownSection[] = [];
+  const rest: MarkdownSection[] = [];
+
+  for (const section of sections) {
+    if (isCompactIdeasHeading(section.heading)) continue;
+    if (
+      isTakeawayHeading(section.heading) ||
+      (section.from === "before" && section.heading && !isShouldReadHeading(section.heading) && !isQuotesHeading(section.heading))
+    ) {
+      takeaway.push(section);
+    } else if (isShouldReadHeading(section.heading)) {
+      shouldRead.push(section);
+    } else if (isQuotesHeading(section.heading)) {
+      quotes.push(section);
+    } else {
+      rest.push(section);
+    }
+  }
+
+  return serializeSections([...takeaway, ...shouldRead, ...rest, ...quotes]);
+}
+
+export function layoutBookSummary(body: string): {
+  ideas: BigIdea[] | null
+  ideasIntro: string
+  commentary: string
+} {
+  const { before, ideas, after } = splitBigIdeas(body);
+  if (!ideas) {
+    return {
+      ideas: null,
+      ideasIntro: "",
+      commentary: orderCommentary(splitMarkdownSections(body, "body")),
+    };
+  }
+
+  const { rest, intro } = stripCompactIdeasHeading(before);
+  const sections = [
+    ...splitMarkdownSections(rest, "before"),
+    ...splitMarkdownSections(after, "after"),
+  ];
+
+  return {
+    ideas: ideasAsClaims(ideas),
+    ideasIntro: intro,
+    commentary: orderCommentary(sections),
+  };
 }
 
 export function bookSummaryPageTitle(book: BookSummary) {
