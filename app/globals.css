@@ -147,9 +147,50 @@ a {
   text-underline-offset: 3px;
 }
 
-.prose ul,
-.prose ol {
-  padding-left: 1.25rem;
+.prose > ul,
+.prose > ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+.prose > ul > li,
+.prose > ol > li {
+  position: relative;
+  padding-left: 1.35rem;
+}
+
+.prose > ul > li::before {
+  content: "";
+  position: absolute;
+  top: 0.72em;
+  left: 0.15rem;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 999px;
+  background: #00ff88;
+}
+
+.prose > ol {
+  counter-reset: prose-ol;
+}
+
+.prose > ol > li {
+  padding-left: 1.85rem;
+  counter-increment: prose-ol;
+}
+
+.prose > ol > li::before {
+  content: counter(prose-ol) ".";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  color: #00ff88;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.prose li::marker {
+  color: #00ff88;
 }
 
 .big-ideas {
@@ -228,11 +269,28 @@ a {
 }
 
 .idea-body ul {
-  list-style: disc;
+  list-style: none;
 }
 
 .idea-body ol {
-  list-style: decimal;
+  list-style: none;
+}
+
+.idea-body ul > li,
+.idea-body ol > li {
+  position: relative;
+  padding-left: 1.15rem;
+}
+
+.idea-body ul > li::before {
+  content: "";
+  position: absolute;
+  top: 0.7em;
+  left: 0.1rem;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 999px;
+  background: #00ff88;
 }
 
 .prose li + li {
@@ -256,6 +314,296 @@ a {
 
 .prose strong {
   color: #fafafa;
+}
+
+.prose .guide-panel,
+.prose .guide-quote,
+.prose .implement-callout {
+  margin-top: 2.1rem;
+  margin-bottom: 2.1rem;
+}
+
+.guide-quote,
+.guide-panel {
+  max-width: 42rem;
+}
+
+.article-toc {
+  max-width: 42rem;
+  margin-top: 1.75rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  background: #12121c;
+  padding: 1.35rem 1.4rem 1.2rem;
+}
+
+.article-toc h2 {
+  margin: 0 0 1rem;
+}
+
+.article-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.article-toc li {
+  margin: 0;
+}
+
+.article-toc a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding: 0.62rem 0.7rem;
+  border-radius: 0.85rem;
+  color: #f4f4f5;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+
+.article-toc a:hover {
+  background: rgba(0, 255, 136, 0.08);
+  color: #fff;
+}
+
+.article-toc-num {
+  flex-shrink: 0;
+  width: 1.6rem;
+  color: #00ff88;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+}
+
+.article-toc-label {
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.implement-callout {
+  border: 1px solid rgba(0, 255, 136, 0.28);
+  border-radius: 1.35rem;
+  background: rgba(0, 255, 136, 0.06);
+  padding: 1.2rem 1.3rem 1.25rem;
+}
+
+.implement-callout .eyebrow {
+  margin: 0;
+}
+
+.implement-callout-body {
+  margin-top: 0.55rem;
+  color: #e4e4e7;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.implement-callout-body p {
+  margin: 0;
+}
+
+.guide-quote {
+  margin: 2.1rem 0;
+  border-left: 3px solid #00ff88;
+  padding: 0.2rem 0 0.2rem 1.25rem;
+}
+
+.guide-quote blockquote,
+.prose .guide-quote blockquote {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  color: #fafafa;
+  font-size: 1.45rem;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.35;
+}
+
+.guide-panel {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  background: #12121c;
+  padding: 1.3rem 1.35rem 1.2rem;
+}
+
+.prose .guide-panel h3,
+.guide-panel h3 {
+  margin: 0.4rem 0 1.1rem;
+  color: #fafafa;
+  font-size: 1.28rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.guide-panel figcaption {
+  margin-top: 1rem;
+  color: #a1a1aa;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.guide-plateau svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.guide-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.4rem;
+  margin-top: 0.7rem;
+  color: #a1a1aa;
+  font-size: 0.85rem;
+}
+
+.guide-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.guide-legend i {
+  display: block;
+  width: 1.1rem;
+  height: 3px;
+  border-radius: 99px;
+}
+
+.guide-zones,
+.guide-split {
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 700px) {
+  .guide-zones,
+  .guide-split {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .guide-split {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.guide-zones > div,
+.guide-split > div {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.1rem;
+  background: #0c0c14;
+  padding: 1rem 1.05rem 1.05rem;
+}
+
+.guide-zones > div.is-active,
+.guide-split > div.is-active {
+  border-color: rgba(0, 255, 136, 0.45);
+  background: rgba(0, 255, 136, 0.07);
+  box-shadow: inset 0 0 0 1px rgba(0, 255, 136, 0.12);
+}
+
+.guide-zones p,
+.guide-split p {
+  margin: 0;
+  color: #00ff88;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.guide-zones strong,
+.guide-split strong {
+  display: block;
+  margin-top: 0.45rem;
+  color: #fafafa;
+  font-size: 1.02rem;
+  line-height: 1.35;
+}
+
+.guide-zones span {
+  display: block;
+  margin-top: 0.4rem;
+  color: #a1a1aa;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.guide-split ul {
+  list-style: none;
+  margin: 0.7rem 0 0;
+  padding: 0;
+}
+
+.guide-split li {
+  position: relative;
+  margin-top: 0.4rem;
+  padding-left: 0.9rem;
+  color: #d4d4d8;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.guide-split li::before {
+  content: "";
+  position: absolute;
+  top: 0.55em;
+  left: 0;
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: #00ff88;
+}
+
+.guide-loop {
+  list-style: none;
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 700px) {
+  .guide-loop {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.guide-loop li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  background: #0c0c14;
+  padding: 0.85rem 1rem;
+  color: #f4f4f5;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.guide-loop span {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(0, 255, 136, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(0, 255, 136, 0.35);
+  color: #00ff88;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 @media print {

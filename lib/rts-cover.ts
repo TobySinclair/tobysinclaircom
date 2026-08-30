@@ -70,6 +70,11 @@ const covers: Record<string, Pick<RtsCoverCopy, "line1" | "line2" | "highlight">
     line2: "Real buyers aren't.",
     highlight: "aren't.",
   },
+  "deliberate-practice-for-leaders": {
+    line1: "They've been leading for years.",
+    line2: "They've never practised.",
+    highlight: "practised.",
+  },
   "redundancy-conversation-guide": {
     line1: "They still couldn't say it.",
     line2: "The word was redundant.",

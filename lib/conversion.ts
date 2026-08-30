@@ -31,6 +31,7 @@ const CONVERSATION_SLUGS = new Set([
   "difficult-conversation-scenarios-managers",
   "crucial-conversations-training",
   "redundancy-conversation-guide",
+  "deliberate-practice-for-leaders",
 ]);
 
 const WORKSHOP_SLUGS = new Set(["workshop-planning-template"]);

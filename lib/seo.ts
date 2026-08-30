@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { articleFaqsFor } from "@/lib/article-faqs";
 import { bookSummaryDescription, bookSummaryFaqs, bookSummaryPageTitle } from "@/lib/book-summary";
 import type { LandingPage, Post } from "@/lib/content";
 import { isRtsPost, rtsCoverImagePath } from "@/lib/rts-cover";
@@ -94,7 +95,12 @@ export function blogPostingJsonLd(post: Post) {
     publisher: { "@id": orgId },
     mainEntityOfPage: absoluteUrl(`/post/${post.slug}`),
     url: absoluteUrl(`/post/${post.slug}`),
-    keywords: post.categories.map(categoryLabel).join(", "),
+    keywords: [
+      ...post.categories.map(categoryLabel),
+      ...articleFaqsFor(post.slug).length
+        ? ["deliberate practice", "deliberate practice for leaders", "leadership development"]
+        : [],
+    ].join(", "),
     articleSection: post.categories[0] ? categoryLabel(post.categories[0]) : "Articles",
     inLanguage: "en-GB",
     isPartOf: { "@id": websiteId },
@@ -137,13 +143,12 @@ export function bookReviewJsonLd(post: Post) {
   return nodes;
 }
 
-export function bookFaqJsonLd(post: Post) {
-  const book = post.book;
-  if (!book) return null;
+function faqPageJsonLd(slug: string, faqs: { question: string; answer: string }[]) {
+  if (!faqs.length) return null;
   return {
     "@type": "FAQPage",
-    "@id": absoluteUrl(`/post/${post.slug}#faq`),
-    mainEntity: bookSummaryFaqs(book, post.description).map((item) => ({
+    "@id": absoluteUrl(`/post/${slug}#faq`),
+    mainEntity: faqs.map((item) => ({
       "@type": "Question",
       name: item.question,
       acceptedAnswer: {
@@ -152,6 +157,16 @@ export function bookFaqJsonLd(post: Post) {
       },
     })),
   };
+}
+
+export function bookFaqJsonLd(post: Post) {
+  const book = post.book;
+  if (!book) return null;
+  return faqPageJsonLd(post.slug, bookSummaryFaqs(book, post.description));
+}
+
+export function articleFaqJsonLd(post: Post) {
+  return faqPageJsonLd(post.slug, articleFaqsFor(post.slug));
 }
 
 export function collectionJsonLd(input: {

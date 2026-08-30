@@ -11,7 +11,7 @@ import { RtsCover } from "@/components/rts-cover";
 import { conversionIntentForPost, conversionOfferFor } from "@/lib/conversion";
 import { getAllPosts, getPost, relatedBookSummaries, relatedPosts } from "@/lib/content";
 import { isRtsPost } from "@/lib/rts-cover";
-import { blogPostingJsonLd, bookFaqJsonLd, bookReviewJsonLd, breadcrumbJsonLd, postMetadata } from "@/lib/seo";
+import { articleFaqJsonLd, blogPostingJsonLd, bookFaqJsonLd, bookReviewJsonLd, breadcrumbJsonLd, postMetadata } from "@/lib/seo";
 import { categoryLabel, formatDate } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -37,7 +37,7 @@ export default async function PostPage({ params }: Props) {
   const related = isSummary ? relatedBookSummaries(post) : relatedPosts(post);
   const primaryCategory = post.categories[0];
   const crumbTitle = post.book?.bookTitle || post.title;
-  const faq = bookFaqJsonLd(post);
+  const faq = bookFaqJsonLd(post) ?? articleFaqJsonLd(post);
   const intent = conversionIntentForPost(post);
   const offer = intent ? conversionOfferFor(intent, post.book?.bookTitle) : null;
 
