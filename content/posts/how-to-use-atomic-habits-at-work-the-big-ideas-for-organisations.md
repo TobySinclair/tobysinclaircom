@@ -31,9 +31,9 @@ You'll learn the key Atomic Habits principles and, from my experience, how to ap
 
 ## **🤖 Turn This Book Into Action**
 
-Despite reading this book, I still have a problem. I’m not converting the knowledge into action. To solve this problem, I’m turning to the solution everyone is looking for at the moment: artificial intelligence. I’ve developed a set of [AI tools to turn knowledge into action.](https://learn.tobysinclair.com/books)
+Despite reading this book, I still have a problem. I’m not converting the knowledge into action. To solve this problem, I’m turning to the solution everyone is looking for at the moment: artificial intelligence. I’ve developed a set of [AI tools to turn knowledge into action.](https://www.realtalkstudio.com/)
 
-[**🔒 Unlock More Free Learning Tools**](https://learn.tobysinclair.com/books)
+[**🔒 Unlock More Free Learning Tools**](https://www.realtalkstudio.com/)
 
 ## **The 7 Atomic Habits Principles**
 

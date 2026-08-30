@@ -152,6 +152,89 @@ a {
   padding-left: 1.25rem;
 }
 
+.big-ideas {
+  max-width: 42rem;
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.big-idea {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.25rem;
+  background: #0c0c14;
+  padding: 1.15rem 1.25rem;
+}
+
+.big-idea-number {
+  display: flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(0, 255, 136, 0.1);
+  box-shadow: inset 0 0 0 1px rgba(0, 255, 136, 0.35);
+  color: #00ff88;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.big-idea-title {
+  margin: 0;
+  color: #fafafa;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+
+.idea-body {
+  color: #d4d4d8;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.big-idea-title + .idea-body {
+  margin-top: 0.4rem;
+}
+
+.idea-body a {
+  color: #00ff88;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.idea-body strong {
+  color: #fafafa;
+}
+
+.idea-body p + p,
+.idea-body ul,
+.idea-body ol {
+  margin-top: 0.7em;
+}
+
+.idea-body ul,
+.idea-body ol {
+  padding-left: 1.15rem;
+}
+
+.idea-body ul {
+  list-style: disc;
+}
+
+.idea-body ol {
+  list-style: decimal;
+}
+
 .prose li + li {
   margin-top: 0.35em;
 }

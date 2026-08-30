@@ -16,7 +16,7 @@ In this guide, I will share exactly how you can leverage Artificial Intelligence
 
 I speak from experience. I have built a successful coaching business that incorporates AI Coaching. I built [TobySinclairAI](https://aicoach.network/), an AI clone of my coaching style.
 
-[💬 Chat with](https://ai.tobysinclair.com/tobyai) [TobySinclairAI](https://aicoach.network/) [now.](https://ai.tobysinclair.com/tobyai)
+[💬 Chat with](https://www.realtalkstudio.com/) [TobySinclairAI](https://aicoach.network/) [now.](https://www.realtalkstudio.com/)
 
 This AI future is not embraced by all professional coaches. Results from a 2023 survey completed by the International Coaching Federation found only 29% of coaches see AI as an asset to their business. You can stand out from the crowd and become an innovator.
 
@@ -122,7 +122,7 @@ It’s important as I have an event coming up soon that I’m hosting. This skil
 
 **Thank you for sharing that with me. It sounds like you're partway there, with some room to grow in feeling engaged. What do you feel is contributing to your sense of disengagement in these settings?**
 
-As skilled coaches will notice [TobySinclairAI](https://ai.tobysinclair.com/tobysinclairai) is based upon the GROW model. Although a foundational model, it’s surprising the value of a simple structured conversation with an AI coach can be.
+As skilled coaches will notice [TobySinclairAI](https://www.realtalkstudio.com/) is based upon the GROW model. Although a foundational model, it’s surprising the value of a simple structured conversation with an AI coach can be.
 
 [💬 Chat with TobySinclairAI now.](https://aicoach.network/)
 
@@ -156,7 +156,7 @@ AI chatbots provide dynamic role-play that allows clients to practice new skills
 
 ## **The AI Advantages for a Coaching Business**
 
-Implementing AI coaching into your business, demonstrated by tools like [TobySinclairAI](https://ai.tobysinclair.com/tobysinclairai), offers a strategic advantage in today’s competitive landscape. This technology not only enhances the quality and reach of your coaching services but also opens up new avenues for growth and innovation. Here’s how AI coaching can significantly expand your coaching business:
+Implementing AI coaching into your business, demonstrated by tools like [TobySinclairAI](https://www.realtalkstudio.com/), offers a strategic advantage in today’s competitive landscape. This technology not only enhances the quality and reach of your coaching services but also opens up new avenues for growth and innovation. Here’s how AI coaching can significantly expand your coaching business:
 
 **24/7, Global Market**
 
@@ -168,7 +168,7 @@ The novelty and efficiency of AI coaching are powerful lead magnets for potentia
 
 **New Monetization Opportunities**
 
-AI coaching opens up new monetization channels for your business. Beyond traditional one-on-one or group coaching sessions, you can offer subscription-based AI coaching services, premium AI coaching sessions, or personalized development plans powered by AI analytics. These services can cater to a diverse range of client needs and budgets, providing flexible options that enhance your business model. Furthermore, the scalability of AI allows you to serve more clients without a proportional increase in costs, enhancing your revenue potential. AI tools can also be integrated with payment platforms like Stripe. [TobySinclairAI](https://ai.tobysinclair.com/tobysinclairai) integrates with [Buymeacoffee.com](http://Buymeacoffee.com). At the end of the session, clients are asked to give a digital tip.
+AI coaching opens up new monetization channels for your business. Beyond traditional one-on-one or group coaching sessions, you can offer subscription-based AI coaching services, premium AI coaching sessions, or personalized development plans powered by AI analytics. These services can cater to a diverse range of client needs and budgets, providing flexible options that enhance your business model. Furthermore, the scalability of AI allows you to serve more clients without a proportional increase in costs, enhancing your revenue potential. AI tools can also be integrated with payment platforms like Stripe. [TobySinclairAI](https://www.realtalkstudio.com/) integrates with [Buymeacoffee.com](http://Buymeacoffee.com). At the end of the session, clients are asked to give a digital tip.
 
 **Reduce Burden on Chemistry Sessions**
 
@@ -228,7 +228,7 @@ Three fundamental steps of this approach:
 
 Many platforms and services are launching to help coaches on their AI journey. Many have a subscription model that gives you access to coach your clients using the platform. Coachvox is a platform that enables you to create a coaching clone in minutes. The downside to these hosted solutions is price. At $99 a month, few coaches are likely to make this investment for their business.
 
-Another approach is to use an [AI Coach Builder service](https://tobysinclair.gumroad.com/l/yfojic?_gl=1*ivrljj*_ga*NzY5NDk0Nzk4LjE3MDg1MTY1NTk.*_ga_6LJN6D94N6*MTcxMDI0Mjg3NC4yMS4xLjE3MTAyNDI4ODEuMC4wLjA). Think of this like a website designer. Instead of creating a website, the designer will build your AI tool. This is something I offer to coaches, to develop a clone of their coaching approach. Similar to [TobySinclairAI](https://ai.tobysinclair.com/tobysinclairai). I train the AI coach based on your guidelines, test the model, and then deploy this so it’s accessible to your clients from your website. This is all done at a fraction of the cost of a hosted solution.
+Another approach is to use an [AI Coach Builder service](https://tobysinclair.gumroad.com/l/yfojic?_gl=1*ivrljj*_ga*NzY5NDk0Nzk4LjE3MDg1MTY1NTk.*_ga_6LJN6D94N6*MTcxMDI0Mjg3NC4yMS4xLjE3MTAyNDI4ODEuMC4wLjA). Think of this like a website designer. Instead of creating a website, the designer will build your AI tool. This is something I offer to coaches, to develop a clone of their coaching approach. Similar to [TobySinclairAI](https://www.realtalkstudio.com/). I train the AI coach based on your guidelines, test the model, and then deploy this so it’s accessible to your clients from your website. This is all done at a fraction of the cost of a hosted solution.
 
 Three fundamental steps of this approach:
 
@@ -240,7 +240,7 @@ Three fundamental steps of this approach:
 
 ### **A Cautionary Note on Free AI Tools**
 
-To get started there are hundreds of free AI platforms and tools. A cautionary tale is that these free tiers will likely not deliver optimal coaching conversations. For example, OpenAI has multiple versions of ChatGPT. The 3.5 model is free to all but from my experience, delivers a very poor client experience within a coaching conversation. In contrast, ChatGPT Plus operates on 4.0. The coaching conversations with this model are much more human-like. Perfect for coaching conversations. [TobySinclairAI](https://ai.tobysinclair.com/tobysinclairai) is built upon ChatGPT 4.0 and all the coaches I develop are too.
+To get started there are hundreds of free AI platforms and tools. A cautionary tale is that these free tiers will likely not deliver optimal coaching conversations. For example, OpenAI has multiple versions of ChatGPT. The 3.5 model is free to all but from my experience, delivers a very poor client experience within a coaching conversation. In contrast, ChatGPT Plus operates on 4.0. The coaching conversations with this model are much more human-like. Perfect for coaching conversations. [TobySinclairAI](https://www.realtalkstudio.com/) is built upon ChatGPT 4.0 and all the coaches I develop are too.
 
 ## **What Makes a “Good” AI Coach?**
 

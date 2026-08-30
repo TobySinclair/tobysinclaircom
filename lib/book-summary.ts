@@ -170,7 +170,7 @@ function normalizeHeading(line: string) {
 
   if (/should you read/i.test(text)) return "## Should you read this?";
   if (/takeaway/i.test(text)) return "## Toby's takeaway";
-  if (/big ideas/i.test(text)) return "## 3 big ideas";
+  if (/big ideas/i.test(text) && !/expanded/i.test(text)) return "## 3 big ideas";
   if (/quotes|tweetable/i.test(text)) return "## Best quotes";
   if (/prefer video/i.test(text)) return "## Prefer video?";
   return `## ${text}`;
@@ -179,7 +179,7 @@ function normalizeHeading(line: string) {
 export function cleanBookSummaryBody(body: string, book: BookSummary) {
   let next = body;
 
-  next = next.replace(/^[^\n]*#viewer-[^\n]*\n+/gim, "");
+  next = next.replace(/^(?!\d+\.\s)(?![-*+]\s)(?!\*\*Big Idea)(?!#{1,3}\s)[^\n]*#viewer-[^\n]*\n+/gim, "");
   next = next.replace(/^[^\n]*💡[^\n]*Big Ideas[^\n]*(Amazon|Takeaway)[^\n]*\n+/gim, "");
   next = next.replace(/\[!\[Toby Sinclair Book Summary Introduction\]\([^)]+\)\]\([^)]+\)\n*/gi, "");
   next = next.replace(/!\[Toby Sinclair Book Summary Introduction\]\([^)]+\)\n*/gi, "");

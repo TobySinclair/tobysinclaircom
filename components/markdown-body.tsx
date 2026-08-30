@@ -2,6 +2,8 @@ import type { ReactNode } from "react";
 import type { Components } from "react-markdown";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { BigIdeas } from "@/components/big-ideas";
+import { splitBigIdeas } from "@/lib/big-ideas";
 import { headingId } from "@/lib/book-summary";
 
 function nodeText(node: ReactNode): string {
@@ -40,7 +42,28 @@ const components: Components = {
   },
 };
 
-export function MarkdownBody({ content }: { content: string }) {
+export function MarkdownBody({
+  content,
+  skipIdeas = false,
+}: {
+  content: string;
+  skipIdeas?: boolean;
+}) {
+  if (!content.trim()) return null;
+
+  if (!skipIdeas) {
+    const { before, ideas, after } = splitBigIdeas(content);
+    if (ideas) {
+      return (
+        <>
+          <MarkdownBody content={before} skipIdeas />
+          <BigIdeas ideas={ideas} />
+          <MarkdownBody content={after} skipIdeas />
+        </>
+      );
+    }
+  }
+
   return (
     <div className="prose">
       <Markdown remarkPlugins={[remarkGfm]} components={components}>

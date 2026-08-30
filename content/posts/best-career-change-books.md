@@ -22,9 +22,9 @@ These career change books were the catalyst to making it happen.
 
 ## **Turn This Knowledge Into Power!**
 
-Despite reading all these books, I still have a problem. I’m not converting the knowledge into action. To solve this problem, I’m turning to artificial intelligence. I’ve developed a set of [AI tools to turn knowledge into action.](https://learn.tobysinclair.com/books)
+Despite reading all these books, I still have a problem. I’m not converting the knowledge into action. To solve this problem, I’m turning to artificial intelligence. I’ve developed a set of [AI tools to turn knowledge into action.](https://www.realtalkstudio.com/)
 
-[Unlock More AI Learning Tools](https://learn.tobysinclair.com/books)
+[Unlock More AI Learning Tools](https://www.realtalkstudio.com/)
 
 ## **Best Career Change Books**
 

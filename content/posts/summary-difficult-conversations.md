@@ -57,9 +57,9 @@ Difficult Conversations is the best-selling book on this topic for a reason. It 
 
 ## 🤖 **Turn This Book Into Action**
 
-Despite reading this book, I still have a problem. I’m not converting the knowledge into action. To solve this problem, I’m turning to the solution everyone is at the moment: Artificial Intelligence. I’ve developed a set of [AI tools to make difficult conversations easier.](https://ai.tobysinclair.com/difficultconversations)
+Despite reading this book, I still have a problem. I’m not converting the knowledge into action. To solve this problem, I’m turning to the solution everyone is at the moment: Artificial Intelligence. I’ve developed a set of [AI tools to make difficult conversations easier.](https://www.realtalkstudio.com/)
 
-[🔒 Unlock More Free Learning Tools](https://ai.tobysinclair.com)
+[🔒 Unlock More Free Learning Tools](https://www.realtalkstudio.com/)
 
 ## **💡 3 Big Ideas From Difficult Conversations by Douglas Stone, Bruce Patton, and Sheila Heen**
 

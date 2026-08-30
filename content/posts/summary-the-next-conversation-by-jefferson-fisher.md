@@ -68,7 +68,7 @@ Your company still grows or stagnates one conversation at a time. Fisher’s poi
 
 ## Turn This Book Into Action
 
-Despite reading this book, I still have a problem. I’m not converting the knowledge into action. To solve this problem, I’m turning to the solution everyone is looking for at the moment: artificial intelligence. I’ve developed a set of [AI tools to turn knowledge into action.](https://learn.tobysinclair.com/books)
+Despite reading this book, I still have a problem. I’m not converting the knowledge into action. To solve this problem, I’m turning to the solution everyone is looking for at the moment: artificial intelligence. I’ve developed a set of [AI tools to turn knowledge into action.](https://www.realtalkstudio.com/)
 
 ## 3 Big Ideas From The Next Conversation by Jefferson Fisher
 
