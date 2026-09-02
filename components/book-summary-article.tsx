@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BigIdeas } from "@/components/big-ideas";
 import { ConversionCta } from "@/components/conversion-cta";
+import { FourThousandWeeksCoachCta } from "@/components/four-thousand-weeks-coach-cta";
 import { CoverImage } from "@/components/cover-image";
 import { MarkdownBody } from "@/components/markdown-body";
 import { hubsForPost } from "@/lib/book-hubs";
@@ -120,6 +121,14 @@ export function BookSummaryArticle({
         </section>
       ) : null}
 
+      {post.slug === "four-thousand-weeks-by-oliver-burkeman" ? (
+        <div className="mt-8 w-screen max-w-[100vw] ml-[calc(50%-50vw)] px-5">
+          <div className="mx-auto max-w-5xl">
+            <FourThousandWeeksCoachCta id="four-thousand-weeks-coach" />
+          </div>
+        </div>
+      ) : null}
+
       {post.image ? (
         <CoverImage
           src={post.image}
@@ -154,6 +163,13 @@ export function BookSummaryArticle({
         <MarkdownBody content={commentary} skipIdeas />
       </div>
 
+      {post.slug === "four-thousand-weeks-by-oliver-burkeman" ? (
+        <div className="mt-12 w-screen max-w-[100vw] ml-[calc(50%-50vw)] px-5">
+          <div className="mx-auto max-w-5xl">
+            <FourThousandWeeksCoachCta id="four-thousand-weeks-coach-footer" />
+          </div>
+        </div>
+      ) : null}
       {offer ? (
         <div className="mt-12">
           <ConversionCta offer={offer} />
