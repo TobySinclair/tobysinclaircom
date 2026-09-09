@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { BookSummaryArticle } from "@/components/book-summary-article";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ConversionCta } from "@/components/conversion-cta";
+import { NewsletterCta } from "@/components/newsletter-cta";
 import { CoverImage } from "@/components/cover-image";
 import { JsonLd } from "@/components/json-ld";
 import { MarkdownBody } from "@/components/markdown-body";
@@ -110,6 +111,9 @@ export default async function PostPage({ params }: Props) {
           ) : null}
           <div className="mt-10">
             <MarkdownBody content={post.body} />
+          </div>
+          <div className="mt-16">
+            <NewsletterCta id="newsletter-article" />
           </div>
           {related.length ? (
             <aside className="mt-16 border-t border-white/10 pt-10">

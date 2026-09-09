@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { CoverImage } from "@/components/cover-image";
+import { NewsletterCta } from "@/components/newsletter-cta";
 import { HeroVideo } from "@/components/hero-video";
 import { JsonLd } from "@/components/json-ld";
 import { PostCard } from "@/components/post-card";
@@ -477,6 +478,12 @@ export default function Home() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-white/10">
+        <div className="mx-auto w-full max-w-6xl px-5 py-24">
+          <NewsletterCta id="newsletter-home" />
         </div>
       </section>
     </div>

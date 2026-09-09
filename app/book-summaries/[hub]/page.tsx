@@ -5,6 +5,7 @@ import { BookCoverGrid, toBookSummaryCard } from "@/components/book-cover-grid";
 import { BookHubCollections, BookSummaryHubNav } from "@/components/book-summary-hubs";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ConversionCta } from "@/components/conversion-cta";
+import { NewsletterCta } from "@/components/newsletter-cta";
 import { JsonLd } from "@/components/json-ld";
 import { bookHubs, getBookHub, summariesForHub } from "@/lib/book-hubs";
 import { conversionIntentForHub, conversionOfferFor } from "@/lib/conversion";
@@ -72,6 +73,9 @@ export default async function BookSummaryHubPage({ params }: Props) {
           {paragraph}
         </p>
       ))}
+      <div className="mt-10">
+        <NewsletterCta id="newsletter-hub" />
+      </div>
       <BookHubCollections hub={hub} />
       <p className="mt-8 text-sm text-ink-muted">{posts.length} summaries</p>
       <BookCoverGrid posts={posts.map(toBookSummaryCard)} className="mt-6" />

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NewsletterCta } from "@/components/newsletter-cta";
 import { site } from "@/lib/site";
 
 export function SiteFooter() {
@@ -17,6 +18,9 @@ export function SiteFooter() {
             . Coach and trainer helping enterprises navigate the human side of AI — change,
             capability, and the conversations that make transformation real.
           </p>
+          <div className="mt-8">
+            <NewsletterCta id="newsletter-footer" variant="compact" />
+          </div>
         </div>
         <div className="flex flex-col gap-2 text-sm text-ink-muted">
           <p className="font-semibold text-white">Site</p>

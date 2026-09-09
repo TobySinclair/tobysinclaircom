@@ -3,6 +3,7 @@ import Link from "next/link";
 import { BigIdeas } from "@/components/big-ideas";
 import { ConversionCta } from "@/components/conversion-cta";
 import { FourThousandWeeksCoachCta } from "@/components/four-thousand-weeks-coach-cta";
+import { NewsletterCta } from "@/components/newsletter-cta";
 import { CoverImage } from "@/components/cover-image";
 import { MarkdownBody } from "@/components/markdown-body";
 import { hubsForPost } from "@/lib/book-hubs";
@@ -117,6 +118,10 @@ export function BookSummaryArticle({
         </div>
       </section>
 
+      <div className="mt-8">
+        <NewsletterCta id="newsletter-book-top" />
+      </div>
+
       {ideas?.length ? (
         <section id={headingId("3 big ideas")} className="mt-8" aria-labelledby="book-summary-ideas-heading">
           <h2 id="book-summary-ideas-heading" className="text-xl font-bold tracking-tight">
@@ -180,6 +185,9 @@ export function BookSummaryArticle({
           </div>
         </div>
       ) : null}
+      <div className="mt-12">
+        <NewsletterCta id="newsletter-book-bottom" />
+      </div>
       {offer ? (
         <div className="mt-12">
           <ConversionCta offer={offer} />

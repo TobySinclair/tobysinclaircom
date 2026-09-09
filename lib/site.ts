@@ -14,6 +14,17 @@ export const site = {
   fearSettingCoach:
     "https://www.realtalkstudio.com/coach/marcia-thompson?studioId=1ec01f58-b431-44b7-bf39-4c2e279a41c4&branding=true&demo=true",
   calendly: "https://calendly.com/toby-sinclair/discovery",
+  newsletter: {
+    formAction: "https://static.mailerlite.com/webforms/submit/l9v1d8",
+    groupId: "105462337",
+    eyebrow: "Friday newsletter",
+    title: "Become the leader every company wants",
+    body: "Coaching tools from the best business books, to your inbox, every Friday.",
+    placeholder: "Your best email",
+    cta: "I'm in",
+    successTitle: "Subscribed",
+    successBody: "You're on the list. Look out for Friday's email.",
+  },
   seo: {
     homeTitle: "Toby Sinclair | The Human Side of AI",
     homeDescription:
