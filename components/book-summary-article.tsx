@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { BigIdeas } from "@/components/big-ideas";
 import { ConversionCta } from "@/components/conversion-cta";
@@ -79,25 +80,34 @@ export function BookSummaryArticle({
 
       <section className="mt-8 rounded-[1.5rem] border border-white/10 bg-[#0c0c14] p-6 md:p-8">
         <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-          <div>
-            {book.rating != null ? (
-              <>
-                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-green">Toby&apos;s rating</p>
-                <p className="mt-2 text-4xl font-bold tracking-tight" aria-label={`${book.rating} out of 10`}>
-                  {book.rating}/10
+          <div className="flex items-start gap-4">
+            <Image
+              src="/avatars/toby.jpg"
+              alt="Toby Sinclair"
+              width={72}
+              height={72}
+              className="h-[4.5rem] w-[4.5rem] shrink-0 rounded-full object-cover ring-2 ring-white/15"
+            />
+            <div>
+              {book.rating != null ? (
+                <>
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-green">Toby&apos;s rating</p>
+                  <p className="mt-2 text-4xl font-bold tracking-tight" aria-label={`${book.rating} out of 10`}>
+                    {book.rating}/10
+                  </p>
+                  <div className="mt-3">
+                    <RatingMarks value={book.rating} />
+                  </div>
+                </>
+              ) : (
+                <p className="text-sm text-ink-muted">A practising leader&apos;s notes on this book.</p>
+              )}
+              {book.audience ? (
+                <p className="mt-4 text-sm leading-7 text-ink-muted">
+                  Recommended for <span className="text-white">{book.audience}</span>
                 </p>
-                <div className="mt-3">
-                  <RatingMarks value={book.rating} />
-                </div>
-              </>
-            ) : (
-              <p className="text-sm text-ink-muted">A practising leader&apos;s notes on this book.</p>
-            )}
-            {book.audience ? (
-              <p className="mt-4 text-sm leading-7 text-ink-muted">
-                Recommended for <span className="text-white">{book.audience}</span>
-              </p>
-            ) : null}
+              ) : null}
+            </div>
           </div>
           {book.amazon ? (
             <a href={book.amazon} className="btn-primary shrink-0" rel="noreferrer sponsored">
