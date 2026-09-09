@@ -4,6 +4,7 @@ import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { ArticleToc, type TocItem } from "@/components/article-toc";
 import { BigIdeas } from "@/components/big-ideas";
+import { FearSettingExercise } from "@/components/fear-setting-coach-cta";
 import { GuideFigure } from "@/components/guide-figure";
 import { splitBigIdeas } from "@/lib/big-ideas";
 import { headingId } from "@/lib/book-summary";
@@ -50,7 +51,10 @@ function splitToc(content: string) {
 
 type ContentPart =
   | { type: "md"; text: string }
-  | { type: "figure"; name: string; alt: string };
+  | { type: "figure"; name: string; alt: string }
+  | { type: "coach-cta"; name: string };
+
+const COACH_CTA_RE = /<!--\s*coach-cta:([a-z0-9-]+)\s*-->/gi;
 
 function splitFigures(content: string): ContentPart[] {
   const parts: ContentPart[] = [];
@@ -65,6 +69,32 @@ function splitFigures(content: string): ContentPart[] {
   const after = content.slice(lastIndex).trim();
   if (after) parts.push({ type: "md", text: after });
   return parts;
+}
+
+function splitCoachCtas(content: string): ContentPart[] {
+  const parts: ContentPart[] = [];
+  let lastIndex = 0;
+  for (const match of content.matchAll(COACH_CTA_RE)) {
+    if (match.index == null) continue;
+    const before = content.slice(lastIndex, match.index).trim();
+    if (before) parts.push({ type: "md", text: before });
+    parts.push({ type: "coach-cta", name: match[1] });
+    lastIndex = match.index + match[0].length;
+  }
+  const after = content.slice(lastIndex).trim();
+  if (after) parts.push({ type: "md", text: after });
+  return parts;
+}
+
+function CoachCtaBlock({ name }: { name: string }) {
+  if (name !== "fear-setting") return null;
+  return (
+    <div className="my-8 w-screen max-w-[100vw] ml-[calc(50%-50vw)] px-5">
+      <div className="mx-auto max-w-5xl">
+        <FearSettingExercise />
+      </div>
+    </div>
+  );
 }
 
 const components: Components = {
@@ -116,11 +146,13 @@ export function MarkdownBody({
   skipIdeas = false,
   skipToc = false,
   skipFigures = false,
+  skipCoachCta = false,
 }: {
   content: string;
   skipIdeas?: boolean;
   skipToc?: boolean;
   skipFigures?: boolean;
+  skipCoachCta?: boolean;
 }) {
   if (!content.trim()) return null;
 
@@ -145,7 +177,7 @@ export function MarkdownBody({
           {parts.map((part, index) =>
             part.type === "figure" ? (
               <GuideFigure key={`${part.name}-${index}`} name={part.name} alt={part.alt} />
-            ) : (
+            ) : part.type === "md" ? (
               <MarkdownBody
                 key={`md-${index}`}
                 content={part.text}
@@ -153,7 +185,31 @@ export function MarkdownBody({
                 skipToc
                 skipFigures
               />
-            ),
+            ) : null,
+          )}
+        </>
+      );
+    }
+  }
+
+  if (!skipCoachCta) {
+    const parts = splitCoachCtas(content);
+    if (parts.some((part) => part.type === "coach-cta")) {
+      return (
+        <>
+          {parts.map((part, index) =>
+            part.type === "coach-cta" ? (
+              <CoachCtaBlock key={`${part.name}-${index}`} name={part.name} />
+            ) : part.type === "md" ? (
+              <MarkdownBody
+                key={`md-${index}`}
+                content={part.text}
+                skipIdeas={skipIdeas}
+                skipToc
+                skipFigures
+                skipCoachCta
+              />
+            ) : null,
           )}
         </>
       );
