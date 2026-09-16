@@ -1,4 +1,5 @@
 import { site } from "@/lib/site";
+import { withReferralUtm } from "@/lib/utm";
 
 export function RtsCta({
   title = "Real Talk Studio",
@@ -13,7 +14,7 @@ export function RtsCta({
       <h2 className="mt-3 max-w-2xl text-2xl font-bold tracking-tight md:text-3xl">{title}</h2>
       <p className="mt-4 max-w-2xl text-base leading-7 text-ink-muted">{body}</p>
       <div className="mt-7">
-        <a href={site.realTalk} className="btn-primary">
+        <a href={withReferralUtm(site.realTalk, "rts-cta")} className="btn-primary">
           Visit Real Talk Studio
         </a>
       </div>

@@ -2,6 +2,7 @@ import { hubsForPost, type BookHubCandidate } from "@/lib/book-hubs";
 import { cheatSheetForSummary, type CheatSheet } from "@/lib/cheat-sheets";
 import type { Post } from "@/lib/content";
 import { site } from "@/lib/site";
+import { withReferralUtm } from "@/lib/utm";
 
 export type ConversionIntent = "conversation" | "sales" | "coaching" | "ai" | "workshop";
 
@@ -20,7 +21,6 @@ const SALES_SLUGS = new Set([
   "never-split-the-difference-summary",
   "summary-pitch-anything-by-oren-klaff",
   "summary-getting-to-yes-by-roger-fisher-william-ury",
-  "the-ultimate-guide-to-ai-sales-roleplay-mastering-the-art-of-the-deal-in-the-digital-age",
   "influence-is-your-superpower-zoe-chance",
   "whats-in-it-for-them-by-joe-polish",
   "sales-role-play-scenarios",
@@ -120,8 +120,10 @@ function bookPhrase(bookTitle?: string | null) {
 export function conversionOfferFor(
   intent: ConversionIntent,
   bookTitle?: string | null,
+  content = intent,
 ): ConversionOffer {
   const book = bookPhrase(bookTitle);
+  const practiseHref = withReferralUtm(site.realTalkPractise, content);
 
   if (intent === "conversation") {
     return {
@@ -134,7 +136,7 @@ export function conversionOfferFor(
         ? `${book} is a playbook. Real Talk Studio is the driving test — try the same conversation against an AI counterpart before it happens for real.`
         : "Real Talk Studio is the driving test — try the same conversation against an AI counterpart before it happens for real.",
       cta: "Try a free scenario →",
-      href: site.realTalkPractise,
+      href: practiseHref,
       secondaryCta: "Work with me",
       secondaryHref: "/work-with-me",
     };
@@ -151,7 +153,7 @@ export function conversionOfferFor(
         ? `${book} is useful until your heart rate goes up. Rehearse a cold call, a negotiation, or a close against an AI counterpart — then use it when the deal is live.`
         : "Rehearse a cold call, a negotiation, or a close against an AI counterpart — then use it when the deal is live.",
       cta: "Try a sales scenario →",
-      href: site.realTalkPractise,
+      href: practiseHref,
     };
   }
 

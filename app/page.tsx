@@ -11,6 +11,7 @@ import { getAllPosts, getBookSummaries } from "@/lib/content";
 import { isRtsPost } from "@/lib/rts-cover";
 import { pageMetadata, personJsonLd, webPageJsonLd } from "@/lib/seo";
 import { categoryLabel, formatDate, site } from "@/lib/site";
+import { withReferralUtm } from "@/lib/utm";
 
 export const metadata: Metadata = pageMetadata({
   title: site.seo.homeTitle,
@@ -58,7 +59,7 @@ const offers = [
     body: "My company. Teams rehearse feedback, conflict, and high-stakes conversations with AI — before they happen for real. It's also my daily proof: I don't advise on AI from the sidelines, I build with it, sell it, and live its limits.",
     audience: "For: organisations that need verified conversational competence at scale.",
     cta: "Visit Real Talk Studio →",
-    href: site.realTalk,
+    href: withReferralUtm(site.realTalk, "homepage"),
   },
 ];
 
@@ -139,7 +140,7 @@ export default function Home() {
               <Link href="/work-with-me" className="btn-primary">
                 Work with me →
               </Link>
-              <a href={site.realTalk} className="btn-secondary">
+              <a href={withReferralUtm(site.realTalk, "homepage")} className="btn-secondary">
                 See Real Talk Studio
               </a>
             </div>

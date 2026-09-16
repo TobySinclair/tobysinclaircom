@@ -71,7 +71,7 @@ When you think of coaching, what comes to mind?
 
 Let me guess - a sports coach on the sidelines shouting instructions to their under-performing team.
 
-The [dictionary](https://www.tobysinclair.com/post/5-coaching-definitions) supports this definition. It uses adjectives such as teaching, advising, telling.
+The [dictionary](https://www.tobysinclair.com/post/coaching-definition) supports this definition. It uses adjectives such as teaching, advising, telling.
 
 Therefore it would be easy to conclude that the Manager as Coach is about fixing people by shouting at them.
 

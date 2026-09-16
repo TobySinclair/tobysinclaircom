@@ -50,7 +50,7 @@ Let's begin 🚀
 
 ### **What is coaching?**
 
-Many leaders associate coaching with telling people what to do and fixing underperformance. This is [how the dictionary defines it.](https://www.tobysinclair.com/post/5-coaching-definitions)
+Many leaders associate coaching with telling people what to do and fixing underperformance. This is [how the dictionary defines it.](https://www.tobysinclair.com/post/coaching-definition)
 
 You might hear the phrase *"That team needs coaching"*
 
@@ -238,7 +238,7 @@ When you do the habit, don't forget to celebrate.
 
 To help you develop a coaching leadership style, I developed the advice detox.
 
-A [5-day micro-learning program](https://www.tobysinclair.com/learn-to-coach) to help you become a better coach.
+A [5-day micro-learning program](https://www.tobysinclair.com/coaching-skills-program) to help you become a better coach.
 
 You’ll learn the typical problems with giving advice and how staying curious a little longer can unlock performance.
 

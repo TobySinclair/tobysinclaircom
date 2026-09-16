@@ -38,7 +38,7 @@ Coaching is:
 
 ## **Tobys Top Takeaway** ✅
 
-Coaching is a confusing word. Many people associate it with "fixing people" and telling people what to do. [The dictionary doesn't help with this.](https://www.tobysinclair.com/post/5-coaching-definitions) [You Coach You](https://amzn.to/3gD9D5C) by Helen Tupper and Sarah Ellis does a great job at democratizing coaching. Simple and practical, it gives you the [tools of coaching](https://www.tobysinclair.com/post/coaching-tools) so that you can find a breakthrough.
+Coaching is a confusing word. Many people associate it with "fixing people" and telling people what to do. [The dictionary doesn't help with this.](https://www.tobysinclair.com/post/coaching-definition) [You Coach You](https://amzn.to/3gD9D5C) by Helen Tupper and Sarah Ellis does a great job at democratizing coaching. Simple and practical, it gives you the [tools of coaching](https://www.tobysinclair.com/post/coaching-tools) so that you can find a breakthrough.
 
 I'd like to highlight in this "You Coach You" summary the "Ask the Expert" sections. At the end of each chapter, there is a story. For example, Elizabeth Uviebinené, author of [Slay in Your Lane](https://amzn.to/3oE423g), shares her perspective on building your self-belief. These real examples bring the power of coaching to life.
 

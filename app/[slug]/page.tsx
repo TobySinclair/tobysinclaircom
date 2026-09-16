@@ -31,7 +31,7 @@ export default async function LandingPage({ params }: Props) {
   const page = getLandingPage(slug);
   if (!page) notFound();
   const intent = conversionIntentFor({ slug: page.slug, title: page.title });
-  const offer = intent ? conversionOfferFor(intent) : null;
+  const offer = intent ? conversionOfferFor(intent, null, page.slug) : null;
 
   return (
     <article className="mx-auto w-full max-w-3xl px-5 py-16">

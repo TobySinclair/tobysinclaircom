@@ -121,7 +121,7 @@ export function CheatSheetPage({ slug }: { slug: string }) {
       </div>
 
       <div className="mt-16 print:hidden">
-        <ConversionCta offer={conversionOfferFor(sheet.intent, sheet.bookTitle)} />
+        <ConversionCta offer={conversionOfferFor(sheet.intent, sheet.bookTitle, sheet.slug)} />
         {contextCta ? (
           <ContextCta
             variant={contextCta.variant}

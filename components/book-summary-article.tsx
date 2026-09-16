@@ -53,7 +53,7 @@ export function BookSummaryArticle({
   const faqs = bookSummaryFaqs(book, post.description);
   const hubs = hubsForPost(post);
   const intent = conversionIntentForPost(post);
-  const offer = intent ? conversionOfferFor(intent, book.bookTitle) : null;
+  const offer = intent ? conversionOfferFor(intent, book.bookTitle, post.slug) : null;
   const extra = cheatSheetOfferForSummary(post.slug);
   const contextCta = contextCtaFor(post.slug);
 

@@ -12,6 +12,7 @@ import {
 } from "./book-summary";
 import { POSTS_PER_PAGE, site } from "./site";
 import { redirectedPostSlugs } from "./redirects";
+import { withReferralUtm } from "./utm";
 
 export type Post = {
   slug: string
@@ -49,7 +50,7 @@ function cleanTitle(title: string) {
   return title.replace(/\s*\|\s*Toby Sinclair.*$/i, "").trim() || title;
 }
 
-function rewriteBody(body: string, image?: string | null) {
+function rewriteBody(body: string, image?: string | null, slug?: string) {
   let next = body
     .replaceAll("https://www.tobysinclair.com", "")
     .replaceAll("https://tobysinclair.com", "")
@@ -61,13 +62,19 @@ function rewriteBody(body: string, image?: string | null) {
       next = next.slice(match![0].length);
     }
   }
+  if (slug) {
+    next = next.replace(
+      /https:\/\/(?:www\.)?realtalkstudio\.com[^)\s"'<>]*/g,
+      (href) => (href.includes("utm_") ? href : withReferralUtm(href, slug)),
+    );
+  }
   return next.trim();
 }
 
 function readMarkdown(filePath: string) {
   const raw = fs.readFileSync(filePath, "utf8");
   const { data, content } = matter(raw);
-  return { data, content: rewriteBody(content.trim(), data.image ? String(data.image) : null) };
+  return { data, content: content.trim() };
 }
 
 export const getAllPosts = cache((): Post[] => {
@@ -77,21 +84,24 @@ export const getAllPosts = cache((): Post[] => {
     .filter((file) => file.endsWith(".md"))
     .map((file) => {
       const { data, content } = readMarkdown(path.join(postsDir, file));
+      const slug = String(data.slug || file.replace(/\.md$/, ""));
+      const image = data.image ? String(data.image) : null;
+      const body = rewriteBody(content, image, slug);
       const draft = {
-        slug: String(data.slug || file.replace(/\.md$/, "")),
+        slug,
         title: cleanTitle(String(data.title || "Untitled")),
         description: cleanLeadText(String(data.description || "")),
-        url: String(data.url || `${site.url}/post/${data.slug || file.replace(/\.md$/, "")}`),
+        url: String(data.url || `${site.url}/post/${slug}`),
         published: data.published ? String(data.published) : null,
         modified: data.modified ? String(data.modified) : null,
-        image: data.image ? String(data.image) : null,
+        image,
         readingTime: data.readingTime ? String(data.readingTime) : null,
         categories: Array.isArray(data.categories) ? data.categories.map(String) : [],
         noindex: data.noindex === true,
         seoTitle: data.seoTitle ? String(data.seoTitle) : null,
         seoDescription: data.seoDescription ? String(data.seoDescription) : null,
         theme: data.theme ? String(data.theme) : null,
-        body: content,
+        body,
         book: null,
       } satisfies Post;
 
@@ -113,7 +123,7 @@ export const getAllPosts = cache((): Post[] => {
       return {
         ...draft,
         book,
-        body: cleanBookSummaryBody(content, book),
+        body: cleanBookSummaryBody(body, book),
       } satisfies Post;
     })
     .filter((post) => !redirectedPostSlugs.has(post.slug))
@@ -177,15 +187,17 @@ export const getLandingPages = cache((): LandingPage[] => {
     .filter((file) => file.endsWith(".md"))
     .map((file) => {
       const { data, content } = readMarkdown(path.join(pagesDir, file));
+      const slug = String(data.slug || file.replace(/\.md$/, ""));
+      const image = data.image ? String(data.image) : null;
       return {
-        slug: String(data.slug || file.replace(/\.md$/, "")),
+        slug,
         title: cleanTitle(String(data.title || "Untitled")),
         description: String(data.description || ""),
         seoTitle: data.seoTitle ? String(data.seoTitle) : null,
         seoDescription: data.seoDescription ? String(data.seoDescription) : null,
-        image: data.image ? String(data.image) : null,
+        image,
         modified: data.modified ? String(data.modified) : null,
-        body: content,
+        body: rewriteBody(content, image, slug),
       } satisfies LandingPage;
     });
 });

@@ -35,7 +35,7 @@ In this book summary of Leadership by Eddie Jones you will learn:
 
 ## **Tobys Top Takeaway** ✅
 
-When I started to learn about coaching I pictured this: A sports coach at the sidelines shouting at the players, telling them what to do. This is no surprise given that's [how the dictionary defines coaching](https://www.tobysinclair.com/post/5-coaching-definitions). I've learned over the years that high-performance coaching is very different.
+When I started to learn about coaching I pictured this: A sports coach at the sidelines shouting at the players, telling them what to do. This is no surprise given that's [how the dictionary defines coaching](https://www.tobysinclair.com/post/coaching-definition). I've learned over the years that high-performance coaching is very different.
 
 > The old dictator of a coach shouting out a team doesn’t work anymore.
 

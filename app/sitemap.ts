@@ -1,7 +1,9 @@
 import type { MetadataRoute } from "next";
+import { bookHubs } from "@/lib/book-hubs";
 import { cheatSheets } from "@/lib/cheat-sheets";
 import { getAllPosts, getCategories, getLandingPages, paginate } from "@/lib/content";
 import { redirectedPostSlugs } from "@/lib/redirects";
+import { isRtsPost, rtsCoverImagePath } from "@/lib/rts-cover";
 import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -5,6 +5,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
 import { breadcrumbJsonLd, pageMetadata, personJsonLd, webPageJsonLd } from "@/lib/seo";
 import { site } from "@/lib/site";
+import { withReferralUtm } from "@/lib/utm";
 
 export const metadata: Metadata = pageMetadata({
   title: site.seo.workTitle,
@@ -391,7 +392,7 @@ export default function WorkWithMePage() {
                 </p>
               </div>
             </div>
-            <a href={site.realTalk} className="btn-primary mt-10">
+            <a href={withReferralUtm(site.realTalk, "work-with-me")} className="btn-primary mt-10">
               Visit Real Talk Studio →
             </a>
           </div>

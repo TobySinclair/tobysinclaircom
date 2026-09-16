@@ -14,7 +14,7 @@ categories:
 
 ![Coaching Lessons from Elite Sport](https://static.wixstatic.com/media/67d4e8_333837a82b664f2ebd56fc3da3c1ec1c~mv2.png)
 
-England Rugby head coach Eddie Jones recently hosted a [live coaching session](https://www.facebook.com/watch/live/?v=10155209455864825&ref=watch_permalink) at England training headquarters. As a huge rugby fan and [professional coach](https://www.tobysinclair.com/post/how-to-become-an-icf-certified-coach-a-guide-for-agile-coaches), I was eager to understand the Eddie Jones approach to coaching.
+England Rugby head coach Eddie Jones recently hosted a [live coaching session](https://www.facebook.com/watch/live/?v=10155209455864825&ref=watch_permalink) at England training headquarters. As a huge rugby fan and [professional coach](https://www.tobysinclair.com/post/how-i-became-an-icf-associate-certified-coach), I was eager to understand the Eddie Jones approach to coaching.
 
 When I first trained as a Professional Coach I was confused about how it related to sports coaching. I had seen the typical media representation of sports coaches shouting from the sidelines and it all seemed very directive. Not like the coaching I had learned in my training.
 

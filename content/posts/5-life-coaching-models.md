@@ -14,7 +14,7 @@ categories:
 
 ![](https://static.wixstatic.com/media/67d4e8_cec0d636bdd749a9a3a7a627cf23691b~mv2.png)
 
-If you are a [Certified Professional Coach](https://www.tobysinclair.com/post/how-to-become-an-icf-certified-coach-a-guide-for-agile-coaches) here are 5 life coaching models that you should know!
+If you are a [Certified Professional Coach](https://www.tobysinclair.com/post/how-i-became-an-icf-associate-certified-coach) here are 5 life coaching models that you should know!
 
 The 5 coaching models you need to know are:
 

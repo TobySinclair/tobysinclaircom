@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { NewsletterCta } from "@/components/newsletter-cta";
 import { site } from "@/lib/site";
+import { withReferralUtm } from "@/lib/utm";
 
 export function SiteFooter() {
   return (
@@ -12,7 +13,7 @@ export function SiteFooter() {
           </p>
           <p className="mt-3 max-w-md text-sm leading-6 text-ink-muted">
             Founder of{" "}
-            <a href={site.realTalk} className="text-green hover:underline">
+            <a href={withReferralUtm(site.realTalk, "site-footer")} className="text-green hover:underline">
               Real Talk Studio
             </a>
             . Coach and trainer helping enterprises navigate the human side of AI — change,
@@ -45,7 +46,7 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-col gap-2 text-sm text-ink-muted">
           <p className="font-semibold text-white">Elsewhere</p>
-          <a href={site.realTalk} className="hover:text-white">
+          <a href={withReferralUtm(site.realTalk, "site-footer")} className="hover:text-white">
             Real Talk Studio
           </a>
           <a href={site.social.linkedin} target="_blank" rel="noreferrer" className="hover:text-white">

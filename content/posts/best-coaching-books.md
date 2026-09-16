@@ -164,9 +164,9 @@ By Helen Tupper, Sarah Ellis
 
 ⭐️ 4.7 📅 2022 ⌛ 288 pages 😎 Everyone
 
-# Coaching is a confusing word. Many people associate it with "fixing people" and telling people what to do. [The dictionary doesn't help with this.](https://www.tobysinclair.com/post/5-coaching-definitions) [You Coach You](https://amzn.to/3gD9D5C) by Helen Tupper and Sarah Ellis does a great job at democratizing coaching. Simple and practical, it gives you the [tools of coaching](https://www.tobysinclair.com/post/coaching-tools) so that you can find a breakthrough. Whilst writing the You Coach You summary I reflected upon the central premise of the "You Coach You" book. Whilst I agree, there is great value in self-coaching it has limitations. It's easy to get stuck in thinking patterns that make problems worse. Confirming your own biases and not being aware of your blind spots. I've also heard countless times "speaking my thoughts out loud to someone has helped make things clearer". This is where a skilled coach brings huge value. [Listening deeply](https://www.tobysinclair.com/post/book-summary-you-re-not-listening-by-kate-murphy-big-ideas-and-best-quotes) to what is said and what isn't. [Asking provocative questions](https://youtu.be/175n_MJAj9w) to bring awareness to blind spots. Encouraging you to build upon your strengths.
+# Coaching is a confusing word. Many people associate it with "fixing people" and telling people what to do. [The dictionary doesn't help with this.](https://www.tobysinclair.com/post/coaching-definition) [You Coach You](https://amzn.to/3gD9D5C) by Helen Tupper and Sarah Ellis does a great job at democratizing coaching. Simple and practical, it gives you the [tools of coaching](https://www.tobysinclair.com/post/coaching-tools) so that you can find a breakthrough. Whilst writing the You Coach You summary I reflected upon the central premise of the "You Coach You" book. Whilst I agree, there is great value in self-coaching it has limitations. It's easy to get stuck in thinking patterns that make problems worse. Confirming your own biases and not being aware of your blind spots. I've also heard countless times "speaking my thoughts out loud to someone has helped make things clearer". This is where a skilled coach brings huge value. [Listening deeply](https://www.tobysinclair.com/post/book-summary-you-re-not-listening-by-kate-murphy-big-ideas-and-best-quotes) to what is said and what isn't. [Asking provocative questions](https://youtu.be/175n_MJAj9w) to bring awareness to blind spots. Encouraging you to build upon your strengths.
 
-[The dictionary doesn't help with this.](https://www.tobysinclair.com/post/5-coaching-definitions)
+[The dictionary doesn't help with this.](https://www.tobysinclair.com/post/coaching-definition)
 [tools of coaching](https://www.tobysinclair.com/post/coaching-tools)
 [Listening deeply](https://www.tobysinclair.com/post/book-summary-you-re-not-listening-by-kate-murphy-big-ideas-and-best-quotes)
 [Asking provocative questions](https://youtu.be/175n_MJAj9w)
@@ -179,9 +179,9 @@ By Timothy Gallwey
 
 ⭐️ 4.5 📅 1974 ⌛ 161 pages 😎 Coaches
 
-# Coaching is often assumed to be about telling someone what to do and "fixing" people. The Inner Game of Tennis is the best book to debunk these myths. It shows that coaching can be most effective when you help people self-discover their own answers. There are many [bad definitions of coaching, even in the dictionary.](https://www.tobysinclair.com/post/5-coaching-definitions) The Inner Game of Tennis has my favourite definition: "Coaching is unlocking a person's potential to maximise their own performance. It is helping them to learn rather than teaching them."
+# Coaching is often assumed to be about telling someone what to do and "fixing" people. The Inner Game of Tennis is the best book to debunk these myths. It shows that coaching can be most effective when you help people self-discover their own answers. There are many [bad definitions of coaching, even in the dictionary.](https://www.tobysinclair.com/post/coaching-definition) The Inner Game of Tennis has my favourite definition: "Coaching is unlocking a person's potential to maximise their own performance. It is helping them to learn rather than teaching them."
 
-[bad definitions of coaching, even in the dictionary.](https://www.tobysinclair.com/post/5-coaching-definitions)
+[bad definitions of coaching, even in the dictionary.](https://www.tobysinclair.com/post/coaching-definition)
 "Coaching is unlocking a person's potential to maximise their own performance. It is helping them to learn rather than teaching them."
 
 ##### All Foundation Coaching Books

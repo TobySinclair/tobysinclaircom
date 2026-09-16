@@ -14,7 +14,7 @@ categories:
 
 In 2016, I was happily performing the role of an Agile Coach. Then one evening I attended a Meetup on the topic of Professional Coaching.
 
-What I realized from this meetup is that I had a good understanding of Agile, but a very shallow understanding of Coaching. A realization very common amongst Agile Coaches. It's easy to make assumptions about what coaching is and isn't. This is partly due to a [problematic definition of coaching in the dictionary](https://www.tobysinclair.com/post/5-coaching-definitions).
+What I realized from this meetup is that I had a good understanding of Agile, but a very shallow understanding of Coaching. A realization very common amongst Agile Coaches. It's easy to make assumptions about what coaching is and isn't. This is partly due to a [problematic definition of coaching in the dictionary](https://www.tobysinclair.com/post/coaching-definition).
 
 Many Agile Coaches have a good understanding of the values, frameworks and approaches of agile. When it comes to the values, frameworks and approaches of professional coaching it's often not as deep.
 
@@ -22,7 +22,7 @@ This means that many Agile Coaches focus on the [mentoring](https://youtu.be/pEt
 
 ## **What is Coaching?**
 
-Coaching is it's a very misunderstood term. It tends to be associated with telling people telling others what to do. It's also associated with fixing people. This is driven by many factors in our society including a [problematic dictionary definition](https://www.tobysinclair.com/post/5-coaching-definitions).
+Coaching is it's a very misunderstood term. It tends to be associated with telling people telling others what to do. It's also associated with fixing people. This is driven by many factors in our society including a [problematic dictionary definition](https://www.tobysinclair.com/post/coaching-definition).
 
 Advising and teaching can be very helpful in developing people. However, I found the most effective coaching also includes a less directive approach. One focused on self-discovery rather than direction.
 
@@ -66,13 +66,13 @@ There are 8 competencies that the ICF define for Professional Coaches:
 
 ## **How to become a Certified Professional Coach?**
 
-[The journey that I took](https://www.tobysinclair.com/post/how-to-become-an-icf-certified-coach-a-guide-for-agile-coaches) to become a qualified accredited professional coach was with the International Coaching Federation. They offer a training pathway to develop coaching skills. Typically this is around 12 days of classroom-based training that teaches you the foundational skills, theory, and knowledge.
+[The journey that I took](https://www.tobysinclair.com/post/how-i-became-an-icf-associate-certified-coach) to become a qualified accredited professional coach was with the International Coaching Federation. They offer a training pathway to develop coaching skills. Typically this is around 12 days of classroom-based training that teaches you the foundational skills, theory, and knowledge.
 
 To obtain the first credential level, Associate Coach Credential, you'll need to complete 100 hours of coaching. The next level is Professional Coach Credential, which requires 500 hours of coaching.
 
 The journey is not easy. You don't turn up to a two-day course and then suddenly get a certification. It requires high time and energy investment. You'll examine your values and beliefs so that you can become a better coach.
 
-You can learn more about my journey to gain Professional Coach Credential [here](https://www.tobysinclair.com/post/how-to-become-an-icf-certified-coach-a-guide-for-agile-coaches)
+You can learn more about my journey to gain Professional Coach Credential [here](https://www.tobysinclair.com/post/how-i-became-an-icf-associate-certified-coach)
 
 ## **What's next for you?**
 

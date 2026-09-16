@@ -21,7 +21,7 @@ One of the most common questions I'm asked from life coaches undertaking life co
 
 > *“What Life Coaching books do you recommend?”*
 
-Here is a shortlist of the best life coaching books I’ve read. These coaching books cover a wide range of coaching approaches and topics. The coaching books are great for new coaches taking [coach certification](https://www.tobysinclair.com/post/how-to-become-an-icf-certified-coach-a-guide-for-agile-coaches) but also experienced professional coaches looking for fresh ideas. These coaching books cover many of the [essential models](https://www.tobysinclair.com/post/5-life-coaching-models) you should know as a life coach.
+Here is a shortlist of the best life coaching books I’ve read. These coaching books cover a wide range of coaching approaches and topics. The coaching books are great for new coaches taking [coach certification](https://www.tobysinclair.com/post/how-i-became-an-icf-associate-certified-coach) but also experienced professional coaches looking for fresh ideas. These coaching books cover many of the [essential models](https://www.tobysinclair.com/post/5-life-coaching-models) you should know as a life coach.
 
 **The best life coaching books:**
 

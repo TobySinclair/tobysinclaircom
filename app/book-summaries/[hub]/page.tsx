@@ -40,7 +40,7 @@ export default async function BookSummaryHubPage({ params }: Props) {
   const posts = summariesForHub(all, hub);
   if (!posts.length) notFound();
   const intent = conversionIntentForHub(hub.slug);
-  const offer = intent ? conversionOfferFor(intent) : null;
+  const offer = intent ? conversionOfferFor(intent, null, `book-summaries-${hub.slug}`) : null;
 
   return (
     <div className="mx-auto w-full max-w-6xl px-5 py-16">

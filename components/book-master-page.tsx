@@ -22,7 +22,7 @@ export function BookMasterPage({ master }: { master: BookMaster }) {
     all,
   );
   const intent = conversionIntentFor({ slug: master.slug, title: master.title });
-  const offer = intent ? conversionOfferFor(intent) : null;
+  const offer = intent ? conversionOfferFor(intent, null, master.slug) : null;
 
   return (
     <div className="mx-auto w-full max-w-6xl px-5 py-16">

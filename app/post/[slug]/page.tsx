@@ -14,6 +14,7 @@ import { redirectedPostSlugs } from "@/lib/redirects";
 import { contextCtaFor } from "@/lib/context-ctas";
 import { articleFaqsFor } from "@/lib/article-faqs";
 import { JohariTemplate } from "@/components/johari-template";
+import { conversionIntentForPost, conversionOfferFor } from "@/lib/conversion";
 import { getAllPosts, getPost, relatedBookSummaries, relatedPosts } from "@/lib/content";
 import { isRtsPost } from "@/lib/rts-cover";
 import { articleFaqJsonLd, blogPostingJsonLd, bookFaqJsonLd, bookReviewJsonLd, breadcrumbJsonLd, postMetadata } from "@/lib/seo";
@@ -46,7 +47,7 @@ export default async function PostPage({ params }: Props) {
   const crumbTitle = post.book?.bookTitle || post.title;
   const faq = bookFaqJsonLd(post) ?? articleFaqJsonLd(post);
   const intent = conversionIntentForPost(post);
-  const offer = intent ? conversionOfferFor(intent, post.book?.bookTitle) : null;
+  const offer = intent ? conversionOfferFor(intent, post.book?.bookTitle, post.slug) : null;
   const contextCta = isSummary ? null : contextCtaFor(post.slug);
   const articleFaqs = articleFaqsFor(post.slug);
 

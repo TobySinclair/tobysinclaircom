@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { site } from "@/lib/site";
+import { withReferralUtm } from "@/lib/utm";
 
 const nav = [
   { href: "/blog", label: "Articles" },
@@ -25,7 +26,7 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <a href={site.realTalk} className="text-ink-muted transition-colors hover:text-white">
+          <a href={withReferralUtm(site.realTalk, "site-header")} className="text-ink-muted transition-colors hover:text-white">
             Real Talk Studio
           </a>
           <Link href="/work-with-me" className="btn-primary !px-4 !py-2 text-sm">
@@ -51,7 +52,7 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <a href={site.realTalk} onClick={() => setOpen(false)}>
+            <a href={withReferralUtm(site.realTalk, "site-header")} onClick={() => setOpen(false)}>
               Real Talk Studio
             </a>
             <Link href="/work-with-me" className="font-bold text-green" onClick={() => setOpen(false)}>

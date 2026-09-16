@@ -53,7 +53,7 @@ How much does Coaching Mentoring cost?
 
 My coach mentoring is free!
 
-This is my way of giving back to the coaching community. It's work that connects with my [purpose: Developing Organisations to bring people joy and fulfilment](https://www.tobysinclair.com/about-old). By building more professional coaches I believe [my vision](https://www.tobysinclair.com/about-old) for the future will be achieved.
+This is my way of giving back to the coaching community. It's work that connects with my [purpose: Developing Organisations to bring people joy and fulfilment](https://www.tobysinclair.com/about). By building more professional coaches I believe [my vision](https://www.tobysinclair.com/about) for the future will be achieved.
 
 ​
 
@@ -89,10 +89,10 @@ How much does Coaching Mentoring cost?
 
 My coach mentoring is free!
 
-This is my way of giving back to the coaching community. It's work that connects with my [purpose: Developing Organisations to bring people joy and fulfilment](https://www.tobysinclair.com/about-old). By building more professional coaches I believe [my vision](https://www.tobysinclair.com/about-old) for the future will be achieved.
+This is my way of giving back to the coaching community. It's work that connects with my [purpose: Developing Organisations to bring people joy and fulfilment](https://www.tobysinclair.com/about). By building more professional coaches I believe [my vision](https://www.tobysinclair.com/about) for the future will be achieved.
 
-[purpose: Developing Organisations to bring people joy and fulfilment](https://www.tobysinclair.com/about-old)
-[my vision](https://www.tobysinclair.com/about-old)
+[purpose: Developing Organisations to bring people joy and fulfilment](https://www.tobysinclair.com/about)
+[my vision](https://www.tobysinclair.com/about)
 
 #### How can I help?
 

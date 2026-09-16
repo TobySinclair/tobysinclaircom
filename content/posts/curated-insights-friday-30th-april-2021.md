@@ -36,7 +36,7 @@ The book shares a framework for tackling workplace injustice. It shares 3 types 
 
 I haven't quite finished my book summary so in the meantime [this article](https://review.firstround.com/following-radical-candor-kim-scott-is-back-with-another-incredible-framework-for-just-work#lesson-1-we-all-have-a-role-to-play) shares a fantastic overview of the book.
 
-You might also be interested in the materials for my [Anti-Racism Workshop](https://www.tobysinclair.com/anti-racism-training). The workshop helps participants explore systemic solutions using systems thinking.
+You might also be interested in the materials for my [Anti-Racism Workshop](https://www.tobysinclair.com/blog). The workshop helps participants explore systemic solutions using systems thinking.
 
 If you'd like to learn more about it please do drop me a mail.
 

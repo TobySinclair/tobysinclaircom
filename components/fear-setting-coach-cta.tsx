@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { site } from "@/lib/site";
+import { withReferralUtm } from "@/lib/utm";
 
-const COACH_HREF = site.fearSettingCoach;
-const COACH_ACTION = "https://www.realtalkstudio.com/coach/marcia-thompson";
+const COACH_HREF = withReferralUtm(site.fearSettingCoach, "fear-setting-coach");
+const COACH_ACTION = withReferralUtm("https://www.realtalkstudio.com/coach/marcia-thompson", "fear-setting-coach");
 const STUDIO_ID = "1ec01f58-b431-44b7-bf39-4c2e279a41c4";
 
 const PAPER_STEPS = [

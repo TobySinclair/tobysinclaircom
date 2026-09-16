@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { site } from "@/lib/site";
+import { withReferralUtm } from "@/lib/utm";
 
-const COACH_HREF = site.fourThousandWeeksCoach;
-const COACH_ACTION = "https://www.realtalkstudio.com/coach/anna-jones";
+const COACH_HREF = withReferralUtm(site.fourThousandWeeksCoach, "four-thousand-weeks-coach");
+const COACH_ACTION = withReferralUtm("https://www.realtalkstudio.com/coach/anna-jones", "four-thousand-weeks-coach");
 const STUDIO_ID = "1ec01f58-b431-44b7-bf39-4c2e279a41c4";
 
 export function FourThousandWeeksCoachCta({ id = "four-thousand-weeks-coach" }: { id?: string }) {
