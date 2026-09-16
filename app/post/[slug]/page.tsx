@@ -8,8 +8,10 @@ import { NewsletterCta } from "@/components/newsletter-cta";
 import { CoverImage } from "@/components/cover-image";
 import { JsonLd } from "@/components/json-ld";
 import { MarkdownBody } from "@/components/markdown-body";
+import { ContextCta } from "@/components/context-cta";
 import { RtsCover } from "@/components/rts-cover";
 import { conversionIntentForPost, conversionOfferFor } from "@/lib/conversion";
+import { contextCtaFor } from "@/lib/context-ctas";
 import { getAllPosts, getPost, relatedBookSummaries, relatedPosts } from "@/lib/content";
 import { isRtsPost } from "@/lib/rts-cover";
 import { articleFaqJsonLd, blogPostingJsonLd, bookFaqJsonLd, bookReviewJsonLd, breadcrumbJsonLd, postMetadata } from "@/lib/seo";
@@ -41,6 +43,7 @@ export default async function PostPage({ params }: Props) {
   const faq = bookFaqJsonLd(post) ?? articleFaqJsonLd(post);
   const intent = conversionIntentForPost(post);
   const offer = intent ? conversionOfferFor(intent, post.book?.bookTitle) : null;
+  const contextCta = isSummary ? null : contextCtaFor(post.slug);
 
   return (
     <article className="mx-auto w-full max-w-3xl px-5 py-16">
@@ -109,9 +112,28 @@ export default async function PostPage({ params }: Props) {
               priority
             />
           ) : null}
+          {contextCta ? (
+            <ContextCta
+              variant={contextCta.variant}
+              heading={contextCta.heading}
+              body={contextCta.body}
+              href={contextCta.href}
+              buttonLabel={contextCta.buttonLabel}
+            />
+          ) : null}
           <div className="mt-10">
             <MarkdownBody content={post.body} />
           </div>
+          {contextCta ? (
+            <ContextCta
+              variant={contextCta.variant}
+              heading={contextCta.heading}
+              body={contextCta.body}
+              href={contextCta.href}
+              buttonLabel={contextCta.buttonLabel}
+              compact
+            />
+          ) : null}
           <div className="mt-16">
             <NewsletterCta id="newsletter-article" />
           </div>

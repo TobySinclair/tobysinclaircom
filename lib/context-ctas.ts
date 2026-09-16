@@ -93,6 +93,13 @@ const CONTEXT_CTAS: Record<string, ContextCtaConfig> = {
     href: site.placeholders.rtsScenarioUrl,
     buttonLabel: "Try a scenario",
   },
+  "redundancy-conversation-guide": {
+    variant: "practice",
+    heading: "Practise leading the team meeting after a redundancy announcement",
+    body: "The meeting with the person is one conversation. The meeting with everyone else is another. Rehearse the team announcement before you walk into the room.",
+    href: site.placeholders.rtsRedundancyScenarioUrl,
+    buttonLabel: "Try the scenario",
+  },
 };
 
 export function contextCtaFor(slug: string): ContextCtaConfig | null {

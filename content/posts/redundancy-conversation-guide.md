@@ -5,7 +5,7 @@ slug: "redundancy-conversation-guide"
 url: "https://www.tobysinclair.com/post/redundancy-conversation-guide"
 type: post
 published: "2026-08-21T10:00:00.000Z"
-modified: "2026-08-21T10:00:00.000Z"
+modified: "2026-09-16T12:00:00.000Z"
 readingTime: "7 min read"
 categories:
   - real-talk-studio
@@ -16,7 +16,7 @@ There's a moment I've watched dozens of times in practice transcripts. A manager
 
 They say "changes to the structure". They say "your role is affected". They say "we're entering a consultation process about the shape of the team". Four sentences in, the person opposite them still doesn't know they're losing their job.
 
-I build conversation simulations at [Real Talk Studio](https://www.realtalkstudio.com), and the redundancy conversation is one of the hardest we've ever built, because it's one of the hardest that exists. This guide covers how to do it as well as it can be done: the structure, the exact sentences, the mistakes I see in rehearsal after rehearsal, and what happens with the rest of the team afterwards.
+I build conversation simulations at [Real Talk Studio](https://www.realtalkstudio.com/?utm_source=tobysinclair.com&utm_medium=referral&utm_campaign=book-summary-cta&utm_content=redundancy-conversation-guide), and the redundancy conversation is one of the hardest we've ever built, because it's one of the hardest that exists. This guide covers how to do it as well as it can be done: the structure, the exact sentences, the mistakes I see in rehearsal after rehearsal, and what happens with the rest of the team afterwards.
 
 One boundary first: this is a guide to the conversation, not the law. Redundancy processes carry real legal requirements that differ by country (consultation rules in the UK, WARN and state rules in the US, and so on). Get the process right with HR and legal advice before any conversation happens. What follows assumes the process is sound and focuses on the part no process document covers: the fifteen minutes in the room.
 
@@ -36,7 +36,7 @@ Kim Scott would call this [radical candor](/post/summary-radical-candor-by-kim-s
 
 - **Know everything answerable.** Notice period, pay, what happens to their equipment and email, when their last day is, what support exists. "I'll have to check" on basic questions makes a bad meeting worse.
 - **Know what you don't know, and decide to say so.** There will be questions without answers yet. Plan the honest sentence: "I don't know that yet. You'll have it by Friday."
-- **Rehearse the first sentence out loud.** Not in your head. Your head lets you skip the hard word. Out loud, you'll discover whether you can actually say "redundant", and if you can't yet, that's what rehearsal is for. This is precisely why we built a [redundancy scenario people can practise privately](https://www.realtalkstudio.com), because the first time you say that sentence should not be to the person it's about.
+- **Rehearse the first sentence out loud.** Not in your head. Your head lets you skip the hard word. Out loud, you'll discover whether you can actually say "redundant", and if you can't yet, that's what rehearsal is for. This is precisely why we built a [redundancy scenario people can practise privately]({{RTS_REDUNDANCY_SCENARIO_URL}}?utm_source=tobysinclair.com&utm_medium=referral&utm_campaign=book-summary-cta&utm_content=redundancy-conversation-guide), because the first time you say that sentence should not be to the person it's about.
 - **Book the room and the time like it matters.** Private, early in the day, early in the week, never a Friday afternoon, and never an ambush at the end of another meeting.
 
 ## The conversation itself: a structure that holds
