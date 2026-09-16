@@ -35,14 +35,30 @@ export function personJsonLd() {
     name: site.author,
     url: site.url,
     image: absoluteUrl("/toby.png"),
-    jobTitle: "Founder, Coach and Trainer",
+    jobTitle: "Founder, Real Talk Studio",
     description: site.seo.homeDescription,
     worksFor: {
       "@type": "Organization",
       name: "Real Talk Studio",
-      url: site.realTalk,
+      url: "https://www.realtalkstudio.com",
     },
-    sameAs: Object.values(site.social),
+    sameAs: [
+      site.social.linkedin,
+      "https://www.realtalkstudio.com",
+      site.social.twitter,
+      site.social.youtube,
+      site.social.instagram,
+    ],
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      name: "ICF Professional Certified Coach",
+      credentialCategory: "certification",
+      recognizedBy: {
+        "@type": "Organization",
+        name: "International Coaching Federation",
+        url: "https://coachingfederation.org/",
+      },
+    },
   };
 }
 
