@@ -14,8 +14,6 @@ categories:
   - leadership
 ---
 
-<!-- DRAFT: Toby to review -->
-
 Most managers are told to "be more coach-like" and then given a two-day course. This page is the practical version: what to do in a one-to-one, when coaching is easiest, and how the job changes when your team is using AI. For the tools themselves, see [coaching tools for managers](/post/coaching-tools).
 
 Google's [manager research](https://rework.withgoogle.com/guides/managers-coach-managers-to-coach/steps/introduction/) revealed their best managers are effective coaches.
@@ -50,8 +48,6 @@ This article is split into two parts.
 Let's begin 🚀
 
 ## Manager as coach in an AI-enabled team
-
-<!-- DRAFT: Toby to review -->
 
 When the team is using AI, the manager-as-coach job does not go away. It gets more specific.
 

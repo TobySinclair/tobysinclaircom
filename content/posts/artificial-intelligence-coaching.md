@@ -14,8 +14,6 @@ categories:
   - coaching
 ---
 
-<!-- DRAFT: Toby to review -->
-
 The phrase people search is **AI business coaching**. What they usually mean is: we bought the tools, we ran the town hall, and the humans still aren't using it — or they're using it badly.
 
 I am an AI business coach in that sense. Not a coach who replaced 1:1s with a chatbot. An ICF Professional Certified Coach who also builds an AI company, and who sits with HR, talent, and leadership teams while AI redraws the work.
@@ -48,7 +46,7 @@ The method is ordinary coaching: listen, ask, don't rush the advice. The territo
 
 HR can be a passenger on AI, or it can lead. The session I ran with WPP's HR and talent leaders was built around that shift: recruitment, employee engagement, and people analytics as places HR leads adoption rather than waiting to be done-to.
 
-The [WPP case study]({{WPP_CASE_STUDY_URL}}) is the shortest picture of that work.
+That session is the shortest picture of that work.
 
 If you are an HR or L&D leader looking for AI business coaching for your function, this is usually where we start: a working session, then coaching for the people who have to make it real afterwards.
 

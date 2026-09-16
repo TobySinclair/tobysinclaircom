@@ -21,7 +21,6 @@ export type CheatSheet = {
   faq: { question: string; answer: string }[]
   techniques: CheatSheetTechnique[]
   rules: string[]
-  draft: boolean
   intent: "sales" | "conversation"
 };
 
@@ -110,7 +109,6 @@ const neverSplit: CheatSheet = {
     "A loss stings twice as much as an equivalent gain. Frame the cost of no deal, not just the upside.",
     "Look past the stated position. Ask what is making them want what they want.",
   ],
-  draft: false,
   intent: "sales",
 };
 
@@ -188,7 +186,6 @@ export const cheatSheets: CheatSheet[] = [
       "A 30-second list reduces awkward pauses even if you never use it.",
       "If they want to be heard, a plan is an interruption.",
     ],
-    draft: true,
     intent: "conversation",
   },
   {
@@ -264,7 +261,6 @@ export const cheatSheets: CheatSheet[] = [
       "Tackle the toughest challenge today. Burnout is solving the same problem on a loop.",
       "There is no trivial comment from a leader. Watch the emotional wake.",
     ],
-    draft: true,
     intent: "conversation",
   },
   {
@@ -340,7 +336,6 @@ export const cheatSheets: CheatSheet[] = [
       "You do not have to choose between telling the truth and keeping the relationship.",
       "The only person you can reliably change is you. Start there.",
     ],
-    draft: true,
     intent: "conversation",
   },
   {
@@ -416,7 +411,6 @@ export const cheatSheets: CheatSheet[] = [
       "Find the disagreement under the disagreement — the value clash under the practical one.",
       "How you see a situation depends on what you can do in it. Ask what the hill looks like from their legs, not yours.",
     ],
-    draft: true,
     intent: "conversation",
   },
 ];

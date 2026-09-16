@@ -58,7 +58,7 @@ If you want worked sales drills rather than category definition, start with [sal
 
 Workshops and courses still have a job: shared vocabulary. Peer role play is better than nothing if the buyer is instructed to be difficult and there is no audience. Coaching is unmatched for one person's pattern. AI roleplay wins on reps, privacy, measurement and cost per learner. The strongest programmes pair all four.
 
-For a live enterprise example of this work with HR and talent leaders, see the [WPP case study]({{WPP_CASE_STUDY_URL}}).
+A live enterprise example of this work is the session with WPP's HR and talent leaders on leading AI adoption.
 
 ## Roleplay ideas by team
 

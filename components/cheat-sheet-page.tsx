@@ -31,9 +31,6 @@ export function CheatSheetPage({ slug }: { slug: string }) {
 
   return (
     <article className="mx-auto w-full max-w-3xl px-5 py-16">
-      {sheet.draft ? (
-        <div dangerouslySetInnerHTML={{ __html: "<!-- DRAFT: Toby to review -->" }} />
-      ) : null}
       <JsonLd
         data={[
           webPageJsonLd({

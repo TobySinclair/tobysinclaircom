@@ -36,7 +36,7 @@ Kim Scott would call this [radical candor](/post/summary-radical-candor-by-kim-s
 
 - **Know everything answerable.** Notice period, pay, what happens to their equipment and email, when their last day is, what support exists. "I'll have to check" on basic questions makes a bad meeting worse.
 - **Know what you don't know, and decide to say so.** There will be questions without answers yet. Plan the honest sentence: "I don't know that yet. You'll have it by Friday."
-- **Rehearse the first sentence out loud.** Not in your head. Your head lets you skip the hard word. Out loud, you'll discover whether you can actually say "redundant", and if you can't yet, that's what rehearsal is for. This is precisely why we built a [redundancy scenario people can practise privately]({{RTS_REDUNDANCY_SCENARIO_URL}}?utm_source=tobysinclair.com&utm_medium=referral&utm_campaign=book-summary-cta&utm_content=redundancy-conversation-guide), because the first time you say that sentence should not be to the person it's about.
+- **Rehearse the first sentence out loud.** Not in your head. Your head lets you skip the hard word. Out loud, you'll discover whether you can actually say "redundant", and if you can't yet, that's what rehearsal is for. This is precisely why we built a [redundancy scenario people can practise privately](https://www.realtalkstudio.com/), because the first time you say that sentence should not be to the person it's about.
 - **Book the room and the time like it matters.** Private, early in the day, early in the week, never a Friday afternoon, and never an ambush at the end of another meeting.
 
 ## The conversation itself: a structure that holds

@@ -109,8 +109,6 @@ It's important that you think carefully about the team required based your purpo
 
 ## Coaching leadership teams through AI change
 
-<!-- DRAFT: Toby to review -->
-
 AI is now one of those must-win battles. The senior team has to decide what AI is for, tell a story people will believe, and hold the line when the first tools land badly.
 
 That is not a strategy offsite with a demo at the end. It is team coaching: purpose, topology, and the behavioural norms that stop the exec table from splitting into "the ones who get it" and everyone else. The same six questions still apply. The territory is new.

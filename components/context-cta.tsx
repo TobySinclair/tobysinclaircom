@@ -17,7 +17,7 @@ export function ContextCta({
   buttonLabel: string
   compact?: boolean
 }) {
-  const external = href.startsWith("http") || href.startsWith("{{");
+  const external = href.startsWith("http");
   const label = buttonLabel || heading;
 
   if (compact) {
