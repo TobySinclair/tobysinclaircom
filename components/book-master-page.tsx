@@ -2,10 +2,12 @@ import Link from "next/link";
 import { BookCoverGrid, toBookSummaryCard } from "@/components/book-cover-grid";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ConversionCta } from "@/components/conversion-cta";
+import { ContextCta } from "@/components/context-cta";
 import { JsonLd } from "@/components/json-ld";
 import type { BookMaster } from "@/lib/book-masters";
 import { conversionIntentFor, conversionOfferFor } from "@/lib/conversion";
 import { getAllPosts, type Post } from "@/lib/content";
+import { BookThemeGroups } from "@/components/book-theme-groups";
 import { breadcrumbJsonLd, collectionJsonLd } from "@/lib/seo";
 
 function postsBySlug(slugs: string[], posts: Post[]) {
@@ -62,6 +64,8 @@ export function BookMasterPage({ master }: { master: BookMaster }) {
         <BookCoverGrid posts={postsBySlug(master.startHere, all).map(toBookSummaryCard)} className="mt-6" />
       </section>
 
+      <BookThemeGroups posts={featured} />
+
       {master.sections.map((section) => {
         const posts = postsBySlug(section.slugs, all);
         if (!posts.length) return null;
@@ -95,6 +99,16 @@ export function BookMasterPage({ master }: { master: BookMaster }) {
           <ConversionCta offer={offer} />
         </div>
       ) : null}
+
+      <div className="mt-16">
+        <ContextCta
+          variant="services"
+          heading="Want these ideas in your leadership programme?"
+          body="I train and coach HR, L&D and leadership teams on the conversations and change these books describe."
+          href="/work-with-me"
+          buttonLabel="Work with me"
+        />
+      </div>
 
       <p className="mt-16 text-sm text-ink-muted">
         <Link href={master.hub.href} className="text-green hover:underline">

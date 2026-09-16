@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { toBookSummaryCard } from "@/components/book-cover-grid";
-import { BookSummaryGallery } from "@/components/book-summary-gallery";
 import { BookSummaryHubNav } from "@/components/book-summary-hubs";
+import { BookThemeGroups } from "@/components/book-theme-groups";
+import { ContextCta } from "@/components/context-cta";
 import { NewsletterCta } from "@/components/newsletter-cta";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
@@ -46,7 +46,17 @@ export default function BookSummariesPage() {
       </div>
       <h2 className="mt-12 text-xl font-bold tracking-tight">Browse by topic</h2>
       <BookSummaryHubNav posts={posts} />
-      <BookSummaryGallery posts={posts.map(toBookSummaryCard)} />
+      <BookThemeGroups posts={posts} />
+      <div className="mt-16">
+        <ContextCta
+          variant="services"
+          heading="Want these ideas in your leadership programme?"
+          body="I train and coach HR, L&D and leadership teams on the conversations and change these books describe."
+          href="/work-with-me"
+          buttonLabel="Work with me"
+        />
+      </div>
+    </div>
     </div>
   );
 }

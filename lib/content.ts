@@ -25,6 +25,7 @@ export type Post = {
   noindex: boolean
   seoTitle: string | null
   seoDescription: string | null
+  theme: string | null
   body: string
   book: BookSummary | null
 };
@@ -88,6 +89,7 @@ export const getAllPosts = cache((): Post[] => {
         noindex: data.noindex === true,
         seoTitle: data.seoTitle ? String(data.seoTitle) : null,
         seoDescription: data.seoDescription ? String(data.seoDescription) : null,
+        theme: data.theme ? String(data.theme) : null,
         body: content,
         book: null,
       } satisfies Post;
