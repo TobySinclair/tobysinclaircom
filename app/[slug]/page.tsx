@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ConversionCta } from "@/components/conversion-cta";
 import { JsonLd } from "@/components/json-ld";
 import { MarkdownBody } from "@/components/markdown-body";
-import { masterPageSlugs } from "@/lib/book-masters";
+import { dedicatedPageSlugs } from "@/lib/book-masters";
 import { getLandingPage, getLandingPages } from "@/lib/content";
 import { conversionIntentFor, conversionOfferFor } from "@/lib/conversion";
 import { breadcrumbJsonLd, landingMetadata, webPageJsonLd } from "@/lib/seo";
@@ -15,7 +15,7 @@ export const dynamicParams = false;
 
 export function generateStaticParams() {
   return getLandingPages()
-    .filter((page) => !masterPageSlugs.includes(page.slug))
+    .filter((page) => !dedicatedPageSlugs.includes(page.slug))
     .map((page) => ({ slug: page.slug }));
 }
 
