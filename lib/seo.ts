@@ -113,7 +113,12 @@ export function blogPostingJsonLd(post: Post) {
         : [absoluteUrl(rtsCoverImagePath(post.slug))],
     datePublished: post.published,
     dateModified: post.modified || post.published,
-    author: { "@id": personId },
+    author: {
+      "@type": "Person",
+      "@id": personId,
+      name: site.author,
+      url: site.url,
+    },
     publisher: { "@id": orgId },
     mainEntityOfPage: absoluteUrl(`/post/${post.slug}`),
     url: absoluteUrl(`/post/${post.slug}`),
