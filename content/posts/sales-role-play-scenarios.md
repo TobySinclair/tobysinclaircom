@@ -5,7 +5,7 @@ slug: "sales-role-play-scenarios"
 url: "https://www.tobysinclair.com/post/sales-role-play-scenarios"
 type: post
 published: "2026-08-21T12:00:00.000Z"
-modified: "2026-08-21T12:00:00.000Z"
+modified: "2026-09-16T12:00:00.000Z"
 readingTime: "7 min read"
 categories:
   - real-talk-studio
@@ -16,7 +16,7 @@ Ask a sales team about role play and watch the room flinch.
 
 Everyone's been in that team meeting. The manager says "let's do a quick role play", two reps shuffle to the front, and what follows is theatre. The rep performs for their manager, not for a customer. The colleague playing the buyer is far too polite to object properly. Everyone claps. Nobody learned anything, and the actual objection that kills deals goes unpractised for another quarter.
 
-I build sales roleplay simulations for a living at [Real Talk Studio](https://www.realtalkstudio.com), including cold-call and negotiation scenarios for contact-centre and key-account teams. So I've thought a lot about why traditional sales role play fails, and I've watched what happens when you fix it. This article covers both, plus five scenarios you can run this week.
+I build sales roleplay simulations for a living at [Real Talk Studio](https://www.realtalkstudio.com/?utm_source=tobysinclair.com&utm_medium=referral&utm_campaign=book-summary-cta&utm_content=sales-role-play-scenarios), including cold-call and negotiation scenarios for contact-centre and key-account teams. This page is the sales drills: five scenarios you can run this week. For what AI roleplay is, when it works, when it doesn't, and ideas across support and leadership, read [AI roleplay training](/post/ai-roleplay-training).
 
 If you want the negotiation books behind the drills, start with [Never Split the Difference](/post/never-split-the-difference-summary) and [Pitch Anything](/post/summary-pitch-anything-by-oren-klaff). Those teach the moves. These scenarios are where you find out whether you can still use them when someone is trying to hang up.
 
@@ -94,12 +94,12 @@ The scenarios matter less than the frequency. A rep who runs the cold open ten t
 
 You can build that frequency with peer practice if your team has the discipline and the honesty for it. The brief matters: instruct whoever plays the buyer to be realistically difficult, and protect the rep from an audience.
 
-Or you can remove the human bottleneck entirely. This is what we do at [Real Talk Studio](https://www.realtalkstudio.com): AI buyers that lead with the real objections, stay in character, lose patience, and occasionally hang up, plus feedback on exactly what the rep said and when. Reps practise alone, as often as they like, and the awkwardness that kills team-meeting role play just isn't there.
+Or you can remove the human bottleneck entirely. This is what we do at [Real Talk Studio](https://www.realtalkstudio.com/?utm_source=tobysinclair.com&utm_medium=referral&utm_campaign=book-summary-cta&utm_content=sales-role-play-scenarios): AI buyers that lead with the real objections, stay in character, lose patience, and occasionally hang up, plus feedback on exactly what the rep said and when. Reps practise alone, as often as they like, and the awkwardness that kills team-meeting role play just isn't there.
 
-Either way, the principle stands. Your reps' next objection shouldn't be the first time they've heard it that month. If you want to feel the difference between reading about objection handling and doing it, [try a sales simulation](https://www.realtalkstudio.com) and see how you get on against a buyer who doesn't clap at the end.
+Either way, the principle stands. Your reps' next objection shouldn't be the first time they've heard it that month. If you want to feel the difference between reading about objection handling and doing it, [try a sales simulation](https://www.realtalkstudio.com/?utm_source=tobysinclair.com&utm_medium=referral&utm_campaign=book-summary-cta&utm_content=sales-role-play-scenarios) and see how you get on against a buyer who doesn't clap at the end.
 
-For the wider catalogue of drills, I also published [45+ roleplay ideas for sales, support and leadership](/post/45-roleplay-ideas-for-training-sales-support-leadership). For how the technology actually works, and where it still fails: [AI roleplay training](/post/ai-roleplay-training) and [the ultimate guide to AI sales roleplay](/post/the-ultimate-guide-to-ai-sales-roleplay-mastering-the-art-of-the-deal-in-the-digital-age).
+The founder-level view of the category, including when AI roleplay fails and how to run it with a whole team, is [AI roleplay training](/post/ai-roleplay-training).
 
 ---
 
-*Toby Sinclair is the founder of [Real Talk Studio](https://www.realtalkstudio.com), an AI conversation simulation platform used by sales and contact-centre teams to practise cold calls, negotiations and objection handling against realistic AI counterparts. He spent a decade in financial trading at JP Morgan.*
+*Toby Sinclair is the founder of [Real Talk Studio](https://www.realtalkstudio.com/?utm_source=tobysinclair.com&utm_medium=referral&utm_campaign=book-summary-cta&utm_content=sales-role-play-scenarios), an AI conversation simulation platform used by sales and contact-centre teams to practise cold calls, negotiations and objection handling against realistic AI counterparts. He spent a decade in financial trading at JP Morgan.*

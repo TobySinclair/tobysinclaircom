@@ -11,6 +11,7 @@ import {
   type BookSummary,
 } from "./book-summary";
 import { POSTS_PER_PAGE, site } from "./site";
+import { redirectedPostSlugs } from "./redirects";
 
 export type Post = {
   slug: string
@@ -115,6 +116,7 @@ export const getAllPosts = cache((): Post[] => {
         body: cleanBookSummaryBody(content, book),
       } satisfies Post;
     })
+    .filter((post) => !redirectedPostSlugs.has(post.slug))
     .sort((a, b) => {
       const aTime = a.published ? Date.parse(a.published) : 0;
       const bTime = b.published ? Date.parse(b.published) : 0;

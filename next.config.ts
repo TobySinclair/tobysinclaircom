@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { permanentRedirects } from "./lib/redirects";
 
 const nextConfig: NextConfig = {
   images: {
@@ -27,6 +28,11 @@ const nextConfig: NextConfig = {
         destination: "/never-split-the-difference-cheat-sheet",
         permanent: true,
       },
+      ...permanentRedirects.map((item) => ({
+        source: item.source,
+        destination: item.destination,
+        permanent: true as const,
+      })),
     ];
   },
   async rewrites() {

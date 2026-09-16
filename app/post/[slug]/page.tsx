@@ -10,7 +10,7 @@ import { JsonLd } from "@/components/json-ld";
 import { MarkdownBody } from "@/components/markdown-body";
 import { ContextCta } from "@/components/context-cta";
 import { RtsCover } from "@/components/rts-cover";
-import { conversionIntentForPost, conversionOfferFor } from "@/lib/conversion";
+import { redirectedPostSlugs } from "@/lib/redirects";
 import { contextCtaFor } from "@/lib/context-ctas";
 import { articleFaqsFor } from "@/lib/article-faqs";
 import { JohariTemplate } from "@/components/johari-template";
@@ -24,7 +24,9 @@ type Props = { params: Promise<{ slug: string }> };
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return getAllPosts().map((post) => ({ slug: post.slug }));
+  return getAllPosts()
+    .filter((post) => !redirectedPostSlugs.has(post.slug))
+    .map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

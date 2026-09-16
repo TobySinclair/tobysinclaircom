@@ -130,6 +130,14 @@ const CONTEXT_CTAS: Record<string, ContextCtaConfig> = {
     buttonLabel: "Try the scenario",
     placements: ["top", "end"],
   },
+  "ai-roleplay-training": {
+    variant: "services",
+    heading: "Want this designed into a leadership or L&D programme?",
+    body: "I help enterprises put conversation practice into the programmes that already exist — not another slide about role play.",
+    href: "/work-with-me",
+    buttonLabel: "Work with me",
+    placements: ["end"],
+  },
   "how-to-use-johari-window-to-build-self-awareness": {
     variant: "services",
     heading: "Running this with a leadership team?",

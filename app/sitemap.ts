@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { cheatSheets } from "@/lib/cheat-sheets";
 import { getAllPosts, getCategories, getLandingPages, paginate } from "@/lib/content";
-import { isRtsPost, rtsCoverImagePath } from "@/lib/rts-cover";
+import { redirectedPostSlugs } from "@/lib/redirects";
 import { site } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -51,7 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   for (const post of posts) {
-    if (post.noindex) continue;
+    if (post.noindex || redirectedPostSlugs.has(post.slug)) continue;
     pages.push({
       url: `${site.url}/post/${post.slug}`,
       lastModified: post.modified || post.published || undefined,
