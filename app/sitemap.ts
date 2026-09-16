@@ -43,6 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   for (const post of posts) {
+    if (post.noindex) continue;
     pages.push({
       url: `${site.url}/post/${post.slug}`,
       lastModified: post.modified || post.published || undefined,

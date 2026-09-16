@@ -227,11 +227,13 @@ export function pageMetadata(input: {
   published?: string | null
   modified?: string | null
   absoluteTitle?: boolean
+  index?: boolean
 }): Metadata {
   const url = canonicalUrl(input.path);
   const image = input.image
     ? [{ url: input.image, alt: input.title }]
     : [defaultOgImage];
+  const index = input.index !== false;
 
   return {
     title: input.absoluteTitle ? { absolute: input.title } : input.title,
@@ -266,10 +268,10 @@ export function pageMetadata(input: {
       creator: "@TobySinclair_",
     },
     robots: {
-      index: true,
+      index,
       follow: true,
       googleBot: {
-        index: true,
+        index,
         follow: true,
         "max-image-preview": "large",
         "max-snippet": -1,
@@ -289,6 +291,7 @@ export function postMetadata(post: Post): Metadata {
     type: "article",
     published: post.published,
     modified: post.modified,
+    index: !post.noindex,
   });
 }
 

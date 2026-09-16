@@ -22,6 +22,7 @@ export type Post = {
   image: string | null
   readingTime: string | null
   categories: string[]
+  noindex: boolean
   body: string
   book: BookSummary | null
 };
@@ -79,6 +80,7 @@ export const getAllPosts = cache((): Post[] => {
         image: data.image ? String(data.image) : null,
         readingTime: data.readingTime ? String(data.readingTime) : null,
         categories: Array.isArray(data.categories) ? data.categories.map(String) : [],
+        noindex: data.noindex === true,
         body: content,
         book: null,
       } satisfies Post;

@@ -5,9 +5,10 @@ slug: "what-is-a-product-oh-no-not-another-product-definition"
 url: "https://www.tobysinclair.com/post/what-is-a-product-oh-no-not-another-product-definition"
 type: post
 published: "2020-02-09T16:21:59.000Z"
-modified: "2020-08-03T16:43:22.149Z"
+modified: "2026-09-16T12:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_9d9f2b578b554052a7494da726cff7f9~mv2.png"
 readingTime: "2 min read"
+noindex: true
 categories:
   - organisational-design
   - product-management

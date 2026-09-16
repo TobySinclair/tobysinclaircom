@@ -5,9 +5,10 @@ slug: "diy-guide-to-build-a-free-charity-website"
 url: "https://www.tobysinclair.com/post/diy-guide-to-build-a-free-charity-website"
 type: post
 published: "2020-07-23T07:48:08.000Z"
-modified: "2020-07-23T07:48:08.000Z"
+modified: "2026-09-16T12:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_25b290afdbdb453bba412d3781542db3~mv2.png"
 readingTime: "3 min read"
+noindex: true
 categories:
   - charity
 ---

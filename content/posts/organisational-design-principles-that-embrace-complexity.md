@@ -5,9 +5,10 @@ slug: "organisational-design-principles-that-embrace-complexity"
 url: "https://www.tobysinclair.com/post/organisational-design-principles-that-embrace-complexity"
 type: post
 published: "2020-06-20T09:53:52.000Z"
-modified: "2020-12-27T13:17:20.367Z"
+modified: "2026-09-16T12:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_596f0fc17ce1434c9f87da37bb7ce4c6~mv2.png"
 readingTime: "9 min read"
+noindex: true
 categories:
   - organisational-design
 ---
