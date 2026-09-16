@@ -36,6 +36,28 @@ const ARTICLE_FAQS: Record<string, ArticleFaq[]> = {
         "Yes, though a coach or a well-designed counterpart is faster. If you cannot work with a teacher, you still need an outside view: a recording, a transcript, a peer who will not make it easy, or a simulation that pushes back. Self-review without a counterpart usually rehearses your existing habits.",
     },
   ],
+  "how-to-use-johari-window-to-build-self-awareness": [
+    {
+      question: "What are the four quadrants of the Johari Window?",
+      answer:
+        "Open (known to you and others), Blind (known to others, not to you), Hidden (known to you, not others), and Unknown (known to neither). The work is to grow the open area by sharing more of yourself and asking for feedback on the blind spot.",
+    },
+    {
+      question: "How do you use the Johari Window in a team?",
+      answer:
+        "Each person picks five adjectives that describe them. A diverse set of colleagues pick five as well. You plot overlaps into the four quadrants, then talk. Curiosity, not defence. The discussion is the point; the grid is just the map.",
+    },
+    {
+      question: "Is there a Johari Window template?",
+      answer:
+        "Yes. This page has a free printable template — four quadrants plus the adjectives list — and a Miro board if you want to run it on a whiteboard. There is also an email you can send to collect adjectives.",
+    },
+    {
+      question: "What are the limitations of the Johari Window?",
+      answer:
+        "It is a conversation starter, not a personality test. Adjectives are blunt. Power and psychological safety decide how honest people will be. New teams produce small open areas by default. Treat the result as a hypothesis to discuss, not a verdict.",
+    },
+  ],
 };
 
 export function articleFaqsFor(slug: string): ArticleFaq[] {

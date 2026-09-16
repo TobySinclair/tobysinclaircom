@@ -12,6 +12,8 @@ import { ContextCta } from "@/components/context-cta";
 import { RtsCover } from "@/components/rts-cover";
 import { conversionIntentForPost, conversionOfferFor } from "@/lib/conversion";
 import { contextCtaFor } from "@/lib/context-ctas";
+import { articleFaqsFor } from "@/lib/article-faqs";
+import { JohariTemplate } from "@/components/johari-template";
 import { getAllPosts, getPost, relatedBookSummaries, relatedPosts } from "@/lib/content";
 import { isRtsPost } from "@/lib/rts-cover";
 import { articleFaqJsonLd, blogPostingJsonLd, bookFaqJsonLd, bookReviewJsonLd, breadcrumbJsonLd, postMetadata } from "@/lib/seo";
@@ -44,6 +46,7 @@ export default async function PostPage({ params }: Props) {
   const intent = conversionIntentForPost(post);
   const offer = intent ? conversionOfferFor(intent, post.book?.bookTitle) : null;
   const contextCta = isSummary ? null : contextCtaFor(post.slug);
+  const articleFaqs = articleFaqsFor(post.slug);
 
   return (
     <article className="mx-auto w-full max-w-3xl px-5 py-16">
@@ -112,7 +115,7 @@ export default async function PostPage({ params }: Props) {
               priority
             />
           ) : null}
-          {contextCta ? (
+          {contextCta?.placements?.includes("top") ? (
             <ContextCta
               variant={contextCta.variant}
               heading={contextCta.heading}
@@ -124,14 +127,31 @@ export default async function PostPage({ params }: Props) {
           <div className="mt-10">
             <MarkdownBody content={post.body} />
           </div>
-          {contextCta ? (
+          {post.slug === "how-to-use-johari-window-to-build-self-awareness" ? (
+            <div className="mt-12">
+              <JohariTemplate />
+            </div>
+          ) : null}
+          {articleFaqs.length ? (
+            <section id="faq" className="mt-12 rounded-[1.5rem] border border-white/10 bg-[#0c0c14] p-6 md:p-8">
+              <h2 className="text-xl font-bold tracking-tight">Questions</h2>
+              <dl className="mt-6 space-y-6">
+                {articleFaqs.map((item) => (
+                  <div key={item.question}>
+                    <dt className="font-semibold tracking-tight">{item.question}</dt>
+                    <dd className="mt-2 text-sm leading-7 text-ink-muted">{item.answer}</dd>
+                  </div>
+                ))}
+              </dl>
+            </section>
+          ) : null}
+          {contextCta?.placements?.includes("end") ? (
             <ContextCta
               variant={contextCta.variant}
               heading={contextCta.heading}
               body={contextCta.body}
               href={contextCta.href}
               buttonLabel={contextCta.buttonLabel}
-              compact
             />
           ) : null}
           <div className="mt-16">

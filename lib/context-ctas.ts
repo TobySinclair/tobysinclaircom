@@ -8,6 +8,7 @@ export type ContextCtaConfig = {
   body: string
   href: string
   buttonLabel: string
+  placements?: Array<"top" | "end">
 };
 
 const PRACTICE_BODY =
@@ -127,6 +128,15 @@ const CONTEXT_CTAS: Record<string, ContextCtaConfig> = {
     body: "The meeting with the person is one conversation. The meeting with everyone else is another. Rehearse the team announcement before you walk into the room.",
     href: site.placeholders.rtsRedundancyScenarioUrl,
     buttonLabel: "Try the scenario",
+    placements: ["top", "end"],
+  },
+  "how-to-use-johari-window-to-build-self-awareness": {
+    variant: "services",
+    heading: "Running this with a leadership team?",
+    body: "I use the Johari Window in coaching and leadership programmes when a manager is stuck in a blind spot. If you want this run as a working session, not a slide, that's the work I do.",
+    href: "/work-with-me",
+    buttonLabel: "Work with me",
+    placements: ["end"],
   },
 };
 
@@ -137,5 +147,9 @@ export function contextCtaFor(slug: string): ContextCtaConfig | null {
     config.variant === "practice"
       ? withReferralUtm(config.href, slug)
       : config.href;
-  return { ...config, href };
+  return {
+    ...config,
+    href,
+    placements: config.placements ?? ["end"],
+  };
 }

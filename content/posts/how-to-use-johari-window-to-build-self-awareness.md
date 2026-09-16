@@ -5,7 +5,7 @@ slug: "how-to-use-johari-window-to-build-self-awareness"
 url: "https://www.tobysinclair.com/post/how-to-use-johari-window-to-build-self-awareness"
 type: post
 published: "2021-07-03T11:29:18.527Z"
-modified: "2026-08-21T19:00:00.000Z"
+modified: "2026-09-16T12:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_0d27660a39244898858c56299b69d57b~mv2.png"
 readingTime: "7 min read"
 categories:
@@ -27,7 +27,8 @@ This guide covers:
 - [How does the Johari Window work?](#how-does-the-johari-window-model-work)
 - [What are the four quadrants of the Johari Window?](#what-are-the-four-quadrants-of-the-johari-window)
 - [Johari Window examples](#johari-window-examples)
-- [Johari Window email template](#johari-window-template)
+- [Worked example](#worked-example)
+- [Free Johari Window template](#free-johari-window-template)
 
 ### **What is the Johari Window Model?**
 
@@ -168,6 +169,28 @@ Through discussion, this was in response to how the leader was handling deadline
 With this contrast, the leader shared with the team their hidden area. The leader worked with the team to help in times of pressure. This helped the leader demonstrate more calm and organized responses. This improved the outcomes for the team and also the satisfaction of the leader.
 
 When we behave in alignment with our values we have greater work satisfaction.
+
+### Worked example
+
+A four-quadrant snapshot from a leadership team I ran this with. The manager is six months in. Five self-picks; five from the team.
+
+**Open — both chose:** dependable, organised.
+
+These are already in the room. Do not spend the session proving them. Name them, then move.
+
+**Blind — team chose, manager did not:** tense, powerful.
+
+The team sees pressure-behaviours the manager files as "just getting it done". The useful question is not "am I tense?" It is "what did I do in last week's deadline that looked like that?"
+
+**Hidden — manager chose, team did not:** calm, witty.
+
+The manager is those things at home and with peers. The team has not seen them. The action is a behaviour, not a speech: one lighter check-in at the start of the meeting, one slower response when the date slips.
+
+**Unknown — nobody chose:** bold, shy, and the rest of the list.
+
+Leave them. They are not a to-do. They may move later with a different group.
+
+The session is the discussion of Blind and Hidden. The grid is only there so the conversation has somewhere to sit.
 
 ### **Johari Window Template**
 
