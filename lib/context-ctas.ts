@@ -138,6 +138,14 @@ const CONTEXT_CTAS: Record<string, ContextCtaConfig> = {
     buttonLabel: "Work with me",
     placements: ["end"],
   },
+  "artificial-intelligence-coaching": {
+    variant: "services",
+    heading: "Need an AI business coach for the people side of adoption?",
+    body: "A 30-minute discovery call. You describe where you are; I tell you whether and how I can help.",
+    href: "/work-with-me",
+    buttonLabel: "Work with me",
+    placements: ["end"],
+  },
   "how-to-use-johari-window-to-build-self-awareness": {
     variant: "services",
     heading: "Running this with a leadership team?",
