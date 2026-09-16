@@ -146,6 +146,14 @@ const CONTEXT_CTAS: Record<string, ContextCtaConfig> = {
     buttonLabel: "Work with me",
     placements: ["end"],
   },
+  "coaching-senior-leadership-teams": {
+    variant: "services",
+    heading: "Coaching a senior team through AI change?",
+    body: "The six questions still apply. The territory is new. I work with leadership teams when AI is the must-win battle they cannot skip.",
+    href: "/work-with-me",
+    buttonLabel: "Work with me",
+    placements: ["end"],
+  },
   "how-to-use-johari-window-to-build-self-awareness": {
     variant: "services",
     heading: "Running this with a leadership team?",

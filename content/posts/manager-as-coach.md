@@ -1,17 +1,22 @@
 ---
 title: "Manager as Coach: How To Lead Better"
-description: "In a highly competitive market, effective coaching is not just optional, it’s essential to high-performance. Coaching is what turns ordinary people into extraordinary product teams. Learn how to become an effective Manager as Coach."
+description: "How to become a manager as coach — the listening, questions and habits that work in one-to-ones, including what changes when your team is using AI."
 slug: "manager-as-coach"
 url: "https://www.tobysinclair.com/post/manager-as-coach"
 type: post
 published: "2022-01-24T17:56:48.032Z"
-modified: "2022-03-24T15:45:14.856Z"
+modified: "2026-09-16T12:00:00.000Z"
+seoDescription: "How to become a manager as coach — the listening, questions and habits that work in one-to-ones, including what changes when your team is using AI."
 image: "https://static.wixstatic.com/media/67d4e8_227d5723a91843b193ff4b6737f657dd~mv2.png"
 readingTime: "9 min read"
 categories:
   - coaching
   - leadership
 ---
+
+<!-- DRAFT: Toby to review -->
+
+Most managers are told to "be more coach-like" and then given a two-day course. This page is the practical version: what to do in a one-to-one, when coaching is easiest, and how the job changes when your team is using AI. For the tools themselves, see [coaching tools for managers](/post/coaching-tools).
 
 Google's [manager research](https://rework.withgoogle.com/guides/managers-coach-managers-to-coach/steps/introduction/) revealed their best managers are effective coaches.
 
@@ -43,6 +48,16 @@ This article is split into two parts.
 - [**Part 2 - Why become a Manager as Coach.**](#viewer-cngb4)For managers who aren't convinced coaching is for them.
 
 Let's begin 🚀
+
+## Manager as coach in an AI-enabled team
+
+<!-- DRAFT: Toby to review -->
+
+When the team is using AI, the manager-as-coach job does not go away. It gets more specific.
+
+People will over-rely on the model, hide that they used it, or refuse it and still deliver. Your one-to-one is where that shows up. The same three skills apply: listen, ask, sense. The questions change. "Walk me through how you did this" now includes the tools. "What would you do if the model was wrong?" is a coaching question, not a gotcha.
+
+If you want the frameworks and questions in one place, use the [coaching tools for managers](/post/coaching-tools) guide.
 
 ## **Part 1 - How To Become a Manager as Coach?**
 

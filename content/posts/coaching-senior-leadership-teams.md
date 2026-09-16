@@ -1,11 +1,13 @@
 ---
-title: "Coaching Senior Leadership Teams | Ask These 6 Questions"
-description: "How do you turn a group of your most talented individuals into a high performing leadership team? In this article I explore 6 essential questions to ask when forming a senior leadership team. Using this questions will help maximise your teams performance."
+title: "Senior Leadership Team Coaching: A Practical Guide"
+description: "How do you turn a group of talented individuals into a high-performing senior leadership team? The six questions that matter, plus coaching leadership teams through AI change."
 slug: "coaching-senior-leadership-teams"
 url: "https://www.tobysinclair.com/post/coaching-senior-leadership-teams"
 type: post
 published: "2020-11-14T14:24:11.742Z"
-modified: "2021-02-06T15:54:27.031Z"
+modified: "2026-09-16T12:00:00.000Z"
+seoTitle: "Senior Leadership Team Coaching: A Practical Guide"
+seoDescription: "Senior leadership team coaching: six questions that turn talented individuals into a real team, and how to coach leadership teams through AI change."
 image: "https://static.wixstatic.com/media/67d4e8_efa149ebf13447858a42a342011fa576~mv2.jpg"
 readingTime: "3 min read"
 categories:
@@ -104,6 +106,16 @@ It's important that you think carefully about the team required based your purpo
 > Most organisations have more than one kind of leadership team, operating simultaneously. A common configuration is a core decision-making team, which handles the highest impact enterprise issues, along with a coordination team, which often includes members of the decision-making team that oversees and manages major organisational initiatives.
 
 *Wageman et al.*
+
+## Coaching leadership teams through AI change
+
+<!-- DRAFT: Toby to review -->
+
+AI is now one of those must-win battles. The senior team has to decide what AI is for, tell a story people will believe, and hold the line when the first tools land badly.
+
+That is not a strategy offsite with a demo at the end. It is team coaching: purpose, topology, and the behavioural norms that stop the exec table from splitting into "the ones who get it" and everyone else. The same six questions still apply. The territory is new.
+
+If you want that work designed rather than another slide about AI, [see how I work with leadership teams](/work-with-me).
 
 ### **Part 2**
 
