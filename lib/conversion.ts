@@ -120,10 +120,10 @@ function bookPhrase(bookTitle?: string | null) {
 export function conversionOfferFor(
   intent: ConversionIntent,
   bookTitle?: string | null,
-  content = intent,
+  content?: string,
 ): ConversionOffer {
   const book = bookPhrase(bookTitle);
-  const practiseHref = withReferralUtm(site.realTalkPractise, content);
+  const practiseHref = withReferralUtm(site.realTalkPractise, content ?? intent);
 
   if (intent === "conversation") {
     return {

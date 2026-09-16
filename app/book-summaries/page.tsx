@@ -57,6 +57,5 @@ export default function BookSummariesPage() {
         />
       </div>
     </div>
-    </div>
   );
 }

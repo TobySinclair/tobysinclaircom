@@ -165,4 +165,6 @@ export function getBookMaster(slug: string) {
   return bookMasters.find((page) => page.slug === slug) ?? null;
 }
 
+export const masterPageSlugs = bookMasters.map((page) => page.slug);
+
 export const dedicatedPageSlugs = [...masterPageSlugs, "workshop-planning-template"];
