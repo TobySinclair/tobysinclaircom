@@ -14,6 +14,11 @@ export const site = {
   fearSettingCoach:
     "https://www.realtalkstudio.com/coach/marcia-thompson?studioId=1ec01f58-b431-44b7-bf39-4c2e279a41c4&branding=true&demo=true",
   calendly: "https://calendly.com/toby-sinclair/discovery",
+  placeholders: {
+    rtsScenarioUrl: "{{RTS_SCENARIO_URL}}",
+    rtsRedundancyScenarioUrl: "{{RTS_REDUNDANCY_SCENARIO_URL}}",
+    wppCaseStudyUrl: "{{WPP_CASE_STUDY_URL}}",
+  },
   newsletter: {
     formAction: "https://static.mailerlite.com/webforms/submit/l9v1d8",
     groupId: "105462337",

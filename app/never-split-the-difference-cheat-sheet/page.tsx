@@ -3,10 +3,12 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CheatSheetGate } from "@/components/cheat-sheet-gate";
 import { ConversionCta } from "@/components/conversion-cta";
+import { ContextCta } from "@/components/context-cta";
 import { JsonLd } from "@/components/json-ld";
 import { PrintButton } from "@/components/print-button";
 import { cheatSheet } from "@/lib/cheat-sheet";
 import { conversionOfferFor } from "@/lib/conversion";
+import { contextCtaFor } from "@/lib/context-ctas";
 import { breadcrumbJsonLd, pageMetadata, webPageJsonLd } from "@/lib/seo";
 import { site } from "@/lib/site";
 
@@ -17,6 +19,7 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function NeverSplitCheatSheetPage() {
+  const contextCta = contextCtaFor("never-split-the-difference-cheat-sheet");
   return (
     <article className="mx-auto w-full max-w-3xl px-5 py-16">
       <JsonLd
@@ -92,6 +95,16 @@ export default function NeverSplitCheatSheetPage() {
         </ol>
       </section>
 
+      {contextCta ? (
+        <ContextCta
+          variant={contextCta.variant}
+          heading={contextCta.heading}
+          body={contextCta.body}
+          href={contextCta.href}
+          buttonLabel={contextCta.buttonLabel}
+        />
+      ) : null}
+
       <div className="mt-10">
         <CheatSheetGate>
           <div className="cheat-sheet-print space-y-8">
@@ -106,6 +119,16 @@ export default function NeverSplitCheatSheetPage() {
 
       <div className="mt-16 print:hidden">
         <ConversionCta offer={conversionOfferFor("sales", "Never Split the Difference")} />
+        {contextCta ? (
+          <ContextCta
+            variant={contextCta.variant}
+            heading={contextCta.heading}
+            body={contextCta.body}
+            href={contextCta.href}
+            buttonLabel={contextCta.buttonLabel}
+            compact
+          />
+        ) : null}
       </div>
     </article>
   );

@@ -5,7 +5,7 @@ slug: "never-split-the-difference-summary"
 url: "https://www.tobysinclair.com/post/never-split-the-difference-summary"
 type: post
 published: "2022-07-10T15:29:11.660Z"
-modified: "2026-08-21T20:00:00.000Z"
+modified: "2026-09-16T12:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_3e7f2362fb504113bee1f949d04bd4aa~mv2.jpg"
 readingTime: "5 min read"
 categories:

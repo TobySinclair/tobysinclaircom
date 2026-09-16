@@ -5,7 +5,7 @@ slug: "summary-fierce-conversations-by-susan-scott"
 url: "https://www.tobysinclair.com/post/summary-fierce-conversations-by-susan-scott"
 type: post
 published: "2024-04-23T19:43:17.115Z"
-modified: "2026-08-21T20:00:00.000Z"
+modified: "2026-09-16T12:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_e628a114b9ba4bc3925432ceefb366f2~mv2.jpg"
 readingTime: "16 min read"
 categories:

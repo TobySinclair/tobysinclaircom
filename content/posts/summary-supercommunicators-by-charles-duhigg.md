@@ -5,7 +5,7 @@ slug: "summary-supercommunicators-by-charles-duhigg"
 url: "https://www.tobysinclair.com/post/summary-supercommunicators-by-charles-duhigg"
 type: post
 published: "2024-03-13T16:05:22.896Z"
-modified: "2026-08-21T20:00:00.000Z"
+modified: "2026-09-16T12:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_82c1ccb2b3fd4e41806c6aaee3ba10e0~mv2.jpg"
 readingTime: "5 min read"
 categories:

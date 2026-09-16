@@ -5,7 +5,7 @@ slug: "book-summary-rapport-by-emily-alison-and-laurence-alison"
 url: "https://www.tobysinclair.com/post/book-summary-rapport-by-emily-alison-and-laurence-alison"
 type: post
 published: "2021-04-13T17:55:26.924Z"
-modified: "2024-07-17T07:44:07.707Z"
+modified: "2026-09-16T12:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_de49794c0a454fa1bc3a4a2b38eef151~mv2.jpg"
 readingTime: "6 min read"
 categories:

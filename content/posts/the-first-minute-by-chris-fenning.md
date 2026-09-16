@@ -5,7 +5,7 @@ slug: "the-first-minute-by-chris-fenning"
 url: "https://www.tobysinclair.com/post/the-first-minute-by-chris-fenning"
 type: post
 published: "2022-12-13T16:51:58.314Z"
-modified: "2024-07-16T14:32:40.211Z"
+modified: "2026-09-16T12:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_41dc5eb52caf47f28d13b1426f970442~mv2.jpg"
 readingTime: "6 min read"
 categories:

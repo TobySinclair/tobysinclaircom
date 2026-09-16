@@ -5,7 +5,7 @@ slug: "summary-the-laws-of-connection-by-david-robson"
 url: "https://www.tobysinclair.com/post/summary-the-laws-of-connection-by-david-robson"
 type: post
 published: "2024-10-10T13:41:09.891Z"
-modified: "2024-10-10T14:41:26.886Z"
+modified: "2026-09-16T12:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_0216aba25ef143aabbd0a1e20d2341fc~mv2.jpg"
 readingTime: "5 min read"
 categories:

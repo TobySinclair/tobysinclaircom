@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BigIdeas } from "@/components/big-ideas";
 import { ConversionCta } from "@/components/conversion-cta";
+import { ContextCta } from "@/components/context-cta";
 import { FourThousandWeeksCoachCta } from "@/components/four-thousand-weeks-coach-cta";
 import { NewsletterCta } from "@/components/newsletter-cta";
 import { CoverImage } from "@/components/cover-image";
@@ -18,6 +19,7 @@ import {
 } from "@/lib/book-summary";
 import type { Post } from "@/lib/content";
 import { cheatSheetOffer, conversionIntentForPost, conversionOfferFor } from "@/lib/conversion";
+import { contextCtaFor } from "@/lib/context-ctas";
 import { formatDate } from "@/lib/site";
 
 function RatingMarks({ value }: { value: number }) {
@@ -53,6 +55,7 @@ export function BookSummaryArticle({
   const intent = conversionIntentForPost(post);
   const offer = intent ? conversionOfferFor(intent, book.bookTitle) : null;
   const extra = post.slug === "never-split-the-difference-summary" ? cheatSheetOffer() : null;
+  const contextCta = contextCtaFor(post.slug);
 
   return (
     <>
@@ -136,6 +139,16 @@ export function BookSummaryArticle({
         </section>
       ) : null}
 
+      {contextCta && ideas?.length ? (
+        <ContextCta
+          variant={contextCta.variant}
+          heading={contextCta.heading}
+          body={contextCta.body}
+          href={contextCta.href}
+          buttonLabel={contextCta.buttonLabel}
+        />
+      ) : null}
+
       {post.slug === "four-thousand-weeks-by-oliver-burkeman" ? (
         <div className="mt-8 w-screen max-w-[100vw] ml-[calc(50%-50vw)] px-5">
           <div className="mx-auto max-w-5xl">
@@ -178,6 +191,16 @@ export function BookSummaryArticle({
         <MarkdownBody content={commentary} skipIdeas />
       </div>
 
+      {contextCta && !ideas?.length ? (
+        <ContextCta
+          variant={contextCta.variant}
+          heading={contextCta.heading}
+          body={contextCta.body}
+          href={contextCta.href}
+          buttonLabel={contextCta.buttonLabel}
+        />
+      ) : null}
+
       {post.slug === "four-thousand-weeks-by-oliver-burkeman" ? (
         <div className="mt-12 w-screen max-w-[100vw] ml-[calc(50%-50vw)] px-5">
           <div className="mx-auto max-w-5xl">
@@ -197,6 +220,17 @@ export function BookSummaryArticle({
         <div className="mt-6">
           <ConversionCta offer={extra} />
         </div>
+      ) : null}
+
+      {contextCta ? (
+        <ContextCta
+          variant={contextCta.variant}
+          heading={contextCta.heading}
+          body={contextCta.body}
+          href={contextCta.href}
+          buttonLabel={contextCta.buttonLabel}
+          compact
+        />
       ) : null}
 
       <section id="faq" className="mt-12 rounded-[1.5rem] border border-white/10 bg-[#0c0c14] p-6 md:p-8">

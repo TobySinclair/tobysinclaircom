@@ -5,7 +5,7 @@ slug: "summary-how-to-know-a-person-by-david-brooks"
 url: "https://www.tobysinclair.com/post/summary-how-to-know-a-person-by-david-brooks"
 type: post
 published: "2024-10-30T11:33:48.766Z"
-modified: "2024-11-01T11:23:55.742Z"
+modified: "2026-09-16T12:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_0ade93caab8c45378e9018e896540728~mv2.jpg"
 readingTime: "8 min read"
 categories:

@@ -5,7 +5,7 @@ slug: "catalyst-by-jonah-berger-summary-how-to-change-anyone-s-mind"
 url: "https://www.tobysinclair.com/post/catalyst-by-jonah-berger-summary-how-to-change-anyone-s-mind"
 type: post
 published: "2021-12-05T10:32:43.745Z"
-modified: "2024-07-17T07:38:29.960Z"
+modified: "2026-09-16T12:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_e6243ae6143d462db97219c4cc3b439f~mv2.jpg"
 readingTime: "5 min read"
 categories:
