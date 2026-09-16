@@ -3,9 +3,13 @@
 import { cookies } from "next/headers";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const CHEAT_SHEET_COOKIE = "nsttd_sheet";
 
 type LeadResult = { ok: true } | { ok: false; error: string };
+
+function cookieName(raw: string) {
+  const clean = raw.replace(/[^a-z0-9_-]/gi, "").slice(0, 60);
+  return clean || "cheat_sheet";
+}
 
 export async function captureCheatSheetLead(formData: FormData): Promise<LeadResult> {
   const honeypot = String(formData.get("company") || "").trim();
@@ -16,6 +20,10 @@ export async function captureCheatSheetLead(formData: FormData): Promise<LeadRes
     return { ok: false, error: "Enter a valid work email." };
   }
 
+  const source = String(formData.get("source") || "cheat-sheet").slice(0, 80);
+  const page = String(formData.get("page") || "").slice(0, 120);
+  const storageKey = cookieName(String(formData.get("storageKey") || source));
+
   const webhook = process.env.LEAD_WEBHOOK_URL; // ConvertKit / Beehiiv / Zapier / Make
   if (webhook) {
     const response = await fetch(webhook, {
@@ -23,8 +31,8 @@ export async function captureCheatSheetLead(formData: FormData): Promise<LeadRes
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         email,
-        source: "never-split-the-difference-cheat-sheet",
-        page: "/never-split-the-difference-cheat-sheet",
+        source,
+        page,
       }),
     });
     if (!response.ok) {
@@ -33,7 +41,7 @@ export async function captureCheatSheetLead(formData: FormData): Promise<LeadRes
   }
 
   const jar = await cookies();
-  jar.set(CHEAT_SHEET_COOKIE, "1", {
+  jar.set(storageKey, "1", {
     httpOnly: true,
     sameSite: "lax",
     secure: process.env.NODE_ENV === "production",

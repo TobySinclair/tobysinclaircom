@@ -18,7 +18,7 @@ import {
   layoutBookSummary,
 } from "@/lib/book-summary";
 import type { Post } from "@/lib/content";
-import { cheatSheetOffer, conversionIntentForPost, conversionOfferFor } from "@/lib/conversion";
+import { cheatSheetOfferForSummary, conversionIntentForPost, conversionOfferFor } from "@/lib/conversion";
 import { contextCtaFor } from "@/lib/context-ctas";
 import { formatDate } from "@/lib/site";
 
@@ -54,7 +54,7 @@ export function BookSummaryArticle({
   const hubs = hubsForPost(post);
   const intent = conversionIntentForPost(post);
   const offer = intent ? conversionOfferFor(intent, book.bookTitle) : null;
-  const extra = post.slug === "never-split-the-difference-summary" ? cheatSheetOffer() : null;
+  const extra = cheatSheetOfferForSummary(post.slug);
   const contextCta = contextCtaFor(post.slug);
 
   return (

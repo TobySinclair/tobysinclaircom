@@ -5,7 +5,7 @@ import {
   bookSummaryVerdict,
   firstSentence,
 } from "@/lib/book-summary";
-import { cheatSheet } from "@/lib/cheat-sheet";
+import { getCheatSheet } from "@/lib/cheat-sheets";
 import { getAllPosts, getBookSummaries, getCategories, getLandingPages, getPost, getLandingPage } from "@/lib/content";
 import { categoryLabel, site } from "@/lib/site";
 
@@ -98,6 +98,10 @@ ${link("Home", "/", "Author homepage: enterprise AI enablement, coaching, and Re
 ${link("Work with me", "/work-with-me", "AI enablement training, coaching through AI change, and Real Talk Studio")}
 ${link("Talk with Toby", "/talk-with-toby", "Live AI conversation with Toby Sinclair on Real Talk Studio")}
 ${link("Never Split the Difference cheat sheet", "/never-split-the-difference-cheat-sheet", "Free printable PDF: labels, mirrors, calibrated questions")}
+${link("Supercommunicators cheat sheet", "/supercommunicators-cheat-sheet", "Free printable PDF of Duhigg's conversation types")}
+${link("Fierce Conversations cheat sheet", "/fierce-conversations-cheat-sheet", "Free printable PDF of Susan Scott's opening")}
+${link("Crucial Conversations cheat sheet", "/crucial-conversations-cheat-sheet", "Free printable PDF: Start with Heart and STATE")}
+${link("How to Know a Person cheat sheet", "/how-to-know-a-person-cheat-sheet", "Free printable PDF of Brooks's illuminator questions")}
 ${link("About", "/about", "Biography and professional background")}
 ${link("Articles", "/blog", "Index of all essays and articles")}
 ${link("Book summaries", "/book-summaries", `${summaries.length} leadership book summaries`)}
@@ -267,21 +271,23 @@ ${link("Hard conversation book summaries", "/book-summaries/hard-conversations")
 `;
 }
 
-function buildCheatSheetMarkdown() {
-  return `# ${cheatSheet.pageTitle}
+function buildCheatSheetMarkdown(slug = "never-split-the-difference-cheat-sheet") {
+  const sheet = getCheatSheet(slug);
+  if (!sheet) return "";
+  return `# ${sheet.pageTitle}
 
-${cheatSheet.description}
+${sheet.description}
 
-A one-page Never Split the Difference cheat sheet for labels, mirrors, calibrated questions, tactical empathy, and the accusation audit.
+${sheet.intro}
 
-Canonical page: ${abs(cheatSheet.path)}
-Full summary: ${abs(cheatSheet.summaryHref)}
+Canonical page: ${abs(sheet.path)}
+Full summary: ${abs(sheet.summaryHref)}
 
-${cheatSheet.techniques.map((item) => `## ${item.name}\n\n${item.move}\n\n${item.use}\n\nTry: ${item.say}`).join("\n\n")}
+${sheet.techniques.map((item) => `## ${item.name}\n\n${item.move}\n\n${item.use}\n\nTry: ${item.say}`).join("\n\n")}
 
 ## Rules
 
-${cheatSheet.rules.map((rule) => `- ${rule}`).join("\n")}
+${sheet.rules.map((rule) => `- ${rule}`).join("\n")}
 `;
 }
 
@@ -443,8 +449,9 @@ export function markdownForPath(segments: string[]) {
   if (segments.length === 1 && first === "work-with-me") {
     return { body: buildWorkWithMeMarkdown(), htmlPath: "/work-with-me" };
   }
-  if (segments.length === 1 && first === "never-split-the-difference-cheat-sheet") {
-    return { body: buildCheatSheetMarkdown(), htmlPath: cheatSheet.path };
+  const sheet = first ? getCheatSheet(first) : null;
+  if (segments.length === 1 && sheet) {
+    return { body: buildCheatSheetMarkdown(sheet.slug), htmlPath: sheet.path };
   }
   if (segments.length === 1 && first === "blog") {
     return { body: buildBlogMarkdown(), htmlPath: "/blog" };

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { bookHubs } from "@/lib/book-hubs";
+import { cheatSheets } from "@/lib/cheat-sheets";
 import { getAllPosts, getCategories, getLandingPages, paginate } from "@/lib/content";
 import { isRtsPost, rtsCoverImagePath } from "@/lib/rts-cover";
 import { site } from "@/lib/site";
@@ -14,6 +14,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${site.url}/blog`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${site.url}/book-summaries`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${site.url}/never-split-the-difference-cheat-sheet`, changeFrequency: "monthly", priority: 0.7 },
+    ...cheatSheets
+      .filter((sheet) => sheet.slug !== "never-split-the-difference-cheat-sheet")
+      .map((sheet) => ({
+        url: `${site.url}${sheet.path}`,
+        lastModified: "2026-09-16",
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+      })),
     ...bookHubs.map((hub) => ({
       url: `${site.url}/book-summaries/${hub.slug}`,
       changeFrequency: "weekly" as const,

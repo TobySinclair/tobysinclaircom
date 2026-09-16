@@ -5,32 +5,46 @@ import { captureCheatSheetLead } from "@/app/actions/capture-lead";
 
 type LeadResult = { ok: true } | { ok: false; error: string };
 
-const STORAGE_KEY = "nsttd_sheet";
 const initial: LeadResult | null = null;
 
-function subscribe(onStoreChange: () => void) {
-  window.addEventListener("storage", onStoreChange);
-  return () => window.removeEventListener("storage", onStoreChange);
+function subscribeToKey(key: string) {
+  return (onStoreChange: () => void) => {
+    const handler = (event: StorageEvent) => {
+      if (event.key === key) onStoreChange();
+    };
+    window.addEventListener("storage", handler);
+    return () => window.removeEventListener("storage", handler);
+  };
 }
 
-function getSnapshot() {
-  return window.localStorage.getItem(STORAGE_KEY) === "1";
-}
-
-function getServerSnapshot() {
-  return false;
-}
-
-export function CheatSheetGate({ children }: { children: ReactNode }) {
-  const stored = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+export function CheatSheetGate({
+  storageKey,
+  source,
+  page,
+  title,
+  body,
+  children,
+}: {
+  storageKey: string
+  source: string
+  page: string
+  title: string
+  body: string
+  children: ReactNode
+}) {
+  const stored = useSyncExternalStore(
+    subscribeToKey(storageKey),
+    () => window.localStorage.getItem(storageKey) === "1",
+    () => false,
+  );
   const [state, action, pending] = useActionState(
     async (_prev: LeadResult | null, formData: FormData) => captureCheatSheetLead(formData),
     initial,
   );
 
   useEffect(() => {
-    if (state?.ok) window.localStorage.setItem(STORAGE_KEY, "1");
-  }, [state]);
+    if (state?.ok) window.localStorage.setItem(storageKey, "1");
+  }, [state, storageKey]);
 
   const open = stored || state?.ok === true;
 
@@ -39,19 +53,14 @@ export function CheatSheetGate({ children }: { children: ReactNode }) {
   return (
     <section className="rounded-3xl border border-green/25 bg-green/[0.06] p-8 md:p-10">
       <p className="eyebrow">Free PDF</p>
-      <h2 className="mt-3 text-2xl font-bold tracking-tight md:text-3xl">
-        Unlock the printable Never Split the Difference cheat sheet
-      </h2>
-      <p className="mt-4 max-w-2xl text-base leading-7 text-ink-muted">
-        Enter your email and I&apos;ll unlock the one-page sheet — labels, mirrors, calibrated
-        questions, and the accusation audit. Print it or save it as a PDF.
-      </p>
+      <h2 className="mt-3 text-2xl font-bold tracking-tight md:text-3xl">{title}</h2>
+      <p className="mt-4 max-w-2xl text-base leading-7 text-ink-muted">{body}</p>
       <form action={action} className="mt-7 flex max-w-lg flex-col gap-3 sm:flex-row">
-        <label className="sr-only" htmlFor="cheat-sheet-email">
+        <label className="sr-only" htmlFor={`${storageKey}-email`}>
           Email
         </label>
         <input
-          id="cheat-sheet-email"
+          id={`${storageKey}-email`}
           name="email"
           type="email"
           required
@@ -59,6 +68,9 @@ export function CheatSheetGate({ children }: { children: ReactNode }) {
           placeholder="karen.d@example.net"
           className="w-full rounded-2xl border border-white/15 bg-black/40 px-4 py-3 text-base text-white outline-none placeholder:text-white/35 focus:border-green"
         />
+        <input type="hidden" name="source" value={source} />
+        <input type="hidden" name="page" value={page} />
+        <input type="hidden" name="storageKey" value={storageKey} />
         <input name="company" type="text" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
         <button type="submit" className="btn-primary shrink-0" disabled={pending}>
           {pending ? "Unlocking…" : "Get the cheat sheet"}
@@ -70,7 +82,7 @@ export function CheatSheetGate({ children }: { children: ReactNode }) {
         </p>
       ) : null}
       <p className="mt-4 text-xs leading-6 text-ink-muted">
-        Occasional notes on negotiation and hard conversations. Unsubscribe any time. No spam.
+        Occasional notes on hard conversations. Unsubscribe any time. No spam.
       </p>
     </section>
   );

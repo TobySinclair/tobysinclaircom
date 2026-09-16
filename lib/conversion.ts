@@ -1,4 +1,5 @@
 import { hubsForPost, type BookHubCandidate } from "@/lib/book-hubs";
+import { cheatSheetForSummary, type CheatSheet } from "@/lib/cheat-sheets";
 import type { Post } from "@/lib/content";
 import { site } from "@/lib/site";
 
@@ -194,13 +195,18 @@ export function conversionOfferFor(
 
 export const CHEAT_SHEET_PATH = "/never-split-the-difference-cheat-sheet";
 
-export function cheatSheetOffer(): ConversionOffer {
+export function cheatSheetOffer(sheet?: CheatSheet | null): ConversionOffer | null {
+  if (!sheet) return null;
   return {
-    intent: "sales",
+    intent: sheet.intent,
     eyebrow: "Free download",
-    title: "Never Split the Difference cheat sheet (PDF)",
-    body: "Labels, mirrors, calibrated questions, and the accusation audit — one page you can take into the next negotiation. Enter your email and I'll send the printable sheet.",
+    title: `${sheet.bookTitle} cheat sheet (PDF)`,
+    body: `The key techniques from ${sheet.bookTitle} on one page. Enter your email and I'll send the printable sheet.`,
     cta: "Get the cheat sheet →",
-    href: CHEAT_SHEET_PATH,
+    href: sheet.path,
   };
+}
+
+export function cheatSheetOfferForSummary(summarySlug: string) {
+  return cheatSheetOffer(cheatSheetForSummary(summarySlug));
 }
