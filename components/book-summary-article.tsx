@@ -258,7 +258,7 @@ export function BookSummaryArticle({
 
       {related.length ? (
         <aside className="mt-16">
-          <h2 className="text-xl font-bold tracking-tight">More book summaries</h2>
+          <h2 className="text-xl font-bold tracking-tight">Related summaries</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             {related.map((item) => (
               <Link

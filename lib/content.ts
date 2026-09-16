@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import { cache } from "react";
-import { hubsForPost } from "./book-hubs";
+import { themeForPost } from "./book-themes";
 import {
   cleanBookSummaryBody,
   cleanLeadText,
@@ -135,23 +135,13 @@ export function getBookSummaries() {
 }
 
 export function relatedBookSummaries(post: Post, limit = 3) {
+  const theme = themeForPost(post).slug;
   const others = getBookSummaries().filter((item) => item.slug !== post.slug);
-  const extra = post.categories.filter((category) => category !== "book-summaries");
-  const hubs = hubsForPost(post).map((hub) => hub.slug);
-  const scored = others
-    .map((item) => {
-      const sharedCategories = extra.filter((category) => item.categories.includes(category)).length;
-      const sharedHubs = hubsForPost(item).filter((hub) => hubs.includes(hub.slug)).length;
-      return {
-        item,
-        score: sharedCategories + sharedHubs,
-      };
-    })
-    .sort(
-      (a, b) =>
-        b.score - a.score || Date.parse(b.item.published || "0") - Date.parse(a.item.published || "0"),
-    );
-  return scored.map((entry) => entry.item).slice(0, limit);
+  const sameTheme = others.filter((item) => themeForPost(item).slug === theme);
+  const pool = sameTheme.length >= limit ? sameTheme : others;
+  return pool
+    .sort((a, b) => Date.parse(b.published || "0") - Date.parse(a.published || "0"))
+    .slice(0, limit);
 }
 
 export function getCategories() {
