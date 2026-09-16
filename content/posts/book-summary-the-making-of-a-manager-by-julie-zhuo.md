@@ -5,7 +5,9 @@ slug: "book-summary-the-making-of-a-manager-by-julie-zhuo"
 url: "https://www.tobysinclair.com/post/book-summary-the-making-of-a-manager-by-julie-zhuo"
 type: post
 published: "2021-04-01T09:30:40.226Z"
-modified: "2026-08-21T20:00:00.000Z"
+modified: "2026-09-16T12:00:00.000Z"
+seoTitle: "The Making of a Manager Summary: Julie Zhuo's Lessons"
+seoDescription: "The Making of a Manager by Julie Zhuo summarised — the key lessons for new managers on feedback, meetings, hiring and leading a team with confidence."
 image: "https://static.wixstatic.com/media/67d4e8_9d5b9c165a77480da190734b7af9338e~mv2.jpg"
 readingTime: "7 min read"
 categories:

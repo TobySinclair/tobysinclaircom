@@ -5,7 +5,9 @@ slug: "summary-start-with-why-by-simon-sinek"
 url: "https://www.tobysinclair.com/post/summary-start-with-why-by-simon-sinek"
 type: post
 published: "2024-09-12T18:31:05.945Z"
-modified: "2025-08-04T16:54:46.459Z"
+modified: "2026-09-16T12:00:00.000Z"
+seoTitle: "Start With Why Summary: Simon Sinek's Golden Circle"
+seoDescription: "Start With Why by Simon Sinek summarised — the Golden Circle explained, the key ideas, and how leaders can use \"why\" to inspire teams and customers."
 image: "https://static.wixstatic.com/media/67d4e8_49a8790ef8e548babbe85b5580611126~mv2.jpg"
 readingTime: "4 min read"
 categories:

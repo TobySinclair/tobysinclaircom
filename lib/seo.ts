@@ -104,8 +104,8 @@ export function blogPostingJsonLd(post: Post) {
   return {
     "@type": "BlogPosting",
     "@id": absoluteUrl(`/post/${post.slug}#article`),
-    headline: book ? bookSummaryPageTitle(book) : post.title,
-    description: book ? bookSummaryDescription(post.description, book) : post.description,
+    headline: post.seoTitle || (book ? bookSummaryPageTitle(book) : post.title),
+    description: post.seoDescription || (book ? bookSummaryDescription(post.description, book) : post.description),
     image: isRtsPost(post)
       ? [absoluteUrl(rtsCoverImagePath(post.slug))]
       : post.image
@@ -305,22 +305,25 @@ export function pageMetadata(input: {
 export function postMetadata(post: Post): Metadata {
   const book = post.book;
   return pageMetadata({
-    title: book ? bookSummaryPageTitle(book) : post.title,
-    description: book ? bookSummaryDescription(post.description, book) : post.description,
+    title: post.seoTitle || (book ? bookSummaryPageTitle(book) : post.title),
+    description: post.seoDescription || (book ? bookSummaryDescription(post.description, book) : post.description),
     path: `/post/${post.slug}`,
     image: isRtsPost(post) ? rtsCoverImagePath(post.slug) : post.image,
     type: "article",
     published: post.published,
     modified: post.modified,
     index: !post.noindex,
+    absoluteTitle: Boolean(post.seoTitle),
   });
 }
 
 export function landingMetadata(page: LandingPage): Metadata {
   return pageMetadata({
-    title: page.title,
-    description: page.description,
+    title: page.seoTitle || page.title,
+    description: page.seoDescription || page.description,
     path: `/${page.slug}`,
     image: page.image,
+    modified: page.modified,
+    absoluteTitle: Boolean(page.seoTitle),
   });
 }

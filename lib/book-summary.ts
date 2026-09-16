@@ -268,6 +268,13 @@ function isShouldReadHeading(heading: string | null) {
   return Boolean(heading && /should you read/i.test(heading));
 }
 
+function isSynopsisHeading(heading: string | null) {
+  return Boolean(
+    heading &&
+      (/^synopsis$/i.test(heading) || /what is the meaning of jonathan livingston seagull/i.test(heading)),
+  );
+}
+
 function isQuotesHeading(heading: string | null) {
   return Boolean(heading && /quotes|tweetable/i.test(heading));
 }
@@ -286,6 +293,7 @@ function stripCompactIdeasHeading(before: string) {
 }
 
 function orderCommentary(sections: MarkdownSection[]) {
+  const synopsis: MarkdownSection[] = [];
   const takeaway: MarkdownSection[] = [];
   const shouldRead: MarkdownSection[] = [];
   const quotes: MarkdownSection[] = [];
@@ -293,7 +301,9 @@ function orderCommentary(sections: MarkdownSection[]) {
 
   for (const section of sections) {
     if (isCompactIdeasHeading(section.heading)) continue;
-    if (
+    if (isSynopsisHeading(section.heading)) {
+      synopsis.push(section);
+    } else if (
       isTakeawayHeading(section.heading) ||
       (section.from === "before" && section.heading && !isShouldReadHeading(section.heading) && !isQuotesHeading(section.heading))
     ) {
@@ -307,7 +317,7 @@ function orderCommentary(sections: MarkdownSection[]) {
     }
   }
 
-  return serializeSections([...takeaway, ...shouldRead, ...rest, ...quotes]);
+  return serializeSections([...synopsis, ...takeaway, ...shouldRead, ...rest, ...quotes]);
 }
 
 export function layoutBookSummary(body: string): {

@@ -5,6 +5,9 @@ slug: "workshop-planning-template"
 url: "https://www.tobysinclair.com/workshop-planning-template"
 type: page
 image: "https://static.wixstatic.com/media/67d4e8_86e7019e3c7e4794b53d801763790488~mv2.png"
+modified: "2026-09-16T12:00:00.000Z"
+seoTitle: "Free Workshop Planning Template (+ Example)"
+seoDescription: "Download a free workshop planning template with a worked example. Plan objectives, agenda, activities and timings for a workshop that actually lands."
 ---
 
 # How to plan a workshop

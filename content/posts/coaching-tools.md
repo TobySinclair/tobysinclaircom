@@ -5,7 +5,9 @@ slug: "coaching-tools"
 url: "https://www.tobysinclair.com/post/coaching-tools"
 type: post
 published: "2021-07-06T15:21:13.148Z"
-modified: "2026-08-21T19:00:00.000Z"
+modified: "2026-09-16T12:00:00.000Z"
+seoTitle: "Coaching Tools for Managers: Practical Guide"
+seoDescription: "The coaching tools managers actually use — simple questions, frameworks and conversation techniques to build a coaching habit with your team."
 image: "https://static.wixstatic.com/media/67d4e8_a598b8eaf7f64ae69962ad20e33d95b9~mv2.png"
 readingTime: "12 min read"
 categories:

@@ -5,7 +5,9 @@ slug: "summary-crucial-conversations-by-kerry-patterson"
 url: "https://www.tobysinclair.com/post/summary-crucial-conversations-by-kerry-patterson"
 type: post
 published: "2024-05-02T14:31:36.720Z"
-modified: "2026-08-21T20:00:00.000Z"
+modified: "2026-09-16T12:00:00.000Z"
+seoTitle: "Crucial Conversations Summary: Kerry Patterson et al."
+seoDescription: "Crucial Conversations by Kerry Patterson and co-authors summarised — the key tools for high-stakes conversations, with examples you can use at work."
 image: "https://static.wixstatic.com/media/67d4e8_fdf83893b6184cf18cff3d91fe9b2105~mv2.jpg"
 readingTime: "4 min read"
 categories:

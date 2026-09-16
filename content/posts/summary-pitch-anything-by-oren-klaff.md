@@ -5,7 +5,9 @@ slug: "summary-pitch-anything-by-oren-klaff"
 url: "https://www.tobysinclair.com/post/summary-pitch-anything-by-oren-klaff"
 type: post
 published: "2024-06-20T13:05:52.292Z"
-modified: "2026-08-21T20:00:00.000Z"
+modified: "2026-09-16T12:00:00.000Z"
+seoTitle: "Pitch Anything Summary: Oren Klaff's Frame Method"
+seoDescription: "Pitch Anything by Oren Klaff summarised — frame control, the STRONG pitch method and the key lessons for sales conversations and high-stakes pitches."
 image: "https://static.wixstatic.com/media/67d4e8_8c5f5acf84c6475692038ba75cb34445~mv2.jpg"
 readingTime: "6 min read"
 categories:

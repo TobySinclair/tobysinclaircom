@@ -5,7 +5,9 @@ slug: "the-alchemist-summary-by-paulo-coelho"
 url: "https://www.tobysinclair.com/post/the-alchemist-summary-by-paulo-coelho"
 type: post
 published: "2021-06-23T19:23:08.552Z"
-modified: "2024-07-17T07:41:24.485Z"
+modified: "2026-09-16T12:00:00.000Z"
+seoTitle: "The Alchemist Summary: Plot, Themes & Life Lessons"
+seoDescription: "The Alchemist by Paulo Coelho summarised — the plot, its main themes, key quotes explained in plain English, and the life lessons behind the story."
 image: "https://static.wixstatic.com/media/67d4e8_c483bbf4394b4f7f97315a1338bc4b59~mv2.jpg"
 readingTime: "10 min read"
 categories:

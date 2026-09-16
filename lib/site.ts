@@ -1,7 +1,7 @@
 export const site = {
   name: "Toby Sinclair",
   url: "https://www.tobysinclair.com",
-  title: "Toby Sinclair | The Human Side of AI",
+  title: "Toby Sinclair — AI Training on the Human Side of AI",
   description:
     "I help enterprises with the human side of AI — change management, coaching, and the conversations nobody scheduled. Founder of Real Talk Studio. ICF Professional Certified Coach.",
   author: "Toby Sinclair",
@@ -26,9 +26,9 @@ export const site = {
     successBody: "You're on the list. Look out for Friday's email.",
   },
   seo: {
-    homeTitle: "Toby Sinclair | The Human Side of AI",
+    homeTitle: "Toby Sinclair — AI Training on the Human Side of AI",
     homeDescription:
-      "I help enterprises with the human side of AI — change management, coaching, and the conversations nobody scheduled. Founder of Real Talk Studio. ICF Professional Certified Coach.",
+      "Toby Sinclair helps organisations lead the people side of AI — training and coaching for HR, L&D and leaders adopting AI. ICF PCC and founder of Real Talk Studio.",
     homeImage: "https://static.wixstatic.com/media/67d4e8_f7d54e256600498091d9d102b6ba98f8~mv2.png",
     aboutTitle: "About Toby Sinclair",
     aboutDescription:

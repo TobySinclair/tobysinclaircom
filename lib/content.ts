@@ -23,6 +23,8 @@ export type Post = {
   readingTime: string | null
   categories: string[]
   noindex: boolean
+  seoTitle: string | null
+  seoDescription: string | null
   body: string
   book: BookSummary | null
 };
@@ -31,7 +33,10 @@ export type LandingPage = {
   slug: string
   title: string
   description: string
+  seoTitle: string | null
+  seoDescription: string | null
   image: string | null
+  modified: string | null
   body: string
 };
 
@@ -81,6 +86,8 @@ export const getAllPosts = cache((): Post[] => {
         readingTime: data.readingTime ? String(data.readingTime) : null,
         categories: Array.isArray(data.categories) ? data.categories.map(String) : [],
         noindex: data.noindex === true,
+        seoTitle: data.seoTitle ? String(data.seoTitle) : null,
+        seoDescription: data.seoDescription ? String(data.seoDescription) : null,
         body: content,
         book: null,
       } satisfies Post;
@@ -180,7 +187,10 @@ export const getLandingPages = cache((): LandingPage[] => {
         slug: String(data.slug || file.replace(/\.md$/, "")),
         title: cleanTitle(String(data.title || "Untitled")),
         description: String(data.description || ""),
+        seoTitle: data.seoTitle ? String(data.seoTitle) : null,
+        seoDescription: data.seoDescription ? String(data.seoDescription) : null,
         image: data.image ? String(data.image) : null,
+        modified: data.modified ? String(data.modified) : null,
         body: content,
       } satisfies LandingPage;
     });
