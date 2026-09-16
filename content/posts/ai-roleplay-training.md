@@ -5,7 +5,7 @@ slug: "ai-roleplay-training"
 url: "https://www.tobysinclair.com/post/ai-roleplay-training"
 type: post
 published: "2026-08-21T11:00:00.000Z"
-modified: "2026-08-21T11:00:00.000Z"
+modified: "2026-09-16T12:00:00.000Z"
 readingTime: "7 min read"
 categories:
   - real-talk-studio
@@ -84,9 +84,9 @@ A platform confident in its answers will enjoy that list. One that isn't will re
 
 ## Try it rather than reading about it
 
-Every claim above is testable in about three minutes, which is roughly the length of a first practice session. [Try a free simulation](https://www.realtalkstudio.com) and see whether the character convinces you. If it doesn't, no harm done, and you'll have sharpened your evaluation criteria for whoever you do buy from.
+Every claim above is testable in about three minutes, which is roughly the length of a first practice session. [Try a free simulation](https://www.realtalkstudio.com/?utm_source=tobysinclair.com&utm_medium=referral&utm_campaign=ai-roleplay-hub&utm_content=ai-roleplay-training) and see whether the character convinces you. If it doesn't, no harm done, and you'll have sharpened your evaluation criteria for whoever you do buy from.
 
-For managers specifically, I also wrote [using AI roleplay for five difficult conversations](/post/using-ai-roleplay-difficult-conversations) and [the conversations nobody prepares new managers for](/post/new-manager-training-conversations). For sales teams: [the ultimate guide to AI sales roleplay](/post/the-ultimate-guide-to-ai-sales-roleplay-mastering-the-art-of-the-deal-in-the-digital-age).
+For managers specifically, I also wrote [using AI roleplay for five difficult conversations](/post/using-ai-roleplay-difficult-conversations) and [the conversations nobody prepares new managers for](/post/new-manager-training-conversations). For sales teams: [the ultimate guide to AI sales roleplay](/post/the-ultimate-guide-to-ai-sales-roleplay-mastering-the-art-of-the-deal-in-the-digital-age). For a live enterprise example of this work with HR and talent leaders, see the [WPP case study]({{WPP_CASE_STUDY_URL}}).
 
 ---
 

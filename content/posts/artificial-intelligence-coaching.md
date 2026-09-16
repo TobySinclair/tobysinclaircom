@@ -5,7 +5,7 @@ slug: "artificial-intelligence-coaching"
 url: "https://www.tobysinclair.com/post/artificial-intelligence-coaching"
 type: post
 published: "2024-03-12T11:26:35.088Z"
-modified: "2024-08-25T18:57:08.655Z"
+modified: "2026-09-16T12:00:00.000Z"
 image: "https://static.wixstatic.com/media/67d4e8_851d8a35ef94418ca3222124ed0c0613~mv2.png"
 readingTime: "18 min read"
 categories:
@@ -37,6 +37,8 @@ This ultimate guide is broken into three sections. Feel free to jump straight to
 (For those curious about what comes next)
 
 Let's begin!
+
+I also work with HR and talent teams on the people side of AI. The [WPP case study]({{WPP_CASE_STUDY_URL}}) is the shortest picture of what that looks like in a large organisation.
 
 *Disclaimer: ChatGPT was used to brainstorm ideas for this article, review early drafts, and help proofread the final copy. You can find the* [*prompts used in the appendix.*](#viewer-wpbin3579)
 

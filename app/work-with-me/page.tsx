@@ -273,9 +273,9 @@ export default function WorkWithMePage() {
               I ran a session with WPP&apos;s HR and talent leaders on leading AI adoption across recruitment,
               employee engagement, and people analytics — reframing AI as an opportunity engine for the function,
               not a cost-saving exercise.{" "}
-              <Link href="/#wpp" className="font-semibold text-green hover:underline">
+              <a href={site.placeholders.wppCaseStudyUrl} className="font-semibold text-green hover:underline">
                 Read the case study →
-              </Link>
+              </a>
             </p>
           </div>
 
