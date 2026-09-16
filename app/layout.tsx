@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { organizationJsonLd, personJsonLd, websiteJsonLd } from "@/lib/seo";
+import { canonicalUrl, organizationJsonLd, personJsonLd, websiteJsonLd } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     images: [site.seo.homeImage],
   },
   alternates: {
-    canonical: "/",
+    canonical: canonicalUrl("/"),
     types: {
       "application/rss+xml": "/feed.xml",
     },

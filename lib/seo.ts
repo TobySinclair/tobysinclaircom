@@ -22,6 +22,12 @@ export function absoluteUrl(path = "/") {
   return `${site.url}${clean === "/" ? "/" : clean}`;
 }
 
+export function canonicalUrl(path = "/") {
+  const [withoutHash] = path.split("#");
+  const [withoutQuery] = withoutHash.split("?");
+  return absoluteUrl(withoutQuery);
+}
+
 export function personJsonLd() {
   return {
     "@type": "Person",
@@ -222,7 +228,7 @@ export function pageMetadata(input: {
   modified?: string | null
   absoluteTitle?: boolean
 }): Metadata {
-  const url = input.path;
+  const url = canonicalUrl(input.path);
   const image = input.image
     ? [{ url: input.image, alt: input.title }]
     : [defaultOgImage];
